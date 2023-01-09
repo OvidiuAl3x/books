@@ -1,0 +1,55 @@
+{
+    "manga": [
+        {
+            "id": 1,
+            "title": "caine",
+            "year": "2021",
+            "chapters": "130",
+            "review": "5",
+            "rereaded":2,
+            "genres": [
+                "Action, ",
+                "Adventure, ",
+                "Comedy, ",
+                "Cultivation, ",
+                "Martial Arts, ",
+                "Fantasy, ",
+                "Manhwa"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "pisica",
+            "year": "2020",
+            "chapters": "57",
+            "review": "5",
+            "rereaded":1,
+            "genres": [
+                "Action",
+                " Adventure",
+                " Comedy",
+                " Fantasy",
+                " Supernatural",
+                " Psyhological",
+                " Manhwa"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "da",
+            "year": "2020",
+            "chapters": "57",
+            "rereaded":3,
+            "review": "5",
+            "genres": [
+                "Action",
+                " Adventure",
+                " Comedy",
+                " Fantasy",
+                " Supernatural",
+                " Psyhological",
+                " Manhwa"
+            ]
+        }
+    ]
+}

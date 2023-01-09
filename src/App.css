@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  background-color: aqua;
+  width: 70%;
+  margin: auto;
+  
+}
+
+.card-container{
+  margin: 20px;
+}
+
+.card-container > h3 {
+  text-transform: capitalize;
+}
