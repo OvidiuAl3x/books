@@ -1,6 +1,6 @@
 import Stars from "react-stars-display";
 
-export const Card = ({ item }) => {
+export const BooksCard = ({ item }) => {
   // add all images
   function importAll(r) {
     let images = {};
