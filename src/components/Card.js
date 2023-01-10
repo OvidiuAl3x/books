@@ -1,4 +1,7 @@
+import Stars from "react-stars-display";
+
 export const Card = ({ item }) => {
+  // add all images
   function importAll(r) {
     let images = {};
     r.keys().forEach((item, index) => {
@@ -12,14 +15,22 @@ export const Card = ({ item }) => {
 
   const { rereaded, chapters, title, review } = item;
 
-  const a = rereaded >= 2 ? `${chapters} x ${rereaded}` : chapters;
+  const totalChapthers = rereaded >= 2 ? `${chapters} x ${rereaded}` : chapters;
+
+  const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
 
   return (
     <div className="card-container">
-      <img src={images[`${title}.jpg`]} height={100} width={100} />
+      <div className="star">
+        <Stars stars={review} size={20} spacing={5} fill={reviewStar} />
+      </div>
+
+      <img src={images[`${title}.jpg`]} height={200} width={200} alt={title}/>
+
       <h3>{title}</h3>
-      <p>Chapters: {a}</p>
-      <p>Icon: {review}</p>
+      <p>
+        <strong>Chapters:</strong> {totalChapthers}
+      </p>
     </div>
   );
 };

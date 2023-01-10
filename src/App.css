@@ -1,15 +1,44 @@
+body {
+  background-image: url(./background.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  letter-spacing: 1.2px;
+  font-family: 'DynaPuff', cursive;
+}
+
+
 .container {
   display: flex;
-  background-color: aqua;
   width: 70%;
   margin: auto;
-  
+  background-color: #ffffff10;
+  backdrop-filter: blur(18px);
 }
 
-.card-container{
+.card-container {
+  border: 1px solid black;
   margin: 20px;
+  border-radius: 10px;
 }
 
-.card-container > h3 {
+.card-container>img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-container>h3 {
   text-transform: capitalize;
+}
+
+.card-container>h3,
+p {
+  color: whitesmoke;
+  margin-left: 10px;
+}
+
+.star {
+  position: absolute;
+  margin-left: 5px;
 }
