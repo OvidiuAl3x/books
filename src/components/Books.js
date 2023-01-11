@@ -8,11 +8,12 @@ const PAGE_TABLE = "table";
 
 export const Books = () => {
   const [data, setData] = useState();
-  const [page, setPage] = useState(PAGE_BOOKS);
+  const [page, setPage] = useState(PAGE_TABLE);
 
   const navigateTo = (nextPage) => {
     setPage(nextPage);
   };
+
   useEffect(() => {
     (async () => {
       const data = await GetData();
@@ -23,17 +24,13 @@ export const Books = () => {
   return (
     <>
       <div className="page-navigation">
-        <p onClick={() => navigateTo(PAGE_BOOKS)}>
-          Books
-        </p>
-        <p onClick={() => navigateTo(PAGE_TABLE)}>
-          Details
-        </p>
+        <p onClick={() => navigateTo(PAGE_BOOKS)}>Books</p>
+        <p onClick={() => navigateTo(PAGE_TABLE)}>Details</p>
       </div>
       <div className="container">
         {page === PAGE_BOOKS && <BooksMap data={data} />}
-        {page === PAGE_TABLE && <BooksTable />}
       </div>
+      {page === PAGE_TABLE && <BooksTable data={data} />}
     </>
   );
 };

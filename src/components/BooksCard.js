@@ -13,19 +13,19 @@ export const BooksCard = ({ item }) => {
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
-  const { rereaded, chapters, title, review } = item;
+  const { rereaded, chapters, title, review, id } = item;
 
   const totalChapthers = rereaded >= 2 ? `${chapters} x ${rereaded}` : chapters;
 
   const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
 
   return (
-    <div className="card-container">
+    <div className="card-container" key={id}>
       <div className="star">
         <Stars stars={review} size={20} spacing={5} fill={reviewStar} />
       </div>
 
-      <img src={images[`${title}.jpg`]} height={200} width={200} alt={title}/>
+      <img src={images[`${title}.jpg`]} height={200} width={200} alt={title} />
 
       <h3>{title}</h3>
       <p>
