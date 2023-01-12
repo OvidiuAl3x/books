@@ -3,12 +3,12 @@
         {
             "id": 1,
             "title": "caine",
-            "year": "2021",
             "chapters": "130",
             "chaptersReread": "160",
             "review": "6",
             "rereaded": 2,
             "details": "bun",
+            "status": "Complete",
             "genres": [
                 "Action, ",
                 "Adventure, ",
@@ -20,13 +20,13 @@
             ]
         },
         {
-            "id": 3,
+            "id": 5,
             "title": "pisica",
-            "year": "2020",
             "chapters": "57",
             "chaptersReread": "70",
             "review": "2",
             "rereaded": 1,
+            "status": "Dropped",
             "genres": [
                 "Action",
                 " Adventure",
@@ -40,11 +40,11 @@
         {
             "id": 2,
             "title": "My Civil Servant Life Reborn in the Strange World",
-            "year": "2020",
             "chapters": "57",
             "rereaded": 3,
             "review": "3.5",
             "details": "naspa",
+            "status": "On Hold",
             "genres": [
                 "Action",
                 " Adventure",

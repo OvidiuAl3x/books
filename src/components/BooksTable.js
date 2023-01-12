@@ -6,11 +6,14 @@ export const BooksTable = ({ data }) => {
       <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>#</th>
+            <th>Image</th>
+            <th>Title</th>
             <th>Chapters</th>
             <th>Chapters 1st</th>
             <th>Review</th>
             <th>Genres</th>
+            <th>Status</th>
             <th>Details</th>
             <th colSpan={2}>
               <i class="fa-solid fa-square-plus"></i>
@@ -18,8 +21,8 @@ export const BooksTable = ({ data }) => {
           </tr>
         </thead>
 
-        {data?.map((item) => (
-          <BooksTableCard key={item.id} item={item} />
+        {data?.map((item , index) => (
+          <BooksTableCard key={item.id} item={item} index={index} />
         ))}
       </table>
     </div>
