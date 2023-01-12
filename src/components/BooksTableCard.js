@@ -22,17 +22,22 @@ export const BooksTableCard = ({ item, index }) => {
   );
 
   const colorStatus =
-    status === "Complete" ? "#24D60C" : status === "Dropped" ? "red" : "yellow";
+    status === "Complete"
+      ? "#169905"
+      : status === "Dropped"
+      ? "#cc0606"
+      : "#d8db03";
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
     : "https://via.placeholder.com/150/000000/00F9F9/?text=NoImage";
 
-  const a = ".table".length;
-
   return (
     <tbody>
       <tr key={id}>
+        <td
+          style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
+        ></td>
         <td>{index + 1}</td>
         <td>
           <img src={image} height={60} width={60} alt="photo2" />
@@ -45,7 +50,6 @@ export const BooksTableCard = ({ item, index }) => {
           <i class="fa-solid fa-star"></i>
         </td>
         <td>{genres}</td>
-        <td style={{ color: `${colorStatus}` }}>{status}</td>
         <td>{details}</td>
         <td>
           <i class="fa-solid fa-ban"></i>

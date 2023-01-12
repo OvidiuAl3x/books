@@ -29,6 +29,17 @@ body {
   height: 100%;
   max-height: 400px;
   max-width: 200px;
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .card-container>img {
@@ -90,23 +101,20 @@ p {
   justify-content: center;
   margin: 40px 15px 0px 15px;
   background-color: #1d1d1d;
-
-  /* backdrop-filter: blur(26px); */
+  animation: fadeIn 1.5s;
 }
 
 .table {
-  /* border: 1px solid white; */
   color: #00F9F9;
   text-align: center;
-
+  border-collapse: collapse;
 }
 
 .table>tr,
 th,
 td {
-  border-bottom: 1px solid #02aa18;
+  border-bottom: 1px solid #1c77b4;
   padding: 8px;
-
 }
 
 .table>tr,
@@ -115,10 +123,16 @@ td {
 }
 
 .table>tr,
+.fa-solid {
+  cursor: pointer;
+}
+
+.table>tr,
 .fa-star {
   color: #00f9f9bb;
   font-size: 12px;
   margin-left: 3px;
+  cursor: default;
 }
 
 .table>tr,
