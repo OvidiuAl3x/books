@@ -6,6 +6,7 @@ body {
   background-size: cover;
   letter-spacing: 1.2px;
   font-family: 'DynaPuff', cursive;
+  text-transform: capitalize;
 }
 
 #root {
@@ -29,7 +30,20 @@ body {
   height: 100%;
   max-height: 400px;
   max-width: 200px;
-  animation: fadeIn 1.5s;
+  position: relative;
+  animation: animationCards 1.5s;
+}
+
+@keyframes animationCards {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeIn {
@@ -143,4 +157,81 @@ td {
 .table>tr,
 .fa-ban {
   color: red;
+}
+
+.add-containerParent {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  justify-content: center;
+
+}
+
+.add-containerChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1c77b4;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  animation: animationCards 1.5s;
+}
+
+@keyframes animationCards {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-containerChild>.fa-x {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: #cc0606;
+}
+
+.add-containerChild>h3 {
+  color: #1d1d1d;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form-container>input {
+  margin: 5px;
+  padding: 10px 25px;
+  outline: none;
+}
+
+.form-container>.fa-plus {
+  position: relative;
+  width: 10%;
+  bottom: 32px;
+  right: 15px;
+}
+
+.add-containerChild>.form-button {
+  margin: 5px;
+  padding: 10px 25px;
+  background-color: #1d1d1d;
+  color: #00F9F9;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: 1.5s ease-in;
+}
+
+.add-containerChild>.form-button:hover {
+  transform: scale(1.2);
 }

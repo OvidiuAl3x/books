@@ -1,59 +1,129 @@
 {
-    "manga": [
-        {
-            "id": 1,
-            "title": "caine",
-            "chapters": "130",
-            "chaptersReread": "160",
-            "review": "6",
-            "rereaded": 2,
-            "details": "bun",
-            "status": "Complete",
-            "genres": [
-                "Action, ",
-                "Adventure, ",
-                "Comedy, ",
-                "Cultivation, ",
-                "Martial Arts, ",
-                "Fantasy, ",
-                "Manhwa"
-            ]
-        },
-        {
-            "id": 5,
-            "title": "pisica",
-            "chapters": "57",
-            "chaptersReread": "70",
-            "review": "2",
-            "rereaded": 1,
-            "status": "Dropped",
-            "genres": [
-                "Action",
-                " Adventure",
-                " Comedy",
-                " Fantasy",
-                " Supernatural",
-                " Psyhological",
-                " Manhwa"
-            ]
-        },
-        {
-            "id": 2,
-            "title": "My Civil Servant Life Reborn in the Strange World",
-            "chapters": "57",
-            "rereaded": 3,
-            "review": "3.5",
-            "details": "naspa",
-            "status": "On Hold",
-            "genres": [
-                "Action",
-                " Adventure",
-                " Comedy",
-                " Fantasy",
-                " Supernatural",
-                " Psyhological",
-                " Manhwa"
-            ]
-        }
-    ]
+  "manga": [
+    {
+      "id": 1,
+      "title": "caine",
+      "chapters": "130",
+      "chaptersReread": "160",
+      "review": "6",
+      "rereaded": 2,
+      "details": "bun",
+      "status": "Complete",
+      "genres": [
+        "Action, ",
+        "Adventure, ",
+        "Comedy, ",
+        "Cultivation, ",
+        "Martial Arts, ",
+        "Fantasy, ",
+        "Manhwa"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "pisica",
+      "chapters": "57",
+      "chaptersReread": "70",
+      "review": "2",
+      "rereaded": 1,
+      "status": "Dropped",
+      "genres": [
+        "Action",
+        " Adventure",
+        " Comedy",
+        " Fantasy",
+        " Supernatural",
+        " Psyhological",
+        " Manhwa"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "My Civil Servant Life Reborn in the Strange World",
+      "chapters": "57",
+      "rereaded": 3,
+      "review": "3.5",
+      "details": "naspa",
+      "status": "On Hold",
+      "genres": [
+        "Action",
+        " Adventure",
+        " Comedy",
+        " Fantasy",
+        " Supernatural",
+        " Psyhological",
+        " Manhwa"
+      ]
+    },
+    {
+      "title": "4",
+      "chapters": "2",
+      "chaptersReread": "234",
+      "review": "",
+      "details": "",
+      "status": "3",
+      "genres": "43",
+      "id": 6
+    },
+    {
+      "title": "dsadssad",
+      "chapters": "dsad",
+      "chaptersReread": "asd",
+      "review": "",
+      "details": "asd",
+      "status": "sad",
+      "genres": "asd",
+      "id": 7
+    },
+    {
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": [],
+      "id": 8
+    },
+    {
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": [],
+      "id": 9
+    },
+    {
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": [],
+      "id": 10
+    },
+    {
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": [],
+      "id": 11
+    },
+    {
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": [],
+      "id": 12
+    }
+  ]
 }

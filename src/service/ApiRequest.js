@@ -12,37 +12,48 @@ export const GetData = () => {
 export const GetDataID = ({ id }) => {
   return axios
     .get(BASE_REQUEST_URL`${id}`)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.warn(err));
-};
-
-export const CreateData = (payload) => {
-  return axios
-    .post(BASE_REQUEST_URL, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
     .then((res) => res.data)
     .catch((err) => console.warn(err));
 };
 
-export const UpdateData = (payload) => {
-  return axios
-    .put(BASE_REQUEST_URL`${payload.id}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-    .then((res) => res.data)
-    .catch((err) => err.data);
+export const CreateData = async (payload) => {
+  const response = await fetch(BASE_REQUEST_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.ok) {
+    return await response.json();
+  }
+  throw new Error("Something went wrong");
 };
 
-export const DeleteData = (payload) => {
-  return axios
-    .delete(BASE_REQUEST_URL`${payload.id}`)
-    .then((res) => res.data)
-    .catch((err) => err.data);
+// Update Product
+export const UpdateData = async (payload) => {
+  const response = await fetch(BASE_REQUEST_URL`${payload.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+    return await response.json();
+  }
+  throw new Error("Something went wrong");
+};
+
+// Delete Product
+export const DelteData = async (id) => {
+  const response = fetch(BASE_REQUEST_URL`${id}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    return await response.json();
+  }
+  throw new Error("Something went wrong");
 };
