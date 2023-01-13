@@ -66,17 +66,17 @@
       "id": 6
     },
     {
-      "title": "dsadssad",
-      "chapters": "dsad",
-      "chaptersReread": "asd",
+      "title": "",
+      "chapters": "",
+      "chaptersReread": "",
       "review": "",
-      "details": "asd",
-      "status": "sad",
-      "genres": "asd",
+      "details": "",
+      "status": "",
+      "genres": [],
       "id": 7
     },
     {
-      "title": "",
+      "title": "das",
       "chapters": "",
       "chaptersReread": "",
       "review": "",
@@ -84,46 +84,6 @@
       "status": "",
       "genres": [],
       "id": 8
-    },
-    {
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": [],
-      "id": 9
-    },
-    {
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": [],
-      "id": 10
-    },
-    {
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": [],
-      "id": 11
-    },
-    {
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": [],
-      "id": 12
     }
   ]
 }

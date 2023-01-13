@@ -31,6 +31,9 @@ export const AddBooks = ({ setAddBooks }) => {
   }, [id]);
 
   const updateField = ({ name, value }) => {
+    if (value.length == 0) {
+      alert("asd");
+    }
     setForm({
       ...form,
       [name]: value,
@@ -40,7 +43,9 @@ export const AddBooks = ({ setAddBooks }) => {
   const handleCreate = async () => {
     try {
       const { id } = await CreateData(form);
-      alert(`Created ${form.name}`);
+      alert(`Created ${form.title}`);
+      setAddBooks(false)
+      window.location.reload(true)
     } catch (e) {
       console.warn(`Eroare Create`);
     }
