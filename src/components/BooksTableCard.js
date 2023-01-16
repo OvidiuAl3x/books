@@ -1,4 +1,6 @@
-export const BooksTableCard = ({ item, index }) => {
+import { DeleteData, UpdateData } from "../service/ApiRequest";
+
+export const BooksTableCard = ({ item, index, form }) => {
   const {
     id,
     title,
@@ -22,9 +24,9 @@ export const BooksTableCard = ({ item, index }) => {
   );
 
   const colorStatus =
-    status === "Complete"
+    status === "complete"
       ? "#169905"
-      : status === "Dropped"
+      : status === "dropped"
       ? "#cc0606"
       : "#d8db03";
 
@@ -32,9 +34,27 @@ export const BooksTableCard = ({ item, index }) => {
     ? images[`${title}.jpg`]
     : "https://via.placeholder.com/150/000000/00F9F9/?text=NoImage";
 
+  const handleDelete = async () => {
+    try {
+      await DeleteData(form.id);
+      alert(`delete ${form.title}`);
+    } catch (e) {
+      console.warn("nu merge");
+    }
+  };
+
+  const handleUpdate = async () => {
+    try {
+      await UpdateData(form);
+      alert(`Updated ${form.title}`);
+    } catch (e) {
+      console.warn("nu merge");
+    }
+  };
+
   return (
-    <tbody>
-      <tr key={id}>
+    <tbody key={id}>
+      <tr>
         <td
           style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
         ></td>
@@ -52,10 +72,10 @@ export const BooksTableCard = ({ item, index }) => {
         <td>{genres}</td>
         <td>{details}</td>
         <td>
-          <i class="fa-solid fa-ban"></i>
+          <i class="fa-solid fa-ban" onClick={handleDelete}></i>
         </td>
         <td>
-          <i class="fa-sharp fa-solid fa-wrench"></i>
+          <i class="fa-sharp fa-solid fa-wrench" onClick={handleUpdate}></i>
         </td>
       </tr>
     </tbody>

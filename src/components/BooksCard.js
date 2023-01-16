@@ -19,8 +19,9 @@ export const BooksCard = ({ item }) => {
 
   const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
 
-  const image = images[`${title}.jpg`] ? images[`${title}.jpg`] : "https://via.placeholder.com/300/000000/00F9F9/?text=No Image"
-
+  const image = images[`${title}.jpg`]
+    ? images[`${title}.jpg`]
+    : "https://via.placeholder.com/300/000000/00F9F9/?text=No Image";
 
   return (
     <div className="card-container" key={id}>

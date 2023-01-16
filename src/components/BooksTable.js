@@ -5,13 +5,25 @@ import { BooksTableCard } from "./BooksTableCard";
 export const BooksTable = ({ data }) => {
   const [addBooks, setAddBooks] = useState(false);
 
+  const [form, setForm] = useState({
+    title: "",
+    chapters: "",
+    chaptersReread: "",
+    review: "",
+    details: "",
+    status: "",
+    genres: [],
+  });
+
   const displayForm = () => {
     setAddBooks(true);
   };
 
   return (
     <>
-      {addBooks && <AddBooks setAddBooks={setAddBooks}/>}
+      {addBooks && (
+        <AddBooks setAddBooks={setAddBooks} form={form} setForm={setForm} />
+      )}
 
       <div className="table-container">
         <table className="table">
@@ -31,8 +43,13 @@ export const BooksTable = ({ data }) => {
             </tr>
           </thead>
 
-          {data?.map((item, index) => (
-            <BooksTableCard key={item.id} item={item} index={index} />
+          {data?.map((item) => (
+            <BooksTableCard
+              key={item.id}
+              item={item}
+              // index={index}
+              form={form}
+            />
           ))}
         </table>
       </div>

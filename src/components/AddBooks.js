@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GetDataID, CreateData } from "../service/ApiRequest";
 
-export const AddBooks = ({ setAddBooks }) => {
+export const AddBooks = ({ setAddBooks, form, setForm }) => {
   const { id } = useParams();
-  const [form, setForm] = useState({
-    title: "",
-    chapters: "",
-    chaptersReread: "",
-    review: "",
-    details: "",
-    status: "",
-    genres: [],
-  });
 
   const { title, chapters, chaptersReread, review, details, status, genres } =
     form;
@@ -24,16 +15,13 @@ export const AddBooks = ({ setAddBooks }) => {
           const data = await GetDataID(id);
           setForm(data);
         } catch (err) {
-          console.warn("Eroare get data");
+          console.warn(err);
         }
       })();
     }
-  }, [id]);
+  }, [id,setForm]);
 
   const updateField = ({ name, value }) => {
-    if (value.length == 0) {
-      alert("asd");
-    }
     setForm({
       ...form,
       [name]: value,
@@ -44,10 +32,10 @@ export const AddBooks = ({ setAddBooks }) => {
     try {
       const { id } = await CreateData(form);
       alert(`Created ${form.title}`);
-      setAddBooks(false)
-      window.location.reload(true)
-    } catch (e) {
-      console.warn(`Eroare Create`);
+      setAddBooks(false);
+      window.location.reload(true);
+    } catch (err) {
+      console.warn(err);
     }
   };
 
@@ -71,7 +59,7 @@ export const AddBooks = ({ setAddBooks }) => {
               onChange={({ target }) => updateField(target)}
             />
             <input
-              type="text"
+              type="number"
               name="chapters"
               placeholder="Chapters"
               value={chapters}
@@ -79,7 +67,7 @@ export const AddBooks = ({ setAddBooks }) => {
               required
             />
             <input
-              type="text"
+              type="number"
               name="chaptersReread"
               placeholder="Chapters Reread"
               value={chaptersReread}

@@ -8,7 +8,7 @@
       "review": "6",
       "rereaded": 2,
       "details": "bun",
-      "status": "Complete",
+      "status": "complete",
       "genres": [
         "Action, ",
         "Adventure, ",
@@ -26,7 +26,7 @@
       "chaptersReread": "70",
       "review": "2",
       "rereaded": 1,
-      "status": "Dropped",
+      "status": "dropped",
       "genres": [
         "Action",
         " Adventure",
@@ -76,14 +76,14 @@
       "id": 7
     },
     {
-      "title": "das",
+      "id": "66",
+      "title": "",
       "chapters": "",
       "chaptersReread": "",
       "review": "",
       "details": "",
       "status": "",
-      "genres": [],
-      "id": 8
+      "genres": []
     }
   ]
 }
