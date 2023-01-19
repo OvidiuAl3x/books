@@ -54,36 +54,6 @@
         " Psyhological",
         " Manhwa"
       ]
-    },
-    {
-      "title": "4",
-      "chapters": "2",
-      "chaptersReread": "234",
-      "review": "",
-      "details": "",
-      "status": "3",
-      "genres": "43",
-      "id": 6
-    },
-    {
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": [],
-      "id": 7
-    },
-    {
-      "id": "66",
-      "title": "",
-      "chapters": "",
-      "chaptersReread": "",
-      "review": "",
-      "details": "",
-      "status": "",
-      "genres": []
     }
   ]
 }
