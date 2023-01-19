@@ -19,7 +19,7 @@ export const AddBooks = ({ setAddBooks, form, setForm }) => {
         }
       })();
     }
-  }, [id,setForm]);
+  }, [id, setForm]);
 
   const updateField = ({ name, value }) => {
     setForm({

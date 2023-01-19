@@ -43,11 +43,11 @@ export const BooksTable = ({ data }) => {
             </tr>
           </thead>
 
-          {data?.map((item) => (
+          {data?.map((item, index) => (
             <BooksTableCard
               key={item.id}
               item={item}
-              // index={index}
+              index={index}
               form={form}
             />
           ))}

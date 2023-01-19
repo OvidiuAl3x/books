@@ -114,6 +114,9 @@ p {
   transform-origin: right;
 }
 
+
+/** ============================== table  ===================================*/
+
 .table-container {
   display: flex;
   justify-content: center;
@@ -162,6 +165,9 @@ td {
 .fa-ban {
   color: red;
 }
+
+
+/** ============================== Form ==============================*/
 
 .add-containerParent {
   display: flex;
@@ -238,4 +244,84 @@ td {
 
 .add-containerChild>.form-button:hover {
   transform: scale(1.2);
+}
+
+
+/* todo  not functional ============================== delete ============================== */
+
+.delete-containerParent {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  /* margin-top: -16em; */
+  justify-content: center;
+  text-transform: none;
+}
+
+.delete-containerChild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1c77b4;
+  padding: 0px 20px;
+  border-radius: 12px;
+  min-height: 200px;
+  max-width: 30em;
+}
+
+.delete-containerChild>.fa-x {
+  display: flex;
+  justify-content: flex-end;
+  color: #cc0606;
+  position: relative;
+  top: -25px;
+  left: 6px;
+  
+}
+
+.delete-containerChild>.confirmationText {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.delete-containerChild>.confirmationText>p {
+  font-size: 20px;
+  color: white;
+}
+
+.delete-containerChild>.confirmationText>p>span {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.delete-containerChild>.confirmationText>span {
+  font-size: 13px;
+  color: rgba(245, 245, 245, 0.842);
+}
+
+.delete-containerChild>.buttonConfirmation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-containerChild>.buttonConfirmation>button {
+  position: relative;
+  top: 20px;
+  margin: 10px;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-containerChild>.buttonConfirmation>.deleteNo {
+  color: #1d1d1dce;
+  border: 1px solid #1d1d1dce;
+}
+
+.delete-containerChild>.buttonConfirmation>.deleteYes {
+  background-color: #cc0606;
+  color: white;
+  border: 1px solid #1d1d1d;
 }

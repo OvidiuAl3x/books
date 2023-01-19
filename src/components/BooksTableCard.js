@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { DeleteData, UpdateData } from "../service/ApiRequest";
+import { DeleteBooks } from "./DeleteBooks";
 
 export const BooksTableCard = ({ item, index, form }) => {
   const {
@@ -23,6 +25,9 @@ export const BooksTableCard = ({ item, index, form }) => {
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
+  //* pop up set
+  //  const [deleteBook, setDeleteBook] = useState(false);
+
   const colorStatus =
     status === "complete"
       ? "#169905"
@@ -43,11 +48,16 @@ export const BooksTableCard = ({ item, index, form }) => {
   //   }
   // };
 
-  const handleDelete=(id) => {
-    DeleteData(id)
+  //* popup delete
+  // const handleDelete = () => {
+  //   setDeleteBook(true);
+  // };
+
+  const handleDelete = (id) => {
+    DeleteData(id);
     alert(`You delete ${title}`);
     window.location.reload(true);
-  }
+  };
 
   const handleUpdate = async () => {
     try {
@@ -59,32 +69,43 @@ export const BooksTableCard = ({ item, index, form }) => {
   };
 
   return (
-    <tbody key={id}>
-      <tr>
-        <td
-          style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
-        ></td>
-        {/* <td>{index + 1}</td> */}
-        <td>{id}</td>
-        <td>
-          <img src={image} height={60} width={60} alt="photo2" />
-        </td>
-        <td>{title}</td>
-        <td>{chapters}</td>
-        <td>{chaptersReread}</td>
-        <td>
-          {review}
-          <i class="fa-solid fa-star"></i>
-        </td>
-        <td>{genres}</td>
-        <td>{details}</td>
-        <td>
-          <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i>
-        </td>
-        <td>
-          <i class="fa-sharp fa-solid fa-wrench" onClick={handleUpdate}></i>
-        </td>
-      </tr>
-    </tbody>
+    <>
+      <tbody key={id}>
+        <tr>
+          <td
+            style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
+          ></td>
+          <td>{index + 1}</td>
+          <td>
+            <img src={image} height={60} width={60} alt="photo2" />
+          </td>
+          <td>{title}</td>
+          <td>{chapters}</td>
+          <td>{chaptersReread}</td>
+          <td>
+            {review}
+            <i class="fa-solid fa-star"></i>
+          </td>
+          <td>{genres}</td>
+          <td>{details}</td>
+          <td>
+            <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i>
+
+            {/* 
+            for popup  delete
+            <i class="fa-solid fa-ban" onClick={handleDelete}></i> 
+            */}
+          </td>
+          <td>
+            <i class="fa-sharp fa-solid fa-wrench" onClick={handleUpdate}></i>
+          </td>
+        </tr>
+      </tbody>
+
+      {/* styled diffrent for every data */}
+      {/* {deleteBook && (
+        <DeleteBooks id={id} title={title} setDeleteBook={setDeleteBook} />
+      )} */}
+    </>
   );
 };
