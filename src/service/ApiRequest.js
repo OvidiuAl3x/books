@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_REQUEST_URL = `http://localhost:3000/manga/`;
+const BASE_REQUEST_URL = `http://localhost:3000/manga`;
 
 export const GetData = () => {
   return axios
@@ -18,7 +18,7 @@ export const GetData = () => {
 
 
 export const GetDataID = async (id) => {
-  const response = await fetch(`http://localhost:3000/manga/${id}`);
+  const response = await fetch(BASE_REQUEST_URL`/${id}`);
   if (response.ok) {
     return await response.json();
   }
@@ -27,7 +27,7 @@ export const GetDataID = async (id) => {
 
 
 export const CreateData = async (payload) => {
-  const response = await fetch(`http://localhost:3000/manga`, {
+  const response = await fetch(BASE_REQUEST_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

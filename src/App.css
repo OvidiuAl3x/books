@@ -121,14 +121,15 @@ p {
   display: flex;
   justify-content: center;
   margin: 40px 15px 0px 15px;
-  background-color: #1d1d1d;
   animation: fadeIn 1.5s;
+
 }
 
 .table {
   color: #00F9F9;
   text-align: center;
   border-collapse: collapse;
+  background-color: #1d1d1d;
 }
 
 .table>tr,
@@ -277,7 +278,7 @@ td {
   position: relative;
   top: -25px;
   left: 6px;
-  
+
 }
 
 .delete-containerChild>.confirmationText {

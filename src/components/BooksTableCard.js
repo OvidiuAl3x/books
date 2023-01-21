@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { DeleteData, UpdateData } from "../service/ApiRequest";
+import { AddBooks } from "./AddBooks";
 import { DeleteBooks } from "./DeleteBooks";
 
-export const BooksTableCard = ({ item, index, form }) => {
+export const BooksTableCard = ({ item, index, form, setAddBooks }) => {
   const {
     id,
     title,
@@ -59,14 +60,27 @@ export const BooksTableCard = ({ item, index, form }) => {
     window.location.reload(true);
   };
 
-  const handleUpdate = async () => {
-    try {
-      await UpdateData(form);
-      alert(`Updated ${form.title}`);
-    } catch (e) {
-      console.warn("nu merge");
-    }
+  const handleUpdate = (id) => {
+    // try {
+    //   await UpdateData(form);
+    //   alert(`Updated ${form.title}`);
+    //   setAddBooks(true);
+    // } catch (e) {
+    //   console.warn("nu merge");
+    // }
+    UpdateData(id)
+    console.log(id);
+    setAddBooks(true)
+    // return <AddBooks />;
   };
+  // const handleUpdate = async () => {
+  //   try {
+  //     await UpdateData(form);
+  //     alert(`Updated ${form.title}`);
+  //   } catch (e) {
+  //     console.warn("nu merge");
+  //   }
+  // };
 
   return (
     <>
@@ -97,7 +111,10 @@ export const BooksTableCard = ({ item, index, form }) => {
             */}
           </td>
           <td>
-            <i class="fa-sharp fa-solid fa-wrench" onClick={handleUpdate}></i>
+            <i
+              class="fa-sharp fa-solid fa-wrench"
+              onClick={() => handleUpdate(id)}
+            ></i>
           </td>
         </tr>
       </tbody>

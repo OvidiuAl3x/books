@@ -49,6 +49,7 @@ export const BooksTable = ({ data }) => {
               item={item}
               index={index}
               form={form}
+              setAddBooks={setAddBooks}
             />
           ))}
         </table>
