@@ -1,0 +1,74 @@
+import React from "react";
+
+export const EditBooks = ({ editFormData, handleEditForm }) => {
+  return (
+    <tr>
+      <td>
+        <input
+          type="text"
+          name="title"
+          placeholder="Status"
+          value={editFormData.status}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={editFormData.title}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="number"
+          name="title"
+          placeholder="Chapters"
+          value={editFormData.chapters}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="number"
+          name="title"
+          placeholder="Chapters Reread"
+          value={editFormData.chaptersReread}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="number"
+          name="title"
+          placeholder="Review"
+          value={editFormData.review}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="text"
+          name="title"
+          placeholder="Genres"
+          value={editFormData.genres}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="text"
+          name="title"
+          placeholder="Details"
+          value={editFormData.details}
+          onChange={handleEditForm}
+        ></input>
+      </td>
+      <td><button type="submit">Save</button></td>
+    </tr>
+  );
+};
