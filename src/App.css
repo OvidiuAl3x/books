@@ -85,17 +85,20 @@ p {
   display: flex;
   padding: 15px;
   background-color: #1d1d1d;
+
 }
 
-.page-navigation>p {
+.page-navigation>a {
   margin: 10px 20px;
   color: #00F9F9;
   cursor: pointer;
   position: relative;
   display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.page-navigation>p::before {
+.page-navigation>a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -109,7 +112,7 @@ p {
   transition: scale 0.25s;
 }
 
-.page-navigation>p:hover::before {
+.page-navigation>a:hover::before {
   scale: 1;
   transform-origin: right;
 }
@@ -165,6 +168,12 @@ td {
 .table>tr,
 .fa-ban {
   color: red;
+}
+
+.table>tr,
+link,
+.fa-wrench {
+  color: #00F9F9;
 }
 
 

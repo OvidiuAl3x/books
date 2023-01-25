@@ -1,14 +1,7 @@
-import { useState } from "react";
-import { DeleteData, UpdateData } from "../service/ApiRequest";
-import { AddBooks } from "./AddBooks";
-import { DeleteBooks } from "./DeleteBooks";
+import { Link } from "react-router-dom";
+import { DeleteData } from "../service/ApiRequest";
 
-export const BooksTableCard = ({
-  item,
-  index,
-  setAddBooks,
-  handleClickEdit,
-}) => {
+export const BooksTableCard = ({ item, index }) => {
   const {
     id,
     title,
@@ -31,9 +24,6 @@ export const BooksTableCard = ({
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
-  //* pop up set
-  //  const [deleteBook, setDeleteBook] = useState(false);
-
   const colorStatus =
     status === "complete"
       ? "#169905"
@@ -45,16 +35,8 @@ export const BooksTableCard = ({
     ? images[`${title}.jpg`]
     : "https://via.placeholder.com/150/000000/00F9F9/?text=NoImage";
 
-
-  //* popup delete
-  // const handleDelete = () => {
-  //   setDeleteBook(true);
-  // };
-
   const handleDelete = (id) => {
     DeleteData(id);
-    alert(`You delete ${title}`);
-    window.location.reload(true);
   };
 
   return (
@@ -63,8 +45,7 @@ export const BooksTableCard = ({
         <td
           style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
         ></td>
-        {/* <td>{index + 1}</td> */}
-        <td>{id}</td>
+        <td>{index + 1}</td>
         <td>
           <img src={image} height={60} width={60} alt="photo2" />
         </td>
@@ -79,24 +60,13 @@ export const BooksTableCard = ({
         <td>{details}</td>
         <td>
           <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i>
-
-          {/* 
-            for popup  delete
-            <i class="fa-solid fa-ban" onClick={handleDelete}></i> 
-            */}
         </td>
         <td>
-          <i
-            class="fa-sharp fa-solid fa-wrench"
-            onClick={(e) => handleClickEdit(e, item)}
-          ></i>
+          <Link to={`${id}`}>
+            <i class="fa-sharp fa-solid fa-wrench"></i>
+          </Link>
         </td>
       </tr>
-
-      {/* styled diffrent for every data */}
-      {/* {deleteBook && (
-        <DeleteBooks id={id} title={title} setDeleteBook={setDeleteBook} />
-      )} */}
     </>
   );
 };

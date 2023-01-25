@@ -9,25 +9,16 @@ export const GetData = () => {
     .catch((err) => console.warn(err));
 };
 
-// export const GetDataID = ({ id }) => {
-//   return axios
-//     .get(BASE_REQUEST_URL`${id}`)
-//     .then((res) => res.data)
-//     .catch((err) => console.warn(err));
-// };
-
-
 export const GetDataID = async (id) => {
-  const response = await fetch(BASE_REQUEST_URL`/${id}`);
+  const response = await fetch(`http://localhost:3000/manga/${id}`);
   if (response.ok) {
     return await response.json();
   }
   throw new Error("something went wrong");
 };
 
-
 export const CreateData = async (payload) => {
-  const response = await fetch(BASE_REQUEST_URL, {
+  const response = await fetch(`http://localhost:3000/manga`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -42,6 +33,7 @@ export const CreateData = async (payload) => {
 };
 
 // Update Product
+
 export const UpdateData = async (payload) => {
   const response = await fetch(`http://localhost:3000/manga/${payload.id}`, {
     method: "PUT",

@@ -1,7 +1,7 @@
 {
   "manga": [
     {
-      "id": 1,
+      "id": "2",
       "title": "caine",
       "chapters": "130",
       "chaptersReread": "160",
@@ -22,7 +22,7 @@
     {
       "id": 5,
       "title": "pisica",
-      "chapters": "57",
+      "chapters": "574",
       "chaptersReread": "70",
       "review": "2",
       "rereaded": 1,
@@ -35,7 +35,8 @@
         " Supernatural",
         " Psyhological",
         " Manhwa"
-      ]
+      ],
+      "details": "da"
     },
     {
       "id": 51,
@@ -54,6 +55,26 @@
         " Psyhological",
         " Manhwa"
       ]
+    },
+    {
+      "title": "2",
+      "chapters": "312",
+      "chaptersReread": "32",
+      "review": "5",
+      "details": "",
+      "status": "da",
+      "genres": "",
+      "id": 52
+    },
+    {
+      "title": "23",
+      "chapters": "",
+      "chaptersReread": "",
+      "review": "",
+      "details": "",
+      "status": "",
+      "genres": "",
+      "id": 54
     }
   ]
 }
