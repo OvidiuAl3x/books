@@ -69,7 +69,6 @@ export const BooksTableCard = ({ item, index }) => {
         <td>{details}</td>
         <td>
           {deleteBook && <DeleteBooks handleDelete={handleDelete} id={id} setDeleteBook={setDeleteBook}/>}
-          {/* <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i> */}
           <i class="fa-solid fa-ban" onClick={confirmationDelete}></i>
         </td>
         <td>
