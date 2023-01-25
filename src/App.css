@@ -259,79 +259,30 @@ link,
 
 /* todo  not functional ============================== delete ============================== */
 
-.delete-containerParent {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  width: 100%;
-  /* margin-top: -16em; */
-  justify-content: center;
-  text-transform: none;
+.container-delete {
+  background-color: #00F9F9;
+  padding: 10px;
+  border-radius: 0% 0% 100% 100%;
 }
 
-.delete-containerChild {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #1c77b4;
-  padding: 0px 20px;
-  border-radius: 12px;
-  min-height: 200px;
-  max-width: 30em;
-}
+/* 
+.container-delete>p {
+  color: black;
+  font-weight: 600;
+} */
 
-.delete-containerChild>.fa-x {
-  display: flex;
-  justify-content: flex-end;
-  color: #cc0606;
-  position: relative;
-  top: -25px;
-  left: 6px;
-
-}
-
-.delete-containerChild>.confirmationText {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-}
-
-.delete-containerChild>.confirmationText>p {
-  font-size: 20px;
-  color: white;
-}
-
-.delete-containerChild>.confirmationText>p>span {
-  text-transform: capitalize;
-  font-weight: bold;
-}
-
-.delete-containerChild>.confirmationText>span {
-  font-size: 13px;
-  color: rgba(245, 245, 245, 0.842);
-}
-
-.delete-containerChild>.buttonConfirmation {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.delete-containerChild>.buttonConfirmation>button {
-  position: relative;
-  top: 20px;
-  margin: 10px;
-  padding: 6px 15px;
-  border-radius: 5px;
+.container-delete>.close {
   cursor: pointer;
+  margin-right: 3px;
+  margin: 3px 3px 6px 0px;
+  border: 1px solid black;
 }
 
-.delete-containerChild>.buttonConfirmation>.deleteNo {
-  color: #1d1d1dce;
-  border: 1px solid #1d1d1dce;
-}
-
-.delete-containerChild>.buttonConfirmation>.deleteYes {
+.container-delete>.delete {
+  cursor: pointer;
   background-color: #cc0606;
   color: white;
-  border: 1px solid #1d1d1d;
+  font-weight: 600;
+  margin: 3px 0px 6px 3px;
+  border: 1px solid black;
 }

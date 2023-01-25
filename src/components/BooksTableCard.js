@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DeleteData } from "../service/ApiRequest";
+import { DeleteBooks } from "./DeleteBooks";
 
 export const BooksTableCard = ({ item, index }) => {
+  const [deleteBook, setDeleteBook] = useState(false);
   const {
     id,
     title,
@@ -37,6 +40,12 @@ export const BooksTableCard = ({ item, index }) => {
 
   const handleDelete = (id) => {
     DeleteData(id);
+    alert(`You Deleted: ${title}`);
+    window.location.reload(true);
+  };
+
+  const confirmationDelete = () => {
+    setDeleteBook(true);
   };
 
   return (
@@ -59,7 +68,9 @@ export const BooksTableCard = ({ item, index }) => {
         <td>{genres}</td>
         <td>{details}</td>
         <td>
-          <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i>
+          {deleteBook && <DeleteBooks handleDelete={handleDelete} id={id} setDeleteBook={setDeleteBook}/>}
+          {/* <i class="fa-solid fa-ban" onClick={() => handleDelete(id)}></i> */}
+          <i class="fa-solid fa-ban" onClick={confirmationDelete}></i>
         </td>
         <td>
           <Link to={`${id}`}>
