@@ -13,9 +13,7 @@ export const BooksCard = ({ item }) => {
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
-  const { rereaded, chapters, title, review, id } = item;
-
-  const totalChapthers = rereaded >= 2 ? `${chapters} x ${rereaded}` : chapters;
+  const { chapters, title, review, id, status, genres } = item;
 
   const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
 
@@ -25,16 +23,30 @@ export const BooksCard = ({ item }) => {
 
   return (
     <div className="card-container" key={id}>
-      <div className="star">
-        <Stars stars={review} size={20} spacing={5} fill={reviewStar} />
+      <div className="card-flip-box-inner">
+        <div className="card-flip-box-front">
+          <div className="star">
+            <Stars stars={review} size={20} spacing={5} fill={reviewStar} />
+          </div>
+
+          <img src={image} height={250} width={250} alt={title} />
+        </div>
+
+        <div className="card-flip-box-back">
+          <h3>{title}</h3>
+          <p>
+            <strong>Chapters:</strong> {chapters}
+          </p>
+          <p>
+            <strong>Genres: </strong>
+            {genres}
+          </p>
+          <p>
+            <strong>status: </strong>
+            {status}
+          </p>
+        </div>
       </div>
-
-      <img src={image} height={200} width={200} alt={title} />
-
-      <h3>{title}</h3>
-      <p>
-        <strong>Chapters:</strong> {totalChapthers}
-      </p>
     </div>
   );
 };

@@ -40,21 +40,13 @@
     },
     {
       "id": 51,
-      "title": "pisicaasd",
+      "title": "pisicaasd asd asd aasd asd asd",
       "chapters": "570",
       "chaptersReread": "70",
       "review": 2,
       "rereaded": 1,
       "status": "on going",
-      "genres": [
-        "Action",
-        " Adventure",
-        " Comedy",
-        " Fantasy",
-        " Supernatural",
-        " Psyhological",
-        " Manhwa"
-      ]
+      "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa"
     },
     {
       "id": 4,
@@ -83,7 +75,7 @@
       "review": "4",
       "details": "",
       "status": "",
-      "genres": "",
+      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
       "id": 52
     }
   ]
