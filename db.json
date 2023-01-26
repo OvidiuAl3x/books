@@ -1,11 +1,11 @@
 {
   "manga": [
     {
-      "id": "2",
+      "id": 2,
       "title": "caine",
       "chapters": "130",
       "chaptersReread": "160",
-      "review": "6",
+      "review": 6,
       "rereaded": 2,
       "details": "bun",
       "status": "complete",
@@ -20,11 +20,11 @@
       ]
     },
     {
-      "id": 5,
+      "id": 1,
       "title": "pisica",
       "chapters": "574",
       "chaptersReread": "70",
-      "review": "2",
+      "review": 4,
       "rereaded": 1,
       "status": "dropped",
       "genres": [
@@ -41,9 +41,9 @@
     {
       "id": 51,
       "title": "pisicaasd",
-      "chapters": "57",
+      "chapters": "570",
       "chaptersReread": "70",
-      "review": "2",
+      "review": 2,
       "rereaded": 1,
       "status": "on going",
       "genres": [
@@ -57,12 +57,32 @@
       ]
     },
     {
-      "title": "2",
+      "id": 4,
+      "title": "asd",
       "chapters": "312",
       "chaptersReread": "32",
-      "review": "5",
+      "review": 5,
       "details": "",
       "status": "da",
+      "genres": ""
+    },
+    {
+      "id": 50,
+      "title": "asdasd",
+      "chapters": "31",
+      "chaptersReread": 233,
+      "review": "3",
+      "details": "3",
+      "status": "",
+      "genres": ""
+    },
+    {
+      "title": "",
+      "chapters": "288",
+      "chaptersReread": "2",
+      "review": "4",
+      "details": "",
+      "status": "",
       "genres": "",
       "id": 52
     }

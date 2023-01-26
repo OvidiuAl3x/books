@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GetData } from "../service/ApiRequest";
 import { BooksTableCard } from "./BooksTableCard";
+import { SortChapters, SortReview } from "./SortTable";
 
 export const BooksTable = () => {
   const [data, setData] = useState();
@@ -23,9 +24,9 @@ export const BooksTable = () => {
                 <th colSpan={2}>#</th>
                 <th>Image</th>
                 <th>Title</th>
-                <th>Chapters</th>
+                <SortChapters setData={setData} data={data} />
                 <th>Chapters 1st</th>
-                <th>Review</th>
+                <SortReview setData={setData} data={data} />
                 <th>Genres</th>
                 <th>Details</th>
                 <th colSpan={2}>
@@ -38,11 +39,7 @@ export const BooksTable = () => {
 
             <tbody>
               {data?.map((item, index) => (
-                <BooksTableCard
-                  index={index}
-                  key={item.id}
-                  item={item}
-                />
+                <BooksTableCard index={index} key={item.id} item={item} />
               ))}
             </tbody>
           </table>

@@ -21,7 +21,7 @@ export const BooksCard = ({ item }) => {
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
-    : "https://via.placeholder.com/300/000000/00F9F9/?text=No Image";
+    : "https://placehold.co/300x300/black/white?text=No+Image";
 
   return (
     <div className="card-container" key={id}>

@@ -36,7 +36,7 @@ export const BooksTableCard = ({ item, index }) => {
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
-    : "https://via.placeholder.com/150/000000/00F9F9/?text=NoImage";
+    : "https://placehold.co/300x300/black/white?text=No+Image";
 
   const handleDelete = (id) => {
     DeleteData(id);
@@ -56,7 +56,7 @@ export const BooksTableCard = ({ item, index }) => {
         ></td>
         <td>{index + 1}</td>
         <td>
-          <img src={image} height={60} width={60} alt="photo2" />
+          <img src={image} height={60} width={60} alt="photo2" className="img-zoom"/>
         </td>
         <td>{title}</td>
         <td>{chapters}</td>
@@ -68,7 +68,13 @@ export const BooksTableCard = ({ item, index }) => {
         <td>{genres}</td>
         <td>{details}</td>
         <td>
-          {deleteBook && <DeleteBooks handleDelete={handleDelete} id={id} setDeleteBook={setDeleteBook}/>}
+          {deleteBook && (
+            <DeleteBooks
+              handleDelete={handleDelete}
+              id={id}
+              setDeleteBook={setDeleteBook}
+            />
+          )}
           <i class="fa-solid fa-ban" onClick={confirmationDelete}></i>
         </td>
         <td>
