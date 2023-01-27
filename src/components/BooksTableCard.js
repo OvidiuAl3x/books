@@ -48,15 +48,24 @@ export const BooksTableCard = ({ item, index }) => {
     setDeleteBook(true);
   };
 
+// todo numerotare row table
+
+
   return (
     <>
       <tr key={id}>
         <td
           style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
         ></td>
-        <td>{index + 1}</td>
+        <td>1</td>
         <td>
-          <img src={image} height={60} width={60} alt="photo2" className="img-zoom"/>
+          <img
+            src={image}
+            height={60}
+            width={60}
+            alt="photo2"
+            className="img-zoom"
+          />
         </td>
         <td>{title}</td>
         <td>{chapters}</td>

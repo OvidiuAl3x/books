@@ -39,7 +39,7 @@
       "details": "da"
     },
     {
-      "id": 51,
+      "id": 21,
       "title": "pisicaasd asd asd aasd asd asd",
       "chapters": "570",
       "chaptersReread": "70",
@@ -50,6 +50,46 @@
     },
     {
       "id": 4,
+      "title": "asd",
+      "chapters": "312",
+      "chaptersReread": "32",
+      "review": 5,
+      "details": "",
+      "status": "da",
+      "genres": ""
+    },
+    {
+      "id": 23,
+      "title": "asdasd",
+      "chapters": "31",
+      "chaptersReread": 233,
+      "review": "3",
+      "details": "3",
+      "status": "",
+      "genres": ""
+    },
+    {
+      "title": "",
+      "chapters": "288",
+      "chaptersReread": "2",
+      "review": "4",
+      "details": "",
+      "status": "",
+      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
+      "id": 52
+    },
+    {
+      "id": 51,
+      "title": "pisicaasd asd asd aasd asd asd",
+      "chapters": "570",
+      "chaptersReread": "70",
+      "review": 2,
+      "rereaded": 1,
+      "status": "on going",
+      "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa"
+    },
+    {
+      "id": 42,
       "title": "asd",
       "chapters": "312",
       "chaptersReread": "32",
@@ -76,7 +116,7 @@
       "details": "",
       "status": "",
       "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
-      "id": 52
+      "id": 53
     }
   ]
 }
