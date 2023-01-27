@@ -24,26 +24,61 @@ body {
   justify-content: space-around;
 }
 
-@keyframes animationCards {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-    transform: rotate(30deg);
-  }
 
-  100% {
-    transform: scale(1);
-  }
-}
 
 .card-container {
   margin: 20px 10px;
-  animation: animationCards 1.5s;
   width: 250px;
   height: 250px;
   perspective: 1000px;
+}
+
+@keyframes animationCards {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-container:nth-child(odd) {
+  animation: animationCardsLeft 1s ease-in-out;
+  position: relative;
+  animation-fill-mode: both;
 
 }
+
+.card-container:nth-child(even) {
+  animation: animationCardsRight 1s ease-in-out;
+  position: relative;
+  animation-fill-mode: both;
+
+}
+
+@keyframes animationCardsRight {
+  0% {
+    opacity: 0;
+    right: 135px;
+  }
+
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes animationCardsLeft {
+  0% {
+    opacity: 0;
+    left: 200px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
 
 .card-flip-box-inner {
   position: relative;
@@ -51,13 +86,11 @@ body {
   height: 100%;
   transition: transform 0.8s ease-out;
   transform-style: preserve-3d;
-
 }
 
 
 .card-container:hover .card-flip-box-inner {
   transform: rotateY(180deg);
-
 }
 
 .card-flip-box-front,
@@ -67,7 +100,6 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-
 }
 
 
@@ -77,10 +109,10 @@ body {
 
 
 .card-flip-box-back {
-  background-color: #1c77b4;
-  border: 1px solid black;
+  background-color: #1d1d1d;
+  color: #00F9F9;
   transform: rotateY(180deg);
-  border-radius: 12px 0px 0px 12pxg ;
+  border-radius: 12px 0px 0px 12px;
   overflow: auto;
 }
 
@@ -170,11 +202,84 @@ h3 {
   text-align: center;
   border-collapse: collapse;
   background-color: #1d1d1d;
+  animation: tableBody 2.8s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes tableBody {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.table>thead>thead>tr,
+th {
+  font-size: 13px;
+  animation: tableHead 0.8s ease-in;
+  position: relative;
+  animation-fill-mode: both;
+}
+
+@keyframes tableHead {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+    top: -200px;
+  }
+
+  100% {
+    top: 0px;
+    transform: scale(1);
+  }
 }
 
 .table>thead>tr,
-th {
-  font-size: 13px;
+th:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.table>thead>tr,
+th:nth-child(2) {
+  animation-delay: 0.75s;
+}
+
+.table>thead>tr,
+th:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.table>thead>tr,
+th:nth-child(4) {
+  animation-delay: 1.25s;
+}
+
+.table>thead>tr,
+th:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+.table>thead>tr,
+th:nth-child(6) {
+  animation-delay: 1.75s;
+}
+
+.table>thead>tr,
+th:nth-child(7) {
+  animation-delay: 2s;
+}
+
+.table>thead>tr,
+th:nth-child(8) {
+  animation-delay: 2.25s;
+}
+
+.table>thead>tr,
+th:nth-child(9) {
+  animation-delay: 2.5s;
 }
 
 .table>tr,
@@ -184,7 +289,7 @@ td {
   padding: 3px 8px;
 }
 
-.table>tr,
+.table>tbody>tr,
 td {
   font-size: 12px;
 }
@@ -219,16 +324,19 @@ link,
 }
 
 .table>tr,
+.img-zoom {
+  transition: 0.5s ease-in-out;
+}
+
+.table>tr,
 .img-zoom:hover {
   transform: scale(2.5);
-  transition: 0.5s ease-in-out;
   cursor: none;
 }
 
 .table>tr,
 .table-sort {
   display: flex;
-  /* flex-direction: row; */
   cursor: pointer;
   align-items: baseline;
 }
@@ -316,12 +424,24 @@ link,
 }
 
 
-/* todo  not functional ============================== delete ============================== */
+/** ============================== delete ============================== */
 
 .container-delete {
   background-color: #00F9F9;
   padding: 10px;
   border-radius: 0% 0% 100% 100%;
+  animation: deleteAnimation 1.5s ease-in-out;
+}
+
+@keyframes deleteAnimation {
+  0% {
+    opacity: 0;
+
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .container-delete>.close {
@@ -330,6 +450,8 @@ link,
   margin: 3px 3px 6px 0px;
   border: 1px solid black;
 }
+
+
 
 .container-delete>.delete {
   cursor: pointer;

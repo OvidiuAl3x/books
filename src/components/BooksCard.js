@@ -17,6 +17,13 @@ export const BooksCard = ({ item }) => {
 
   const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
 
+  const statusBorderColor =
+    status === "complete"
+      ? "#169905"
+      : status === "dropped"
+      ? "#cc0606"
+      : "#d8db03";
+
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
     : "https://placehold.co/300x300/black/white?text=No+Image";
@@ -32,7 +39,10 @@ export const BooksCard = ({ item }) => {
           <img src={image} height={250} width={250} alt={title} />
         </div>
 
-        <div className="card-flip-box-back">
+        <div
+          className="card-flip-box-back"
+          style={{ border: `2px solid ${statusBorderColor}` }}
+        >
           <h3>{title}</h3>
           <p>
             <strong>Chapters:</strong> {chapters}
