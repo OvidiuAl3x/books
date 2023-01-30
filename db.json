@@ -5,8 +5,8 @@
       "title": "caine",
       "chapters": "130",
       "chaptersReread": "160",
-      "review": 6,
-      "rereaded": 2,
+      "review": "6",
+      "rereaded": 6,
       "details": "bun",
       "status": "complete",
       "genres": [
@@ -24,7 +24,7 @@
       "title": "pisica",
       "chapters": "574",
       "chaptersReread": "70",
-      "review": 4,
+      "review": "5",
       "rereaded": 1,
       "status": "dropped",
       "genres": [
@@ -43,7 +43,7 @@
       "title": "pisicaasd asd asd aasd asd asd",
       "chapters": "570",
       "chaptersReread": "70",
-      "review": 2,
+      "review": "6",
       "rereaded": 1,
       "status": "on going",
       "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa"
@@ -53,7 +53,7 @@
       "title": "asd",
       "chapters": "312",
       "chaptersReread": "32",
-      "review": 5,
+      "review": "5,5",
       "details": "",
       "status": "da",
       "genres": ""
@@ -73,7 +73,7 @@
       "title": "pisicaasd asd asd aasd asd asd",
       "chapters": "570",
       "chaptersReread": "70",
-      "review": 2,
+      "review": "2.5",
       "rereaded": 1,
       "status": "on going",
       "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa"
@@ -83,7 +83,7 @@
       "title": "asd",
       "chapters": "312",
       "chaptersReread": "32",
-      "review": 5,
+      "review": "3.5",
       "details": "",
       "status": "da",
       "genres": ""
@@ -93,8 +93,8 @@
       "title": "asdasd",
       "chapters": "31",
       "chaptersReread": 233,
-      "review": "3",
-      "details": "3",
+      "review": "4.5",
+      "details": "3", 
       "status": "",
       "genres": ""
     },
@@ -102,7 +102,7 @@
       "title": "",
       "chapters": "288",
       "chaptersReread": "2",
-      "review": "4",
+      "review": "6",
       "details": "",
       "status": "",
       "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
