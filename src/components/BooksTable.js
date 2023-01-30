@@ -54,7 +54,7 @@ export const BooksTable = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th colSpan={2}>#</th>
+                  <th>#</th>
                   <th>Image</th>
                   <th>Title</th>
                   <SortChapters setData={setData} data={data} />

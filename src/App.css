@@ -22,6 +22,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
+  
 }
 
 
@@ -105,6 +106,7 @@ body {
 
 .card-flip-box-front>img {
   border-radius: 12px;
+  
 }
 
 
@@ -146,6 +148,9 @@ h3 {
   list-style: none;
   cursor: pointer;
   margin-top: 60px;
+  animation: tableBody 2s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
 }
 
 .pagination a {
@@ -239,7 +244,7 @@ h3 {
   text-align: center;
   border-collapse: collapse;
   background-color: #1d1d1d;
-  animation: tableBody 2.8s ease-in-out;
+  animation: tableBody 1.5s ease-in-out;
   animation-fill-mode: both;
   width: 100%;
   min-width: 500px;
@@ -255,70 +260,10 @@ h3 {
   }
 }
 
-.table>thead>thead>tr,
+.table>thead>tr,
 th {
   font-size: 13px;
-  animation: tableHead 0.8s ease-in;
   position: relative;
-  animation-fill-mode: both;
-}
-
-@keyframes tableHead {
-  0% {
-    opacity: 0;
-    transform: scale(.1);
-    top: -200px;
-  }
-
-  100% {
-    top: 0px;
-    transform: scale(1);
-  }
-}
-
-.table>thead>tr,
-th:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.table>thead>tr,
-th:nth-child(2) {
-  animation-delay: 0.75s;
-}
-
-.table>thead>tr,
-th:nth-child(3) {
-  animation-delay: 1s;
-}
-
-.table>thead>tr,
-th:nth-child(4) {
-  animation-delay: 1.25s;
-}
-
-.table>thead>tr,
-th:nth-child(5) {
-  animation-delay: 1.5s;
-}
-
-.table>thead>tr,
-th:nth-child(6) {
-  animation-delay: 1.75s;
-}
-
-.table>thead>tr,
-th:nth-child(7) {
-  animation-delay: 2s;
-}
-
-.table>thead>tr,
-th:nth-child(8) {
-  animation-delay: 2.25s;
-}
-
-.table>thead>tr,
-th:nth-child(9) {
-  animation-delay: 2.5s;
 }
 
 .table>tr,
@@ -383,6 +328,12 @@ link,
 .table>tr,
 .table-sort>i {
   margin-left: 3px;
+}
+
+.span-status {
+  padding: 1px;
+  min-height: 61px;
+  width: 5px;
 }
 
 

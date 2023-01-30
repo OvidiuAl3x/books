@@ -38,10 +38,9 @@ export const BooksCard = ({ item }) => {
 
           <img src={image} height={250} width={250} alt={title} />
         </div>
-
         <div
           className="card-flip-box-back"
-          style={{ border: `2px solid ${statusBorderColor}` }}
+          style={{ boxShadow: `1px 0px 15px 2px ${statusBorderColor} inset` }}
         >
           <h3>{title}</h3>
           <p>

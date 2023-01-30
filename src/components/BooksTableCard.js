@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DeleteData } from "../service/ApiRequest";
 import { DeleteBooks } from "./DeleteBooks";
 
-export const BooksTableCard = ({ item, index }) => {
+export const BooksTableCard = ({ item }) => {
   const [deleteBook, setDeleteBook] = useState(false);
   const {
     id,
@@ -48,16 +48,15 @@ export const BooksTableCard = ({ item, index }) => {
     setDeleteBook(true);
   };
 
-// todo numerotare row table
-
-
   return (
     <>
       <tr key={id}>
-        <td
-          style={{ backgroundColor: `${colorStatus}`, padding: "3.3px" }}
-        ></td>
-        <td>1</td>
+        <td>
+          <div
+            style={{ backgroundColor: `${colorStatus}` }}
+            className="span-status"
+          ></div>
+        </td>
         <td>
           <img
             src={image}
