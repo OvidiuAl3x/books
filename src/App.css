@@ -224,11 +224,12 @@ h3 {
   cursor: pointer;
   animation: tableBody 0.8s ease-in-out;
 }
-.h1-totalDetails{
+
+.h1-totalDetails {
   margin-left: 30px;
 }
 
-.p-totalDetails{
+.p-totalDetails {
   margin-left: 30px;
   cursor: pointer;
 }
@@ -242,7 +243,7 @@ h3 {
   cursor: default;
 }
 
-.container-totalDetails>p>span{
+.container-totalDetails>p>span {
   color: #18e0e0;
   font-weight: 400;
 }
@@ -420,13 +421,6 @@ link,
   border: 0px;
 }
 
-.form-container>.fa-plus {
-  position: relative;
-  width: 10%;
-  bottom: 32px;
-  right: 15px;
-}
-
 .add-containerChild>.form-button {
   margin: 5px;
   padding: 10px 25px;
@@ -440,6 +434,19 @@ link,
 
 .add-containerChild>.form-button:hover {
   transform: scale(1.2);
+}
+
+.add-containerChild>.form-container>select {
+  border-radius: 12px;
+  padding: 8px;
+  margin: 5px;
+  text-transform: capitalize;
+}
+
+.add-containerChild>.form-container>textarea {
+  border-radius: 12px;
+  margin: 5px 0px;
+  padding: 10px;
 }
 
 

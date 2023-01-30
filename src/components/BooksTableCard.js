@@ -66,7 +66,7 @@ export const BooksTableCard = ({ item }) => {
             className="img-zoom"
           />
         </td>
-        <td>{title}</td>
+        <td style={{minWidth:"100px", maxWidth:"100px"}}>{title}</td>
         <td>{chapters}</td>
         <td>{chaptersReread}</td>
         <td>

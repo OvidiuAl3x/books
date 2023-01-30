@@ -11,7 +11,7 @@ const PER_PAGE = 8;
 export const BooksTable = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [showStats, setShowStats] = useState(true);
+  const [showStats, setShowStats] = useState(false);
 
   useEffect(() => {
     (async () => {

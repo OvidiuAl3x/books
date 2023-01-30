@@ -8,7 +8,7 @@ export const EditBooks = () => {
   const [form, setForm] = useState({
     title: "",
     chapters: "",
-    chaptersReread: "",
+    chaptersReread: "0",
     review: "",
     details: "",
     status: "",
@@ -107,22 +107,23 @@ export const EditBooks = () => {
               value={details}
               onChange={({ target }) => updateField(target)}
             />
-            <input
-              type="text"
+            <select
               name="status"
-              placeholder="Status"
-              value={status}
               onChange={({ target }) => updateField(target)}
-              required
-            />
-            <input
+            >
+              <option value={status}>Status Selected: {status}</option>
+              <option value="complete">Complete</option>
+              <option value="on going">On Going</option>
+              <option value="dropped">Dropped</option>
+            </select>
+            <textarea
               type="text"
               name="genres"
-              placeholder="Genres"
+              rows="10"
+              cols="15"
               value={genres}
               onChange={({ target }) => updateField(target)}
-            />
-            <i class="fa-solid fa-plus"></i>
+            ></textarea>
           </form>
 
           {!id ? (
