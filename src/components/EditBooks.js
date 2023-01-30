@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
 
+const reTitle = /^[A-Za-z0-9\s]*$/;
+const reChapters = /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
+const reChaptersRereaded =
+  /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
+const reReview = /[1-6]/;
+
 export const EditBooks = () => {
   const { id } = useParams();
   const [errorForm, setErrorForm] = useState(false);
-  const reTitle = /^[A-Za-z0-9\s]*$/;
-  const reChapters = /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
-  const reChaptersRereaded =
-    /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
-  const reReview = /[1-6]/;
 
   const [form, setForm] = useState({
     title: "",
@@ -48,6 +49,7 @@ export const EditBooks = () => {
   const handleCreate = async () => {
     if (
       reTitle.test(form.title) &&
+      form.title &&
       reChapters.test(form.chapters) &&
       form.chapters > 0 &&
       form.chaptersReread >= 0 &&
@@ -104,7 +106,6 @@ export const EditBooks = () => {
               type="text"
               name="title"
               value={title}
-              required="required"
               onChange={({ target }) => updateField(target)}
               className={errorForm ? "error-form" : ""}
             />
@@ -115,7 +116,6 @@ export const EditBooks = () => {
               name="chapters"
               value={chapters}
               onChange={({ target }) => updateField(target)}
-              required="required"
               className={errorForm ? "error-form" : ""}
             />
             {errorForm && (
@@ -137,7 +137,6 @@ export const EditBooks = () => {
               name="review"
               value={review}
               onChange={({ target }) => updateField(target)}
-              required="required"
               className={errorForm ? "error-form" : ""}
             />
             {errorForm && (

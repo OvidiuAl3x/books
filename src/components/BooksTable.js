@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { GetData } from "../service/ApiRequest";
 import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
-import { SortChapters, SortReview } from "./SortTable";
+import { SortChapters, SortDetails, SortReview } from "./SortTable";
 
 const PER_PAGE = 6;
 
@@ -67,7 +67,7 @@ export const BooksTable = () => {
                   <th>Chapters 1st</th>
                   <SortReview setData={setData} data={data} />
                   <th>Genres</th>
-                  <th>Details</th>
+                  <SortDetails setData={setData} data={data}/>
                   <th colSpan={2}>
                     <Link to="new">
                       <i class="fa-solid fa-square-plus"></i>

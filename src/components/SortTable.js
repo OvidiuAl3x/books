@@ -90,3 +90,27 @@ export const SortReview = ({ data, setData }) => {
     </th>
   );
 };
+export const SortDetails = ({ data, setData }) => {
+  const sort = () => {
+    const copyArray = [...data];
+    copyArray.sort((a, b) => {
+      return a.details < b.details ? 1 : -1;
+    });
+
+    setData(copyArray);
+  };
+
+  return (
+    <th>
+      <div
+        className="table-sort"
+        onClick={() => {
+          sort();
+        }}
+      >
+        <p>Details</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </th>
+  );
+};
