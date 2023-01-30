@@ -4,6 +4,12 @@ import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
 
 export const EditBooks = () => {
   const { id } = useParams();
+  const [errorForm, setErrorForm] = useState(false);
+  const reTitle = /^[A-Za-z0-9\s]*$/;
+  const reChapters = /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
+  const reChaptersRereaded =
+    /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
+  const reReview = /[1-6]/;
 
   const [form, setForm] = useState({
     title: "",
@@ -40,22 +46,46 @@ export const EditBooks = () => {
   };
 
   const handleCreate = async () => {
-    try {
-      await CreateData(form);
-      alert(`Created ${form.title}`);
-      navigate(`/table`);
-    } catch (err) {
-      console.warn(err);
+    if (
+      reTitle.test(form.title) &&
+      reChapters.test(form.chapters) &&
+      form.chapters > 0 &&
+      form.chaptersReread >= 0 &&
+      reReview.test(form.review) &&
+      reChaptersRereaded.test(form.chaptersReread) &&
+      form.status
+    ) {
+      try {
+        await CreateData(form);
+        alert(`Created ${form.title}`);
+        navigate(`/table`);
+      } catch (err) {
+        console.warn(err);
+      }
     }
+    return setErrorForm(true);
   };
+
   const handleUpdate = async () => {
-    try {
-      await UpdateData(form);
-      alert(`Updated ${form.title}`);
-      navigate(`/table`);
-    } catch (e) {
-      console.warn(e);
+    if (
+      reTitle.test(form.title) &&
+      form.title &&
+      reChapters.test(form.chapters) &&
+      form.chapters > 0 &&
+      form.chaptersReread >= 0 &&
+      reReview.test(form.review) &&
+      reChaptersRereaded.test(form.chaptersReread) &&
+      form.status
+    ) {
+      try {
+        await UpdateData(form);
+        alert(`Updated ${form.title}`);
+        navigate(`/table`);
+      } catch (e) {
+        console.warn(e);
+      }
     }
+    return setErrorForm(true);
   };
 
   if (form === null) {
@@ -69,58 +99,74 @@ export const EditBooks = () => {
           <i class="fa-solid fa-x" onClick={() => navigate("/table")}></i>
           <h3>Add New Book</h3>
           <form className="form-container">
+            <label for="title">Title</label>
             <input
               type="text"
               name="title"
-              placeholder="Title"
               value={title}
-              required
+              required="required"
               onChange={({ target }) => updateField(target)}
+              className={errorForm ? "error-form" : ""}
             />
+            {errorForm && <p className="error-message">Please insert title</p>}
+            <label for="chapters">Chapters</label>
             <input
               type="number"
               name="chapters"
-              placeholder="Chapters"
               value={chapters}
               onChange={({ target }) => updateField(target)}
-              required
+              required="required"
+              className={errorForm ? "error-form" : ""}
             />
+            {errorForm && (
+              <p className="error-message">Chapters range between 1-9999</p>
+            )}
+            <label for="chaptersReread">Chapters Reread</label>
             <input
               type="number"
               name="chaptersReread"
-              placeholder="Chapters Reread"
               value={chaptersReread}
               onChange={({ target }) => updateField(target)}
             />
+            {errorForm && (
+              <p className="error-message">Chapters range between 0-9999</p>
+            )}
+            <label for="review">Review</label>
             <input
               type="number"
               name="review"
-              placeholder="Review"
               value={review}
               onChange={({ target }) => updateField(target)}
-              required
+              required="required"
+              className={errorForm ? "error-form" : ""}
             />
+            {errorForm && (
+              <p className="error-message">Review range between 1-6</p>
+            )}
+            <label for="details">Details</label>
             <input
               type="text"
               name="details"
-              placeholder="Details"
               value={details}
               onChange={({ target }) => updateField(target)}
             />
             <select
               name="status"
               onChange={({ target }) => updateField(target)}
+              className={errorForm ? "error-form" : ""}
             >
               <option value={status}>Status Selected: {status}</option>
               <option value="complete">Complete</option>
               <option value="on going">On Going</option>
               <option value="dropped">Dropped</option>
             </select>
+            {errorForm && <p className="error-message">Please select status</p>}
+            <label for="genres">Genres</label>
             <textarea
               type="text"
               name="genres"
               rows="10"
-              cols="15"
+              cols="30"
               value={genres}
               onChange={({ target }) => updateField(target)}
             ></textarea>

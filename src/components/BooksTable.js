@@ -6,7 +6,7 @@ import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
 import { SortChapters, SortReview } from "./SortTable";
 
-const PER_PAGE = 8;
+const PER_PAGE = 6;
 
 export const BooksTable = () => {
   const [data, setData] = useState([]);
@@ -57,44 +57,42 @@ export const BooksTable = () => {
           {showStats && <BooksStats setShowStats={setShowStats} data={data} />}
 
           <div className="table-container">
-            <form>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <SortChapters setData={setData} data={data} />
-                    <th>Chapters 1st</th>
-                    <SortReview setData={setData} data={data} />
-                    <th>Genres</th>
-                    <th>Details</th>
-                    <th colSpan={2}>
-                      <Link to="new">
-                        <i class="fa-solid fa-square-plus"></i>
-                      </Link>
-                    </th>
-                  </tr>
-                </thead>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <SortChapters setData={setData} data={data} />
+                  <th>Chapters 1st</th>
+                  <SortReview setData={setData} data={data} />
+                  <th>Genres</th>
+                  <th>Details</th>
+                  <th colSpan={2}>
+                    <Link to="new">
+                      <i class="fa-solid fa-square-plus"></i>
+                    </Link>
+                  </th>
+                </tr>
+              </thead>
 
-                <tbody>{currentPageData}</tbody>
-              </table>
-              <ReactPaginate
-                previousLabel={"< previous"}
-                nextLabel={"next >"}
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                containerClassName={"pagination"}
-                previousLinkClassName={"page-link"}
-                nextLinkClassName={"page-link"}
-                activeClassName={"page-link-active"}
-                disabledClassName={"page-link-disabled"}
-                breakLabel="..."
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={2}
-              />
-            </form>
+              <tbody>{currentPageData}</tbody>
+            </table>
           </div>
+          <ReactPaginate
+            previousLabel={"< previous"}
+            nextLabel={"next >"}
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            previousLinkClassName={"page-link"}
+            nextLinkClassName={"page-link"}
+            activeClassName={"page-link-active"}
+            disabledClassName={"page-link-disabled"}
+            breakLabel="..."
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+          />
         </>
       )}
     </>

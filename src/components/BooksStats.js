@@ -1,3 +1,6 @@
+// todo add status total for compled dropped etc 
+// todo on click on status show in table only  x status
+
 export const BooksStats = ({ setShowStats, data }) => {
   const chapters = data.reduce((a, b) => a + parseInt(b.chapters), 0);
   const chaptersRereaded = data.reduce(

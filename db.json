@@ -43,16 +43,6 @@
       "genres": ""
     },
     {
-      "title": "",
-      "chapters": "288",
-      "chaptersReread": "2",
-      "review": "4",
-      "details": "",
-      "status": "dropped",
-      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
-      "id": 52
-    },
-    {
       "id": 51,
       "title": "pisicaasd asd asd aasd asd asd",
       "chapters": "570",
@@ -83,12 +73,12 @@
       "genres": ""
     },
     {
-      "title": "",
+      "title": "da",
       "chapters": "288",
       "chaptersReread": "2",
       "review": "6",
       "details": "",
-      "status": "",
+      "status": "on going",
       "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
       "id": 53
     },
@@ -116,11 +106,91 @@
       "title": "baaa",
       "chapters": "23",
       "chaptersReread": "0",
-      "review": "",
+      "review": "2.5",
+      "details": "",
+      "status": "on going",
+      "genres": "",
+      "id": 57
+    },
+    {
+      "title": "da",
+      "chapters": "23",
+      "chaptersReread": "2",
+      "review": "4",
+      "details": "",
+      "status": "dropped",
+      "genres": "",
+      "id": 58
+    },
+    {
+      "title": "da",
+      "chapters": "5",
+      "chaptersReread": "0",
+      "review": "2.5",
+      "details": "",
+      "status": "dropped",
+      "genres": "",
+      "id": 59
+    },
+    {
+      "title": "da23",
+      "chapters": "54",
+      "chaptersReread": "0",
+      "review": "2",
       "details": "",
       "status": "",
       "genres": "",
-      "id": 57
+      "id": 60
+    },
+    {
+      "title": "da",
+      "chapters": "4",
+      "chaptersReread": "0",
+      "review": "2",
+      "details": "",
+      "status": "",
+      "genres": "",
+      "id": 61
+    },
+    {
+      "title": "da",
+      "chapters": "2",
+      "chaptersReread": "0",
+      "review": "2",
+      "details": "",
+      "status": "",
+      "genres": "",
+      "id": 62
+    },
+    {
+      "title": "da",
+      "chapters": "234",
+      "chaptersReread": "0",
+      "review": "1",
+      "details": "",
+      "status": "",
+      "genres": "",
+      "id": 63
+    },
+    {
+      "title": "da",
+      "chapters": "23",
+      "chaptersReread": "0",
+      "review": "2",
+      "details": "",
+      "status": "on going",
+      "genres": "",
+      "id": 64
+    },
+    {
+      "title": "da23",
+      "chapters": "234",
+      "chaptersReread": "232",
+      "review": "3",
+      "details": "",
+      "status": "dropped",
+      "genres": "",
+      "id": 65
     }
   ]
 }

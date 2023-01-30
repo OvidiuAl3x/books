@@ -382,6 +382,7 @@ link,
   align-items: center;
   background-color: #1c77b4;
   padding: 20px;
+  min-width: 25%;
   border-radius: 12px;
   animation: animationCards 1.5s;
 
@@ -406,24 +407,36 @@ link,
 
 .add-containerChild>h3 {
   color: #1d1d1d;
+  font-size: 20px;
+  margin: 0px 0px 10px 0px;
 }
 
 .form-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .form-container>input {
+  text-align: center;
+  width: 100%;
   margin: 5px;
-  padding: 10px 25px;
+  padding: 10px 0px;
   outline: none;
   border-radius: 12px;
   border: 0px;
 }
 
+.form-container>.error-message {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  margin: 0px 0px 10px 0px;
+}
+
 .add-containerChild>.form-button {
   margin: 5px;
-  padding: 10px 25px;
+  padding: 10px 50px;
   background-color: #1d1d1d;
   color: #00F9F9;
   border-radius: 12px;
@@ -437,8 +450,10 @@ link,
 }
 
 .add-containerChild>.form-container>select {
+  text-align: center;
   border-radius: 12px;
-  padding: 8px;
+  width: 100%;
+  padding: 8px 0px;
   margin: 5px;
   text-transform: capitalize;
 }
@@ -447,6 +462,37 @@ link,
   border-radius: 12px;
   margin: 5px 0px;
   padding: 10px;
+}
+
+.form-container>label {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0px 8px;
+}
+
+.form-container>.error-form {
+  outline: solid red;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s;
+  animation-iteration-count: 2;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 
 
