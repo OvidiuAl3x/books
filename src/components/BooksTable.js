@@ -27,7 +27,7 @@ export const BooksTable = () => {
 
   const offset = currentPage * PER_PAGE;
 
-  const dataFilter = data.filter((item) => item.status === selectedCategory);
+  const dataFilter = data?.filter((item) => item.status === selectedCategory);
 
   const getFilteredList = () => {
     if (!selectedCategory) {
@@ -43,14 +43,14 @@ export const BooksTable = () => {
   ]);
 
   const currentPageData = filteredList
-    .slice(offset, offset + PER_PAGE)
-    .map((item) => <BooksTableCard key={item.id} item={item} />);
+    ?.slice(offset, offset + PER_PAGE)
+    ?.map((item) => <BooksTableCard key={item.id} item={item} />);
 
   const pageCount = !selectedCategory
-    ? Math.ceil(data.length / PER_PAGE)
-    : Math.ceil(dataFilter.length / PER_PAGE);
+    ? Math.ceil(data?.length / PER_PAGE)
+    : Math.ceil(dataFilter?.length / PER_PAGE);
 
-  if (currentPageData === null) {
+  if (!data) {
     return <div>Loading ....</div>;
   }
 

@@ -23,10 +23,14 @@ export const Books = () => {
   const offset = currentPage * PER_PAGE;
 
   const currentPageData = data
-    .slice(offset, offset + PER_PAGE)
+    ?.slice(offset, offset + PER_PAGE)
     .map((item) => <BooksCard key={item.id} item={item} />);
 
-  const pageCount = Math.ceil(data.length / PER_PAGE);
+  const pageCount = Math.ceil(data?.length / PER_PAGE);
+
+  if (!data) {
+    return <div>Loading ....</div>;
+  }
 
   return (
     <>
