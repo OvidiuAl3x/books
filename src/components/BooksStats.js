@@ -1,4 +1,9 @@
-export const BooksStats = ({ setShowStats, data, setSelectedCategory }) => {
+export const BooksStats = ({
+  setShowStats,
+  data,
+  setSelectedCategory,
+  selectedCategory,
+}) => {
   const chapters = data.reduce((a, b) => a + parseInt(b.chapters), 0);
   const chaptersRereaded = data.reduce(
     (a, b) => a + parseInt(b.chaptersReread),
@@ -37,18 +42,33 @@ export const BooksStats = ({ setShowStats, data, setSelectedCategory }) => {
           className="container-statusON"
           onClick={() => setSelectedCategory("on going")}
         >
+          {selectedCategory === "on going" ? (
+            <i class="fa-solid fa-eye"></i>
+          ) : (
+            <i class="fa-solid fa-eye-slash"></i>
+          )}
           On Going: <span>{onGoingStatus}</span>
         </p>
         <p
           className="container-statusDR"
           onClick={() => setSelectedCategory("dropped")}
         >
+          {selectedCategory === "dropped" ? (
+            <i class="fa-solid fa-eye"></i>
+          ) : (
+            <i class="fa-solid fa-eye-slash"></i>
+          )}
           Dropped: <span>{droppedStatus}</span>
         </p>
         <p
           className="container-statusCO"
           onClick={() => setSelectedCategory("complete")}
         >
+          {selectedCategory === "complete" ? (
+            <i class="fa-solid fa-eye"></i>
+          ) : (
+            <i class="fa-solid fa-eye-slash"></i>
+          )}
           Complete: <span>{completeStatus}</span>
         </p>
 

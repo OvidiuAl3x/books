@@ -67,6 +67,7 @@ export const BooksTable = () => {
               setShowStats={setShowStats}
               data={data}
               setSelectedCategory={setSelectedCategory}
+              selectedCategory={selectedCategory}
             />
           )}
 
