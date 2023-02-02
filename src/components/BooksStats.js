@@ -45,7 +45,7 @@ export const BooksStats = ({
           {selectedCategory === "on going" ? (
             <i class="fa-solid fa-eye"></i>
           ) : (
-            <i class="fa-solid fa-eye-slash"></i>
+            <i class="fa-solid fa-eye-slash" style={{ opacity: "0.5" }}></i>
           )}
           On Going: <span>{onGoingStatus}</span>
         </p>
@@ -56,7 +56,7 @@ export const BooksStats = ({
           {selectedCategory === "dropped" ? (
             <i class="fa-solid fa-eye"></i>
           ) : (
-            <i class="fa-solid fa-eye-slash"></i>
+            <i class="fa-solid fa-eye-slash" style={{ opacity: "0.5" }}></i>
           )}
           Dropped: <span>{droppedStatus}</span>
         </p>
@@ -67,7 +67,7 @@ export const BooksStats = ({
           {selectedCategory === "complete" ? (
             <i class="fa-solid fa-eye"></i>
           ) : (
-            <i class="fa-solid fa-eye-slash"></i>
+            <i class="fa-solid fa-eye-slash" style={{ opacity: "0.5" }}></i>
           )}
           Complete: <span>{completeStatus}</span>
         </p>
