@@ -22,22 +22,11 @@ export const Books = () => {
 
   const offset = currentPage * PER_PAGE;
 
-  const uniqueIds = [];
-  const uniquesRecipe = data.filter((element) => {
-    const isDuplicate = uniqueIds.includes(element.id);
-    if (!isDuplicate) {
-      uniqueIds.push(element.id);
-      return true;
-    }
-    return false;
-  });
-
-  const currentPageData = uniquesRecipe
+  const currentPageData = data
     .slice(offset, offset + PER_PAGE)
     .map((item) => <BooksCard key={item.id} item={item} />);
 
   const pageCount = Math.ceil(data.length / PER_PAGE);
-
 
   return (
     <>

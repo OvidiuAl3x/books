@@ -219,10 +219,15 @@ h3 {
 
 .container-totalDetails {
   background-color: #1c77b4;
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
   animation: tableBody 0.8s ease-in-out;
+  animation-fill-mode: both;
+  font-weight: bold;
+}
+
+.container-totalDetails1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .h1-totalDetails {
@@ -234,18 +239,38 @@ h3 {
   cursor: pointer;
 }
 
-.container-totalDetails>p {
-  font-weight: bold;
-}
-
-.container-totalDetails>p>.fa-star {
+.container-totalDetails1>p>.fa-star {
   margin-left: -6px;
   cursor: default;
 }
 
-.container-totalDetails>p>span {
+.container-totalDetails>.container-totalDetails1>p>span {
   color: #18e0e0;
   font-weight: 400;
+}
+
+.container-totalDetails>.container-totalDetails1>.fa-circle-xmark {
+  font-size: 24px;
+  color: #cc0606;
+  cursor: pointer;
+  position: relative;
+  top: 30px;
+}
+
+
+.container-statusON {
+  border-bottom: 3px solid #d8db03;
+  cursor: pointer;
+}
+
+.container-statusDR {
+  border-bottom: 3px solid #cc0606;
+  cursor: pointer;
+}
+
+.container-statusCO {
+  border-bottom: 3px solid #2de215;
+  cursor: pointer;
 }
 
 .table-container {
@@ -365,6 +390,8 @@ link,
   min-height: 61px;
   width: 5px;
 }
+
+
 
 
 /** ============================== Form ==============================*/

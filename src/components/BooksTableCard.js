@@ -32,7 +32,9 @@ export const BooksTableCard = ({ item }) => {
       ? "#169905"
       : status === "dropped"
       ? "#cc0606"
-      : "#d8db03";
+      : status === "on going"
+      ? "#d8db03"
+      : ""
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
