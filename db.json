@@ -129,6 +129,16 @@
       "status": "on going",
       "genres": "",
       "id": 56
+    },
+    {
+      "title": "carte",
+      "chapters": "20",
+      "chaptersReread": "0",
+      "review": "5",
+      "details": "",
+      "status": "complete",
+      "genres": "",
+      "id": 57
     }
   ]
 }

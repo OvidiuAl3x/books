@@ -33,7 +33,7 @@ export const Books = () => {
   }
 
   return (
-    <>
+    <div className="width-container">
       <div className="container">{currentPageData}</div>
       <ReactPaginate
         previousLabel={"< previous"}
@@ -49,6 +49,6 @@ export const Books = () => {
         pageRangeDisplayed={3}
         marginPagesDisplayed={2}
       />
-    </>
+    </div>
   );
 };

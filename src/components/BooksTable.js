@@ -6,7 +6,7 @@ import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
 import { SortChapters, SortDetails, SortReview } from "./SortTable";
 
-const PER_PAGE = 6;
+const PER_PAGE = 8;
 
 export const BooksTable = () => {
   const [data, setData] = useState([]);
@@ -55,7 +55,7 @@ export const BooksTable = () => {
   }
 
   return (
-    <>
+    <div className="width-container">
       {currentPageData && (
         <>
           <h1 className="h1-totalDetails">Books Details</h1>
@@ -115,6 +115,6 @@ export const BooksTable = () => {
           />
         </>
       )}
-    </>
+    </div>
   );
 };
