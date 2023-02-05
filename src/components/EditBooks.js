@@ -57,7 +57,8 @@ export const EditBooks = () => {
       form.chaptersReread >= 0 &&
       reReview.test(form.review) &&
       reChaptersRereaded.test(form.chaptersReread) &&
-      form.status
+      form.status &&
+      form.genres.length >= 1
     ) {
       try {
         await CreateData(form);

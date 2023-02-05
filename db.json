@@ -112,16 +112,6 @@
       "id": 8
     },
     {
-      "title": "asdas",
-      "chapters": "213123",
-      "chaptersReread": "0",
-      "review": "62323",
-      "details": "",
-      "status": "on going",
-      "genres": [],
-      "id": 9
-    },
-    {
       "title": "sadasd",
       "chapters": "31",
       "chaptersReread": "0",
@@ -130,6 +120,33 @@
       "status": "complete",
       "genres": [],
       "id": 10
+    },
+    {
+      "title": "asd",
+      "chapters": "123",
+      "chaptersReread": "0",
+      "review": "2",
+      "details": "",
+      "status": "on going",
+      "genres": [
+        "Comedy",
+        "Dungeon",
+        "Manhwa"
+      ],
+      "id": 11
+    },
+    {
+      "title": "da",
+      "chapters": "123",
+      "chaptersReread": "2",
+      "review": "2",
+      "details": "",
+      "status": "dropped",
+      "genres": [
+        "Adventure",
+        "Dungeon"
+      ],
+      "id": 12
     }
   ]
 }
