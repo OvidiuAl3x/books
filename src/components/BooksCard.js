@@ -19,10 +19,12 @@ export const BooksCard = ({ item }) => {
 
   const statusBorderColor =
     status === "complete"
-      ? "#169905"
+      ? "#2de215"
       : status === "dropped"
       ? "#cc0606"
-      : "#d8db03";
+      : status === "on going"
+      ? "#d8db03"
+      : "";
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
@@ -43,10 +45,15 @@ export const BooksCard = ({ item }) => {
           <p>
             <strong>Chapters:</strong> {chapters}
           </p>
+
           <p>
             <strong>Genres: </strong>
-            {genres}
           </p>
+          <div className="genres-Books">
+            {genres.map((item) => (
+              <span className="genres-alignBooks">{item} </span>
+            ))}
+          </div>
           <p>
             <strong>status: </strong>
             <span style={{ color: `${statusBorderColor}` }}>{status}</span>

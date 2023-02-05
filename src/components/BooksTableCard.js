@@ -29,12 +29,12 @@ export const BooksTableCard = ({ item }) => {
 
   const colorStatus =
     status === "complete"
-      ? "#169905"
+      ? "#2de215"
       : status === "dropped"
       ? "#cc0606"
       : status === "on going"
       ? "#d8db03"
-      : ""
+      : "grey";
 
   const image = images[`${title}.jpg`]
     ? images[`${title}.jpg`]
@@ -54,12 +54,10 @@ export const BooksTableCard = ({ item }) => {
     <>
       <tr key={id}>
         <td>
-          <div
+          <span
             style={{ backgroundColor: `${colorStatus}` }}
             className="span-status"
-          ></div>
-        </td>
-        <td>
+          ></span>
           <img
             src={image}
             height={60}
@@ -68,14 +66,20 @@ export const BooksTableCard = ({ item }) => {
             className="img-zoom"
           />
         </td>
-        <td style={{minWidth:"100px", maxWidth:"100px"}}>{title}</td>
+        <td style={{ minWidth: "100px", maxWidth: "100px" }}>{title}</td>
         <td>{chapters}</td>
         <td>{chaptersReread}</td>
         <td>
           {review}
           <i class="fa-solid fa-star"></i>
         </td>
-        <td>{genres}</td>
+        <td>
+          <div className="genres-container">
+            {genres.map((item) => (
+              <span className="genres-align">{item}</span>
+            ))}
+          </div>
+        </td>
         <td>{details}</td>
         <td>
           {deleteBook && (

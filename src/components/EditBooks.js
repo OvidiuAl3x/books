@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
+import { EditGenres } from "./EditGenres";
 
 const reTitle = /^[A-Za-z0-9\s]*$/;
 const reChapters = /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
 const reChaptersRereaded =
   /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
-const reReview = /[1-6]/;
+const reReview = /^[0-6\b]+$/;
 
 export const EditBooks = () => {
   const { id } = useParams();
@@ -19,11 +20,10 @@ export const EditBooks = () => {
     review: "",
     details: "",
     status: "",
-    genres: "",
+    genres: [],
   });
 
-  const { title, chapters, chaptersReread, review, details, status, genres } =
-    form;
+  const { title, chapters, chaptersReread, review, details, status } = form;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,6 +52,8 @@ export const EditBooks = () => {
       form.title &&
       reChapters.test(form.chapters) &&
       form.chapters > 0 &&
+      form.chapters < 9999 &&
+      form.review <= 6 &&
       form.chaptersReread >= 0 &&
       reReview.test(form.review) &&
       reChaptersRereaded.test(form.chaptersReread) &&
@@ -74,8 +76,10 @@ export const EditBooks = () => {
       form.title &&
       reChapters.test(form.chapters) &&
       form.chapters > 0 &&
+      form.chapters < 9999 &&
       form.chaptersReread >= 0 &&
       reReview.test(form.review) &&
+      form.review <= 6 &&
       reChaptersRereaded.test(form.chaptersReread) &&
       form.status
     ) {
@@ -138,6 +142,8 @@ export const EditBooks = () => {
               value={review}
               onChange={({ target }) => updateField(target)}
               className={errorForm ? "error-form" : ""}
+              min="1"
+              max="6"
             />
             {errorForm && (
               <p className="error-message">Review range between 1-6</p>
@@ -160,15 +166,8 @@ export const EditBooks = () => {
               <option value="dropped">Dropped</option>
             </select>
             {errorForm && <p className="error-message">Please select status</p>}
-            <label for="genres">Genres</label>
-            <textarea
-              type="text"
-              name="genres"
-              rows="10"
-              cols="30"
-              value={genres}
-              onChange={({ target }) => updateField(target)}
-            ></textarea>
+            <p className="genres">Please Select Genres:</p>
+            <EditGenres form={form} setForm={setForm} />
           </form>
 
           {!id ? (

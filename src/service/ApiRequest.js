@@ -59,3 +59,11 @@ export const DeleteData = async (id) => {
   }
   throw new Error("Something went wrong");
 };
+
+
+export const GetDataGenres = () => {
+  return axios
+    .get('http://localhost:3000/genres')
+    .then((res) => res.data)
+    .catch((err) => console.warn(err));
+};

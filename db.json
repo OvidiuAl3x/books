@@ -1,4 +1,16 @@
 {
+  "genres": [
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Fantasy",
+    "Reincarnation",
+    "Dungeon",
+    "System",
+    "Magic",
+    "Manhwa",
+    "Manga"
+  ],
   "manga": [
     {
       "id": 2,
@@ -10,13 +22,9 @@
       "details": "bun",
       "status": "complete",
       "genres": [
-        "Action, ",
-        "Adventure, ",
-        "Comedy, ",
-        "Cultivation, ",
-        "Martial Arts, ",
-        "Fantasy, ",
-        "Manhwa"
+        "Adventure",
+        "Reincarnation",
+        "Dungeon"
       ]
     },
     {
@@ -28,117 +36,100 @@
       "rereaded": 1,
       "status": "dropped",
       "genres": [
+        "Manga",
         "Action",
-        " Adventure",
-        " Comedy",
-        " Fantasy",
-        " Supernatural",
-        " Psyhological",
-        " Manhwa"
+        "Fantasy",
+        "System",
+        "Dungeon",
+        "Comedy",
+        "Manhwa",
+        "Magic"
       ],
       "details": "da"
-    },
-    {
-      "id": 21,
-      "title": "pisicaasd asd asd aasd asd asd",
-      "chapters": "570",
-      "chaptersReread": "71",
-      "review": "6",
-      "rereaded": 1,
-      "status": "on going",
-      "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa, Altceva",
-      "details": "da"
-    },
-    {
-      "id": 4,
-      "title": "pisica",
-      "chapters": "312",
-      "chaptersReread": "32",
-      "review": "5.5",
-      "details": "",
-      "status": "complete",
-      "genres": ""
-    },
-    {
-      "title": "da",
-      "chapters": "288",
-      "chaptersReread": "2",
-      "review": "4",
-      "details": "foarte bun",
-      "status": "dropped",
-      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
-      "id": 52
-    },
-    {
-      "id": 51,
-      "title": "pisicaasd asd asd aasd asd asd",
-      "chapters": "570",
-      "chaptersReread": "70",
-      "review": "2.5",
-      "rereaded": 1,
-      "status": "complete",
-      "genres": "Action, Adventure, Comedy,Action, Adventure, Comedy, Fantasy, Supernatural, Psyhological, Manhwa, Supernatural, Psyhological, Manhwa",
-      "details": "b"
-    },
-    {
-      "id": 42,
-      "title": "asd",
-      "chapters": "312",
-      "chaptersReread": "32",
-      "review": "3.5",
-      "details": "",
-      "status": "on going",
-      "genres": ""
-    },
-    {
-      "id": 50,
-      "title": "asdasd",
-      "chapters": "31",
-      "chaptersReread": 233,
-      "review": "4.5",
-      "details": "3",
-      "status": "dropped",
-      "genres": ""
-    },
-    {
-      "title": "amazing",
-      "chapters": "288",
-      "chaptersReread": "2",
-      "review": "6",
-      "details": "amazing",
-      "status": "dropped",
-      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
-      "id": 53
-    },
-    {
-      "title": "da",
-      "chapters": "54",
-      "chaptersReread": "0",
-      "review": "4.5",
-      "details": "3da",
-      "status": "complete",
-      "genres": "Action Adventure Comedy Fantasy Supernatural Psyhological ManhwaAction Adventure Comedy Fantasy Supernatural Psyhological Manhwa\t\t",
-      "id": 54
     },
     {
       "title": "da",
       "chapters": "23",
       "chaptersReread": "0",
-      "review": "5",
-      "details": "23",
-      "status": "on going",
-      "genres": "",
-      "id": 56
+      "review": "2",
+      "details": "",
+      "status": "dropped",
+      "genres": [
+        "Comedy",
+        "Reincarnation",
+        "Dungeon"
+      ],
+      "id": 3
     },
     {
-      "title": "carte",
-      "chapters": "20",
+      "title": "dsa",
+      "chapters": "23",
       "chaptersReread": "0",
-      "review": "5",
+      "review": "22",
+      "details": "",
+      "status": "on going",
+      "genres": [],
+      "id": 4
+    },
+    {
+      "title": "dsa",
+      "chapters": "2312",
+      "chaptersReread": "0",
+      "review": "2",
       "details": "",
       "status": "complete",
-      "genres": "",
-      "id": 57
+      "genres": [],
+      "id": 5
+    },
+    {
+      "title": "asdasd",
+      "chapters": "231",
+      "chaptersReread": "0",
+      "review": "3",
+      "details": "",
+      "status": "complete",
+      "genres": [],
+      "id": 6
+    },
+    {
+      "title": "dsad",
+      "chapters": "2313",
+      "chaptersReread": "0",
+      "review": "3",
+      "details": "",
+      "status": "on going",
+      "genres": [],
+      "id": 7
+    },
+    {
+      "title": "dsad",
+      "chapters": "231",
+      "chaptersReread": "0",
+      "review": "23",
+      "details": "",
+      "status": "on going",
+      "genres": [],
+      "id": 8
+    },
+    {
+      "title": "asdas",
+      "chapters": "213123",
+      "chaptersReread": "0",
+      "review": "62323",
+      "details": "",
+      "status": "on going",
+      "genres": [],
+      "id": 9
+    },
+    {
+      "title": "sadasd",
+      "chapters": "31",
+      "chaptersReread": "0",
+      "review": "2",
+      "details": "",
+      "status": "complete",
+      "genres": [],
+      "id": 10
     }
   ]
 }

@@ -75,12 +75,6 @@ export const BooksTable = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th
-                    onClick={() => setSelectedCategory()}
-                    style={{ cursor: "pointer" }}
-                  >
-                    All
-                  </th>
                   <th>Image</th>
                   <th>Title</th>
                   <SortChapters setData={setData} data={data} />

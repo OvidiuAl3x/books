@@ -203,7 +203,14 @@ h3 {
   position: absolute;
   margin: 7px 16px;
 }
-
+.genres-Books{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -14px 10px 0px 10px;
+}
+.genres-Books>.genres-alignBooks{
+  padding: 0px 4px;
+}
 /**  =================================== PAGINATION Container =================================== */
 
 .pagination {
@@ -326,29 +333,17 @@ h3 {
   }
 }
 
-.table-container>form {
-  width: 100%;
-}
 
 .table {
-  color: black;
   text-align: center;
   border-collapse: collapse;
   background-color: #1d1d1d;
   animation: tableBody 1.5s ease-in-out;
   animation-fill-mode: both;
-  width: 100%;
-  min-width: 500px;
-  background-image: linear-gradient(-160deg,
-      hsl(191deg 100% 43%) 1%,
-      hsl(192deg 100% 41%) 49%,
-      hsl(193deg 100% 40%) 51%,
-      hsl(193deg 100% 38%) 49%,
-      hsl(194deg 100% 36%) 51%,
-      hsl(195deg 100% 35%) 99%);
   border: 1px solid black;
-  border-radius: 12px;
   font-weight: 600;
+  background-color: #200f5f3a;
+  backdrop-filter: blur(12px);
 }
 
 @keyframes tableBody {
@@ -377,6 +372,7 @@ td {
 .table>tbody>tr,
 td {
   font-size: 12px;
+  max-width: 400px;
 }
 
 .table>tr,
@@ -424,6 +420,7 @@ link,
   display: flex;
   cursor: pointer;
   align-items: baseline;
+  justify-content: center;
 }
 
 .table>tr,
@@ -432,12 +429,20 @@ link,
 }
 
 .span-status {
-  padding: 1px;
-  min-height: 61px;
-  width: 5px;
+  padding: 49px 3px 3px 1px;
+  position: relative;
+  left: -3px;
 }
 
 
+.genres-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genres-align {
+  padding: 0 5px;
+}
 
 
 /** ============================== Form ==============================*/
@@ -446,19 +451,20 @@ link,
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  min-height: calc(100vh - 50px);
 }
 
 .add-containerChild {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1c77b4;
   padding: 20px;
-  min-width: 25%;
+  min-width: 15%;
   border-radius: 12px;
   animation: animationCards 1.5s;
-
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  border: 1px solid black;
 }
 
 @keyframes animationCards {
@@ -488,11 +494,12 @@ link,
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 350px;
 }
 
 .form-container>input {
   text-align: center;
-  width: 100%;
+  width: 80%;
   margin: 5px;
   padding: 10px 0px;
   outline: none;
@@ -525,7 +532,7 @@ link,
 .add-containerChild>.form-container>select {
   text-align: center;
   border-radius: 12px;
-  width: 100%;
+  width: 80%;
   padding: 8px 0px;
   margin: 5px;
   text-transform: capitalize;
@@ -566,6 +573,36 @@ link,
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+
+.form-container>.genres {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-container>.container-formGenres {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.form-container>.container-formGenres>.checkbox {
+  cursor: pointer;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+
+.form-container>.container-formGenres>.checkbox>input {
+  display: contents;
 }
 
 
