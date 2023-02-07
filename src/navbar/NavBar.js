@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { BooksCard } from "../components/BooksCard";
 import { Books } from "../view/Books";
-import TableNavLinks from "../view/TableNavLinks";
+import { BooksDetails } from "../view/BooksDetails";
 import { NavLinks } from "./NavLinks";
 
 export const NavBar = () => {
@@ -9,11 +9,14 @@ export const NavBar = () => {
     <BrowserRouter>
       <NavLinks />
       <Routes>
-        <Route exact path="/" element={<Books />}>
-          <Route exact path="/" element={<BooksCard />}></Route>
+        <Route path="/" element={<Books />}>
+          <Route path="/" element={<BooksCard />}></Route>
         </Route>
-        <Route path="/table/*" element={<TableNavLinks />}></Route>
-        <Route path="*" element={<Navigate to="" />}></Route>
+        <Route path="/table" element={<BooksDetails />}>
+          <Route path="new" element={<BooksDetails />}></Route>
+          <Route path=":id" element={<BooksDetails />}></Route>
+        </Route>
+        <Route path="*" element={<Navigate to="" replace />}></Route>
       </Routes>
     </BrowserRouter>
   );

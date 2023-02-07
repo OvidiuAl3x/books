@@ -117,7 +117,7 @@ export const EditBooks = ({ setShowForm }) => {
               name="chapters"
               value={chapters}
               onChange={({ target }) => updateField(target)}
-              className={chapters >= 9999 ? "error-form2" : ""}
+              className={chapters >= 9999 ? "error-form" : ""}
               min="1"
               max="9999"
             />
@@ -130,7 +130,7 @@ export const EditBooks = ({ setShowForm }) => {
               name="chaptersReread"
               value={chaptersReread}
               onChange={({ target }) => updateField(target)}
-              className={chaptersReread >= 9999 ? "error-form2" : ""}
+              className={chaptersReread >= 9999 ? "error-form" : ""}
             />
             {chaptersReread >= 9999 && (
               <p className="error-message">Chapters range between 0-9999</p>
@@ -157,7 +157,7 @@ export const EditBooks = ({ setShowForm }) => {
             <select
               name="status"
               onChange={({ target }) => updateField(target)}
-              className={errorForm ? "error-form4" : ""}
+              className={errorForm ? "error-form" : ""}
             >
               <option value={status}>Status Selected: {status}</option>
               <option value="complete">Complete</option>

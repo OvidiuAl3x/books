@@ -36,7 +36,7 @@ export const EditGenres = ({ form, setForm }) => {
             <label
               for={item}
               className="checkbox"
-              style={{ opacity: "1", fontWeight: "600" }}
+              style={{ opacity: "1", fontWeight: "600", backgroundColor:"#00b3db" }}
             >
               <input
                 id={item}
