@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
-import TableNavLinks from "../components/TableNavLinks";
-import { Books } from "../components/Books";
 import { BooksCard } from "../components/BooksCard";
+import { Books } from "../view/Books";
+import TableNavLinks from "../view/TableNavLinks";
 import { NavLinks } from "./NavLinks";
 
 export const NavBar = () => {

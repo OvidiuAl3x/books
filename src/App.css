@@ -203,14 +203,17 @@ h3 {
   position: absolute;
   margin: 7px 16px;
 }
-.genres-Books{
+
+.genres-Books {
   display: flex;
   flex-wrap: wrap;
   margin: -14px 10px 0px 10px;
 }
-.genres-Books>.genres-alignBooks{
+
+.genres-Books>.genres-alignBooks {
   padding: 0px 4px;
 }
+
 /**  =================================== PAGINATION Container =================================== */
 
 .pagination {
@@ -337,7 +340,6 @@ h3 {
 .table {
   text-align: center;
   border-collapse: collapse;
-  background-color: #1d1d1d;
   animation: tableBody 1.5s ease-in-out;
   animation-fill-mode: both;
   border: 1px solid black;
@@ -448,18 +450,21 @@ link,
 /** ============================== Form ==============================*/
 
 .add-containerParent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 50px);
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  z-index: 1;
+  margin-top: 50px;
 }
 
 .add-containerChild {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
   padding: 20px;
   min-width: 15%;
+  max-width: 20%;
   border-radius: 12px;
   animation: animationCards 1.5s;
   background-color: #ffffff10;
@@ -477,11 +482,16 @@ link,
   }
 }
 
-.add-containerChild>.fa-x {
+.add-containerChild>.close-form {
   display: flex;
   width: 100%;
   justify-content: flex-end;
+}
+
+.add-containerChild>.close-form>a,
+.fa-x {
   color: #cc0606;
+  text-decoration: none;
 }
 
 .add-containerChild>h3 {
@@ -516,17 +526,19 @@ link,
 
 .add-containerChild>.form-button {
   margin: 5px;
-  padding: 10px 50px;
-  background-color: #1d1d1d;
-  color: #00F9F9;
+  padding: 10px 30px;
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  color: black;
   border-radius: 12px;
   cursor: pointer;
   position: relative;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
+  font-weight: 600;
 }
 
 .add-containerChild>.form-button:hover {
-  transform: scale(1.2);
+  background-color: #00b3db;
 }
 
 .add-containerChild>.form-container>select {
@@ -609,10 +621,12 @@ link,
 /** ============================== delete ============================== */
 
 .container-delete {
-  background-color: #00F9F9;
-  padding: 10px;
-  border-radius: 0% 0% 100% 100%;
-  animation: deleteAnimation 1.5s ease-in-out;
+  background-color: #ffffff3d;
+  backdrop-filter: blur(12px);
+  padding: 6px 10px 4px 10px;
+  border-radius: 12px;
+  animation: deleteAnimation 0.5s ease-in-out;
+  margin-bottom: 4px;
 }
 
 @keyframes deleteAnimation {

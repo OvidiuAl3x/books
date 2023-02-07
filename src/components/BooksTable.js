@@ -8,7 +8,7 @@ import { SortChapters, SortDetails, SortReview } from "./SortTable";
 
 const PER_PAGE = 8;
 
-export const BooksTable = () => {
+export const BooksTable = ({ setShowForm }) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [showStats, setShowStats] = useState(false);
@@ -44,7 +44,9 @@ export const BooksTable = () => {
 
   const currentPageData = filteredList
     ?.slice(offset, offset + PER_PAGE)
-    ?.map((item) => <BooksTableCard key={item.id} item={item} />);
+    ?.map((item) => (
+      <BooksTableCard key={item.id} item={item} setShowForm={setShowForm} />
+    ));
 
   const pageCount = !selectedCategory
     ? Math.ceil(data?.length / PER_PAGE)
@@ -59,7 +61,10 @@ export const BooksTable = () => {
       {currentPageData && (
         <>
           <h1 className="h1-totalDetails">Books Details</h1>
-          <h3 className="p-totalDetails" onClick={() => setShowStats(true)}>
+          <h3
+            className="p-totalDetails"
+            onClick={() => setShowStats(!showStats)}
+          >
             Stats <i class="fa-solid fa-magnifying-glass"></i>
           </h3>
           {showStats && (
@@ -84,7 +89,10 @@ export const BooksTable = () => {
                   <SortDetails setData={setData} data={data} />
                   <th colSpan={2}>
                     <Link to="new">
-                      <i class="fa-solid fa-square-plus"></i>
+                      <i
+                        class="fa-solid fa-square-plus"
+                        onClick={() => setShowForm(true)}
+                      ></i>
                     </Link>
                   </th>
                 </tr>
@@ -93,20 +101,22 @@ export const BooksTable = () => {
               <tbody>{currentPageData}</tbody>
             </table>
           </div>
-          <ReactPaginate
-            previousLabel={"< previous"}
-            nextLabel={"next >"}
-            pageCount={pageCount}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            previousLinkClassName={"page-link"}
-            nextLinkClassName={"page-link"}
-            activeClassName={"page-link-active"}
-            disabledClassName={"page-link-disabled"}
-            breakLabel="..."
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
-          />
+          {data && (
+            <ReactPaginate
+              previousLabel={"< previous"}
+              nextLabel={"next >"}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              previousLinkClassName={"page-link"}
+              nextLinkClassName={"page-link"}
+              activeClassName={"page-link-active"}
+              disabledClassName={"page-link-disabled"}
+              breakLabel="..."
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+            />
+          )}
         </>
       )}
     </div>

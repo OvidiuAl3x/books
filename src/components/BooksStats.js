@@ -29,6 +29,7 @@ export const BooksStats = ({
     (item) => item.status === "complete"
   ).length;
 
+  console.log(selectedCategory);
   return (
     <div className="container-totalDetails">
       <div className="container-totalDetails1">
@@ -39,8 +40,18 @@ export const BooksStats = ({
           Total Chapters: <span>{totalChapters}</span>
         </p>
         <p
+          onClick={() => {
+            setSelectedCategory();
+          }}
+          style={{cursor:"pointer", borderBottom:"1px solid white"}}
+        >
+          All
+        </p>
+        <p
           className="container-statusON"
-          onClick={() => setSelectedCategory("on going")}
+          onClick={() => {
+            setSelectedCategory("on going");
+          }}
         >
           {selectedCategory === "on going" ? (
             <i class="fa-solid fa-eye"></i>
@@ -76,7 +87,6 @@ export const BooksStats = ({
           class="fa-regular fa-circle-xmark"
           onClick={() => {
             setShowStats(false);
-            setSelectedCategory();
           }}
         ></i>
       </div>

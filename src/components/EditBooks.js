@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
 import { EditGenres } from "./EditGenres";
 
@@ -9,7 +9,7 @@ const reChaptersRereaded =
   /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
 const reReview = /^[0-6\b]+$/;
 
-export const EditBooks = () => {
+export const EditBooks = ({ setShowForm }) => {
   const { id } = useParams();
   const [errorForm, setErrorForm] = useState(false);
 
@@ -64,6 +64,7 @@ export const EditBooks = () => {
         await CreateData(form);
         alert(`Created ${form.title}`);
         navigate(`/table`);
+        window.location.reload(true);
       } catch (err) {
         console.warn(err);
       }
@@ -88,6 +89,7 @@ export const EditBooks = () => {
         await UpdateData(form);
         alert(`Updated ${form.title}`);
         navigate(`/table`);
+        window.location.reload(true);
       } catch (e) {
         console.warn(e);
       }
@@ -103,7 +105,12 @@ export const EditBooks = () => {
     <>
       <div className="add-containerParent">
         <div className="add-containerChild">
-          <i class="fa-solid fa-x" onClick={() => navigate("/table")}></i>
+          <div className="close-form">
+            <Link to="/table">
+              <i class="fa-solid fa-x" onClick={() => setShowForm(false)}></i>
+            </Link>
+          </div>
+
           <h3>Add New Book</h3>
           <form className="form-container">
             <label for="title">Title</label>

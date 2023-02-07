@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DeleteData } from "../service/ApiRequest";
 import { DeleteBooks } from "./DeleteBooks";
 
-export const BooksTableCard = ({ item }) => {
+export const BooksTableCard = ({ item, setShowForm }) => {
   const [deleteBook, setDeleteBook] = useState(false);
   const {
     id,
@@ -82,18 +82,22 @@ export const BooksTableCard = ({ item }) => {
         </td>
         <td>{details}</td>
         <td>
-          {deleteBook && (
+          {deleteBook ? (
             <DeleteBooks
               handleDelete={handleDelete}
               id={id}
               setDeleteBook={setDeleteBook}
             />
+          ) : (
+            <i class="fa-solid fa-ban" onClick={confirmationDelete}></i>
           )}
-          <i class="fa-solid fa-ban" onClick={confirmationDelete}></i>
         </td>
         <td>
           <Link to={`${id}`}>
-            <i class="fa-sharp fa-solid fa-wrench"></i>
+            <i
+              class="fa-sharp fa-solid fa-wrench"
+              onClick={() => setShowForm(true)}
+            ></i>
           </Link>
         </td>
       </tr>

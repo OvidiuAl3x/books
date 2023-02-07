@@ -24,7 +24,8 @@
       "genres": [
         "Adventure",
         "Reincarnation",
-        "Dungeon"
+        "Dungeon",
+        "Comedy"
       ]
     },
     {
@@ -34,22 +35,20 @@
       "chaptersReread": "70",
       "review": "5",
       "rereaded": 1,
-      "status": "dropped",
+      "status": "complete",
       "genres": [
-        "Manga",
         "Action",
-        "Fantasy",
-        "System",
         "Dungeon",
         "Comedy",
         "Manhwa",
-        "Magic"
+        "Manga",
+        "System"
       ],
       "details": "da"
     },
     {
       "title": "da",
-      "chapters": "23",
+      "chapters": "232",
       "chaptersReread": "0",
       "review": "2",
       "details": "",
@@ -62,64 +61,17 @@
       "id": 3
     },
     {
-      "title": "dsa",
-      "chapters": "23",
-      "chaptersReread": "0",
-      "review": "22",
-      "details": "",
-      "status": "on going",
-      "genres": [],
-      "id": 4
-    },
-    {
-      "title": "dsa",
+      "title": "dsa2",
       "chapters": "2312",
       "chaptersReread": "0",
       "review": "2",
       "details": "",
       "status": "complete",
-      "genres": [],
+      "genres": [
+        "Reincarnation",
+        "Magic"
+      ],
       "id": 5
-    },
-    {
-      "title": "asdasd",
-      "chapters": "231",
-      "chaptersReread": "0",
-      "review": "3",
-      "details": "",
-      "status": "complete",
-      "genres": [],
-      "id": 6
-    },
-    {
-      "title": "dsad",
-      "chapters": "2313",
-      "chaptersReread": "0",
-      "review": "3",
-      "details": "",
-      "status": "on going",
-      "genres": [],
-      "id": 7
-    },
-    {
-      "title": "dsad",
-      "chapters": "231",
-      "chaptersReread": "0",
-      "review": "23",
-      "details": "",
-      "status": "on going",
-      "genres": [],
-      "id": 8
-    },
-    {
-      "title": "sadasd",
-      "chapters": "31",
-      "chaptersReread": "0",
-      "review": "2",
-      "details": "",
-      "status": "complete",
-      "genres": [],
-      "id": 10
     },
     {
       "title": "asd",
@@ -147,6 +99,32 @@
         "Dungeon"
       ],
       "id": 12
+    },
+    {
+      "title": "231dsa",
+      "chapters": "3",
+      "chaptersReread": "0",
+      "review": "3",
+      "details": "",
+      "status": "on going",
+      "genres": [
+        "Adventure",
+        "Reincarnation"
+      ],
+      "id": 15
+    },
+    {
+      "title": "asd",
+      "chapters": "23",
+      "chaptersReread": "23",
+      "review": "2",
+      "details": "",
+      "status": "on going",
+      "genres": [
+        "Reincarnation",
+        "Magic"
+      ],
+      "id": 16
     }
   ]
 }

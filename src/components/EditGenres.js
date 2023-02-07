@@ -28,8 +28,6 @@ export const EditGenres = ({ form, setForm }) => {
     }
   };
 
-  console.log(genres);
-
   return (
     <div className="container-formGenres">
       {data.map((item) => (

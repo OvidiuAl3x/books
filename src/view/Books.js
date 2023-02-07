@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { GetData } from "../service/ApiRequest";
-import { BooksCard } from "./BooksCard";
+import { BooksCard } from "../components/BooksCard";
 
 const PER_PAGE = 8;
 
