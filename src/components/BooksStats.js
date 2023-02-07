@@ -43,7 +43,7 @@ export const BooksStats = ({
           onClick={() => {
             setSelectedCategory();
           }}
-          style={{cursor:"pointer", borderBottom:"1px solid white"}}
+          style={{ cursor: "pointer", borderBottom: "1px solid white" }}
         >
           All
         </p>
