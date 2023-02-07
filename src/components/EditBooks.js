@@ -4,10 +4,6 @@ import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
 import { EditGenres } from "./EditGenres";
 
 const reTitle = /^[A-Za-z0-9\s]*$/;
-const reChapters = /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
-const reChaptersRereaded =
-  /([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])/;
-const reReview = /^[0-6\b]+$/;
 
 export const EditBooks = ({ setShowForm }) => {
   const { id } = useParams();
@@ -15,9 +11,9 @@ export const EditBooks = ({ setShowForm }) => {
 
   const [form, setForm] = useState({
     title: "",
-    chapters: "",
+    chapters: "1",
     chaptersReread: "0",
-    review: "",
+    review: "1",
     details: "",
     status: "",
     genres: [],
@@ -49,16 +45,12 @@ export const EditBooks = ({ setShowForm }) => {
   const handleCreate = async () => {
     if (
       reTitle.test(form.title) &&
-      form.title &&
-      reChapters.test(form.chapters) &&
+      !title.length < 1 &&
       form.chapters > 0 &&
       form.chapters < 9999 &&
-      form.review <= 6 &&
       form.chaptersReread >= 0 &&
-      reReview.test(form.review) &&
-      reChaptersRereaded.test(form.chaptersReread) &&
-      form.status &&
-      form.genres.length >= 1
+      form.chaptersReread < 9999 &&
+      form.status
     ) {
       try {
         await CreateData(form);
@@ -75,14 +67,11 @@ export const EditBooks = ({ setShowForm }) => {
   const handleUpdate = async () => {
     if (
       reTitle.test(form.title) &&
-      form.title &&
-      reChapters.test(form.chapters) &&
+      !title.length < 1 &&
       form.chapters > 0 &&
       form.chapters < 9999 &&
       form.chaptersReread >= 0 &&
-      reReview.test(form.review) &&
-      form.review <= 6 &&
-      reChaptersRereaded.test(form.chaptersReread) &&
+      form.chaptersReread < 9999 &&
       form.status
     ) {
       try {
@@ -128,34 +117,36 @@ export const EditBooks = ({ setShowForm }) => {
               name="chapters"
               value={chapters}
               onChange={({ target }) => updateField(target)}
-              className={errorForm ? "error-form" : ""}
+              className={chapters >= 9999 ? "error-form2" : ""}
+              min="1"
+              max="9999"
             />
-            {errorForm && (
+            {chapters >= 9999 ? (
               <p className="error-message">Chapters range between 1-9999</p>
-            )}
+            ) : null}
             <label for="chaptersReread">Chapters Reread</label>
             <input
               type="number"
               name="chaptersReread"
               value={chaptersReread}
               onChange={({ target }) => updateField(target)}
+              className={chaptersReread >= 9999 ? "error-form2" : ""}
             />
-            {errorForm && (
+            {chaptersReread >= 9999 && (
               <p className="error-message">Chapters range between 0-9999</p>
             )}
-            <label for="review">Review</label>
+            <label for="review">
+              Review (1 - 6): <span style={{ color: "white" }}>{review}</span>
+            </label>
             <input
-              type="number"
+              type="range"
+              id="review"
               name="review"
-              value={review}
-              onChange={({ target }) => updateField(target)}
-              className={errorForm ? "error-form" : ""}
               min="1"
               max="6"
+              onChange={({ target }) => updateField(target)}
+              value={review}
             />
-            {errorForm && (
-              <p className="error-message">Review range between 1-6</p>
-            )}
             <label for="details">Details</label>
             <input
               type="text"
@@ -166,7 +157,7 @@ export const EditBooks = ({ setShowForm }) => {
             <select
               name="status"
               onChange={({ target }) => updateField(target)}
-              className={errorForm ? "error-form" : ""}
+              className={errorForm ? "error-form4" : ""}
             >
               <option value={status}>Status Selected: {status}</option>
               <option value="complete">Complete</option>

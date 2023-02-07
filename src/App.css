@@ -569,6 +569,27 @@ link,
   animation: pulse 2s;
   animation-iteration-count: 2;
 }
+.form-container>.error-form2 {
+  outline: solid rgb(0, 225, 255);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s;
+  animation-iteration-count: 2;
+}
+.form-container>.error-form3 {
+  outline: solid rgb(0, 255, 21);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s;
+  animation-iteration-count: 2;
+}
+.form-container>.error-form4 {
+  outline: solid rgb(89, 0, 255);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s;
+  animation-iteration-count: 2;
+}
 
 @keyframes pulse {
   0% {

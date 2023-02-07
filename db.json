@@ -64,7 +64,7 @@
       "title": "dsa2",
       "chapters": "2312",
       "chaptersReread": "0",
-      "review": "2",
+      "review": "3",
       "details": "",
       "status": "complete",
       "genres": [
@@ -125,6 +125,35 @@
         "Magic"
       ],
       "id": 16
+    },
+    {
+      "title": "d",
+      "chapters": "1222",
+      "chaptersReread": "0",
+      "review": "4",
+      "details": "",
+      "status": "on going",
+      "genres": [
+        "Adventure",
+        "Reincarnation"
+      ],
+      "id": 17
+    },
+    {
+      "title": "da",
+      "chapters": "1231",
+      "chaptersReread": "0",
+      "review": "5",
+      "details": "",
+      "status": "complete",
+      "genres": [
+        "Dungeon",
+        "Adventure",
+        "Reincarnation",
+        "Magic",
+        "Manhwa"
+      ],
+      "id": 18
     }
   ]
 }
