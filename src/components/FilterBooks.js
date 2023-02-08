@@ -6,6 +6,9 @@ export const FilterBooks = ({
   selectedCategory,
   data,
   filteredList,
+  search,
+  setSearch,
+  searchResult,
 }) => {
   const [dataGenres, setDataGenres] = useState([]);
 
@@ -20,13 +23,22 @@ export const FilterBooks = ({
     <div className="container-filterHome">
       <div className="container-filterHomeChild">
         {!selectedCategory ? (
-          <p
-            onClick={() => setSelectedCategory()}
-            style={{ fontWeight: "600" }}
-          >
-            <i class="fa-solid fa-eye" />
-            All ({data.length})
-          </p>
+          <>
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="search"
+              placeholder="Search"
+            />
+            <p
+              onClick={() => setSelectedCategory()}
+              style={{ fontWeight: "600" }}
+            >
+              <i class="fa-solid fa-eye" />
+              All ({data.length})
+            </p>
+          </>
         ) : (
           <p onClick={() => setSelectedCategory()}>
             <i class="fa-solid fa-eye-slash" style={{ opacity: "0.5" }} />

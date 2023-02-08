@@ -3,6 +3,7 @@ import ReactPaginate from "react-paginate";
 import { GetData, GetDataGenres } from "../service/ApiRequest";
 import { BooksCard } from "../components/BooksCard";
 import { FilterBooks } from "../components/FilterBooks";
+import { useDebounce } from "../components/DeabounceSearch";
 
 const PER_PAGE = 8;
 
@@ -10,6 +11,10 @@ export const Books = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState();
+  const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+
+  const deb = useDebounce(search, 500);
 
   useEffect(() => {
     (async () => {
@@ -17,6 +22,13 @@ export const Books = () => {
       setData(data);
     })();
   }, []);
+
+  useEffect(() => {
+    const dataSearch = data.filter((el) =>
+      el.title.toString().toLowerCase().trim().includes(deb)
+    );
+    setSearchResult(dataSearch);
+  }, [deb]);
 
   const handlePageClick = ({ selected: selectedPage }) => {
     setCurrentPage(selectedPage);
@@ -33,16 +45,12 @@ export const Books = () => {
 
   const getFilteredList = () => {
     if (!selectedCategory) {
-      return data;
+      return searchResult;
     }
     return dataFilter;
   };
 
-  const filteredList = useMemo(getFilteredList, [
-    selectedCategory,
-    data,
-    dataFilter,
-  ]);
+  const filteredList = useMemo(getFilteredList, [selectedCategory, dataFilter]);
 
   const currentPageData = filteredList
     ?.slice(offset, offset + PER_PAGE)
@@ -62,6 +70,9 @@ export const Books = () => {
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
         filteredList={filteredList}
+        setSearch={setSearch}
+        search={search}
+        searchResult={searchResult}
       />
       <div className="container">{currentPageData}</div>
 

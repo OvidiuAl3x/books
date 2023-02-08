@@ -240,6 +240,14 @@ h3 {
   margin-right: 3px;
 }
 
+.width-container>.container-filterHome>.container-filterHomeChild>.search{
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid black;
+  margin: 10px 10px;
+  padding: 5px 5px;
+}
+
 /**  =================================== PAGINATION Container =================================== */
 
 .pagination {
