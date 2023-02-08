@@ -26,7 +26,7 @@ export const Books = () => {
 
   const dataFilter = useMemo(() => {
     return data.filter((item) => {
-      const bookGenres = item.genres.map((val) => val);
+      const bookGenres = item.genres.map((item) => item);
       return bookGenres.includes(selectedCategory);
     });
   });
@@ -48,7 +48,9 @@ export const Books = () => {
     ?.slice(offset, offset + PER_PAGE)
     .map((item) => <BooksCard key={item.id} item={item} />);
 
-  const pageCount = Math.ceil(data?.length / PER_PAGE);
+  const pageCount = !selectedCategory
+    ? Math.ceil(data?.length / PER_PAGE)
+    : Math.ceil(dataFilter?.length / PER_PAGE);
 
   if (!data) {
     return <div>Loading ....</div>;
@@ -59,22 +61,26 @@ export const Books = () => {
         data={data}
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
+        filteredList={filteredList}
       />
       <div className="container">{currentPageData}</div>
-      <ReactPaginate
-        previousLabel={"< previous"}
-        nextLabel={"next >"}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        previousLinkClassName={"page-link"}
-        nextLinkClassName={"page-link"}
-        activeClassName={"page-link-active"}
-        disabledClassName={"page-link-disabled"}
-        breakLabel="..."
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
-      />
+
+      {data && (
+        <ReactPaginate
+          previousLabel={"< previous"}
+          nextLabel={"next >"}
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          previousLinkClassName={"page-link"}
+          nextLinkClassName={"page-link"}
+          activeClassName={"page-link-active"}
+          disabledClassName={"page-link-disabled"}
+          breakLabel="..."
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+        />
+      )}
     </div>
   );
 };

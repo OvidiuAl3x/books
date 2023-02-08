@@ -214,20 +214,30 @@ h3 {
   padding: 0px 4px;
 }
 
-
-.width-container>.checkbox {
-  cursor: pointer;
-  margin: 10px;
-  border: 1px solid black;
-  padding: 5px;
-  border-radius: 12px;
-  text-align: center;
-  opacity: 0.6;
+.width-container>.container-filterHome {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
+.width-container>.container-filterHome>.container-filterHomeChild {
+  position: relative;
+  right: 15em;
+  top: 10em;
+  background-color: #ffffff3d;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
 
-.width-container>.checkbox>input {
-  display: contents;
+.width-container>.container-filterHome>.container-filterHomeChild>p {
+  cursor: pointer;
+  margin: 6px;
+
+}
+
+.width-container>.container-filterHome>.container-filterHomeChild>p>i {
+  margin-right: 3px;
 }
 
 /**  =================================== PAGINATION Container =================================== */
