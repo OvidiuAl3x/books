@@ -214,6 +214,22 @@ h3 {
   padding: 0px 4px;
 }
 
+
+.width-container>.checkbox {
+  cursor: pointer;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+
+.width-container>.checkbox>input {
+  display: contents;
+}
+
 /**  =================================== PAGINATION Container =================================== */
 
 .pagination {
@@ -414,7 +430,8 @@ link,
 .table>tr,
 .img-zoom:hover {
   transform: scale(2.5);
-  cursor: none;
+  position: relative;
+  z-index: 1;
 }
 
 .table>tr,

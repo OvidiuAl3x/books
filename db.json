@@ -154,6 +154,34 @@
         "Manhwa"
       ],
       "id": 18
+    },
+    {
+      "title": "caine",
+      "chapters": "123",
+      "chaptersReread": "0",
+      "review": "5",
+      "details": "",
+      "status": "complete",
+      "genres": [
+        "Adventure",
+        "Reincarnation",
+        "Magic",
+        "System",
+        "Comedy"
+      ],
+      "id": 19
+    },
+    {
+      "title": "fs",
+      "chapters": "1",
+      "chaptersReread": "0",
+      "review": "1",
+      "details": "",
+      "status": "on going",
+      "genres": [
+        "Action"
+      ],
+      "id": 20
     }
   ]
 }

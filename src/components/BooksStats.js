@@ -29,7 +29,6 @@ export const BooksStats = ({
     (item) => item.status === "complete"
   ).length;
 
-  console.log(selectedCategory);
   return (
     <div className="container-totalDetails">
       <div className="container-totalDetails1">
