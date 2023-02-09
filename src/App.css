@@ -240,7 +240,7 @@ h3 {
   margin-right: 3px;
 }
 
-.width-container>.container-filterHome>.container-filterHomeChild>.search{
+.width-container>.container-filterHome>.container-filterHomeChild>.search {
   border-radius: 12px;
   outline: none;
   border: 1px solid black;
@@ -286,7 +286,16 @@ h3 {
 
 /** ============================== table  ===================================*/
 
+.container-totalDetailsFilter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .container-totalDetails {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   animation: tableBody 0.8s ease-in-out;
   animation-fill-mode: both;
   font-weight: bold;
@@ -301,12 +310,6 @@ h3 {
   border-radius: 12px;
 }
 
-.container-totalDetails1 {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .h1-totalDetails {
   margin-left: 30px;
   margin-top: 0px;
@@ -318,22 +321,27 @@ h3 {
   cursor: pointer;
 }
 
-.container-totalDetails1>p>.fa-star {
+.container-totalDetails>p>.fa-star {
   margin-left: -6px;
   cursor: default;
 }
 
-.container-totalDetails>.container-totalDetails1>p>span {
+.container-totalDetails>p>span {
   color: white;
   font-weight: 400;
 }
 
-.container-totalDetails>.container-totalDetails1>.fa-circle-xmark {
+.container-totalDetails>.fa-circle-xmark {
   font-size: 24px;
   color: #cc0606;
   cursor: pointer;
-  position: relative;
-  top: 30px;
+}
+
+.width-container>.container-totalDetailsFilter>.search {
+  border-radius: 12px;
+  border: 1px solid black;
+  padding: 5px;
+  outline: none;
 }
 
 

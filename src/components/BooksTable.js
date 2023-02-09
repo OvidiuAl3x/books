@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { GetData } from "../service/ApiRequest";
 import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
+import { useDebounce } from "./DeabounceSearch";
 import { SortChapters, SortDetails, SortReview } from "./SortTable";
+import { StatusFilter } from "./StatusFilter";
 
 const PER_PAGE = 8;
 
@@ -13,13 +15,18 @@ export const BooksTable = ({ setShowForm }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [showStats, setShowStats] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState();
+  const [search, setSearch] = useState("");
+  const deb = useDebounce(search, 500);
 
   useEffect(() => {
     (async () => {
       const data = await GetData();
-      setData(data);
+      const dataSearch = data.filter((el) =>
+        el.title.toString().toLowerCase().trim().includes(deb)
+      );
+      setData(dataSearch);
     })();
-  }, []);
+  }, [deb]);
 
   const handlePageClick = ({ selected: selectedPage }) => {
     setCurrentPage(selectedPage);
@@ -30,10 +37,7 @@ export const BooksTable = ({ setShowForm }) => {
   const dataFilter = data?.filter((item) => item.status === selectedCategory);
 
   const getFilteredList = () => {
-    if (!selectedCategory) {
-      return data;
-    }
-    return dataFilter;
+    return !selectedCategory ? data : dataFilter;
   };
 
   const filteredList = useMemo(getFilteredList, [
@@ -61,20 +65,28 @@ export const BooksTable = ({ setShowForm }) => {
       {currentPageData && (
         <>
           <h1 className="h1-totalDetails">Books Details</h1>
-          <h3
-            className="p-totalDetails"
-            onClick={() => setShowStats(!showStats)}
-          >
-            Stats <i class="fa-solid fa-magnifying-glass"></i>
-          </h3>
-          {showStats && (
-            <BooksStats
-              setShowStats={setShowStats}
-              data={data}
+          <div className="container-totalDetailsFilter">
+            <h3
+              className="p-totalDetails"
+              onClick={() => setShowStats(!showStats)}
+            >
+              Stats <i class="fa-solid fa-magnifying-glass"></i>
+            </h3>
+            <StatusFilter
               setSelectedCategory={setSelectedCategory}
               selectedCategory={selectedCategory}
+              data={data}
             />
-          )}
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="search"
+              placeholder="Search"
+            />
+          </div>
+
+          {showStats && <BooksStats setShowStats={setShowStats} data={data} />}
 
           <div className="table-container">
             <table className="table">
