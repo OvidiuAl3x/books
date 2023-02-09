@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
-import { GetData, GetDataGenres } from "../service/ApiRequest";
+import { GetData } from "../service/ApiRequest";
 import { BooksCard } from "../components/BooksCard";
 import { FilterBooks } from "../components/FilterBooks";
 import { useDebounce } from "../components/DeabounceSearch";
@@ -12,22 +12,17 @@ export const Books = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState();
   const [search, setSearch] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
 
-  const deb = useDebounce(search, 500);
+  const deb = useDebounce(search, 50);
 
   useEffect(() => {
     (async () => {
       const data = await GetData();
-      setData(data);
+      const dataSearch = data.filter((el) =>
+        el.title.toString().toLowerCase().trim().includes(deb)
+      );
+      setData(dataSearch);
     })();
-  }, []);
-
-  useEffect(() => {
-    const dataSearch = data.filter((el) =>
-      el.title.toString().toLowerCase().trim().includes(deb)
-    );
-    setSearchResult(dataSearch);
   }, [deb]);
 
   const handlePageClick = ({ selected: selectedPage }) => {
@@ -37,20 +32,21 @@ export const Books = () => {
   const offset = currentPage * PER_PAGE;
 
   const dataFilter = useMemo(() => {
-    return data.filter((item) => {
+    return data?.filter((item) => {
       const bookGenres = item.genres.map((item) => item);
       return bookGenres.includes(selectedCategory);
     });
   });
 
   const getFilteredList = () => {
-    if (!selectedCategory) {
-      return searchResult;
-    }
-    return dataFilter;
+    return !selectedCategory ? data : dataFilter;
   };
 
-  const filteredList = useMemo(getFilteredList, [selectedCategory, dataFilter]);
+  const filteredList = useMemo(getFilteredList, [
+    selectedCategory,
+    data,
+    dataFilter,
+  ]);
 
   const currentPageData = filteredList
     ?.slice(offset, offset + PER_PAGE)
@@ -72,7 +68,7 @@ export const Books = () => {
         filteredList={filteredList}
         setSearch={setSearch}
         search={search}
-        searchResult={searchResult}
+        setData={setData}
       />
       <div className="container">{currentPageData}</div>
 
