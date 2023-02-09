@@ -290,6 +290,8 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 80%;
+  margin: auto;
 }
 
 .container-totalDetails {
@@ -308,6 +310,8 @@ h3 {
       hsl(195deg 100% 35%) 99%);
   border: 1px solid black;
   border-radius: 12px;
+  width: 80%;
+  margin: auto;
 }
 
 .h1-totalDetails {
