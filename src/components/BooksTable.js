@@ -21,8 +21,10 @@ export const BooksTable = ({ setShowForm }) => {
   useEffect(() => {
     (async () => {
       const data = await GetData();
-      const dataSearch = data.filter((el) =>
-        el.title.toString().toLowerCase().trim().includes(deb)
+      const dataSearch = data.filter(
+        (el) =>
+          el.title.toString().toLowerCase().trim().includes(deb) ||
+          el.details.toString().toLowerCase().trim().includes(deb)
       );
       setData(dataSearch);
     })();
@@ -34,7 +36,10 @@ export const BooksTable = ({ setShowForm }) => {
 
   const offset = currentPage * PER_PAGE;
 
-  const dataFilter = data?.filter((item) => item.status === selectedCategory);
+  const dataFilter = data?.filter(
+    (item) =>
+      item.status === selectedCategory || item.review === selectedCategory
+  );
 
   const getFilteredList = () => {
     return !selectedCategory ? data : dataFilter;
@@ -82,11 +87,18 @@ export const BooksTable = ({ setShowForm }) => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="search"
-              placeholder="Search"
+              placeholder="Search..."
             />
           </div>
 
-          {showStats && <BooksStats setShowStats={setShowStats} data={data} />}
+          {showStats && (
+            <BooksStats
+              setShowStats={setShowStats}
+              data={data}
+              setSelectedCategory={setSelectedCategory}
+              selectedCategory={selectedCategory}
+            />
+          )}
 
           <div className="table-container">
             <table className="table">

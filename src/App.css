@@ -349,6 +349,7 @@ h3 {
 }
 
 
+
 .container-statusON {
   border-bottom: 3px solid #d8db03;
   cursor: pointer;
@@ -429,7 +430,7 @@ td {
 }
 
 .table>tbody>tr .fa-star {
-  color: yellow;
+  color: #ffff00;
   font-size: 12px;
   margin-left: 3px;
   cursor: default;
