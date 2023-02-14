@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_REQUEST_URL = `http://localhost:3000/manga`;
+const BASE_REQUEST_URL = `http://localhost:3000/books`;
 
 export const GetData = () => {
   return axios
@@ -9,8 +9,9 @@ export const GetData = () => {
     .catch((err) => console.warn(err));
 };
 
+
 export const GetDataID = async (id) => {
-  const response = await fetch(`http://localhost:3000/manga/${id}`);
+  const response = await fetch(`http://localhost:3000/books/${id}`);
   if (response.ok) {
     return await response.json();
   }
@@ -18,7 +19,7 @@ export const GetDataID = async (id) => {
 };
 
 export const CreateData = async (payload) => {
-  const response = await fetch(`http://localhost:3000/manga`, {
+  const response = await fetch(`http://localhost:3000/books`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,7 +36,7 @@ export const CreateData = async (payload) => {
 // Update Product
 
 export const UpdateData = async (payload) => {
-  const response = await fetch(`http://localhost:3000/manga/${payload.id}`, {
+  const response = await fetch(`http://localhost:3000/books/${payload.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -50,7 +51,7 @@ export const UpdateData = async (payload) => {
 
 // Delete Product
 export const DeleteData = async (id) => {
-  const response = fetch(`http://localhost:3000/manga/${id}`, {
+  const response = fetch(`http://localhost:3000/books/${id}`, {
     method: "DELETE",
   });
 
