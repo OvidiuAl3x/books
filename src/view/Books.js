@@ -56,9 +56,6 @@ export const Books = () => {
     ? Math.ceil(data?.length / PER_PAGE)
     : Math.ceil(dataFilter?.length / PER_PAGE);
 
-  if (!data) {
-    return <div>Loading ....</div>;
-  }
   return (
     <div className="width-container">
       <FilterBooks
@@ -70,23 +67,32 @@ export const Books = () => {
         search={search}
         setData={setData}
       />
-      <div className="container">{currentPageData}</div>
+      {data.length <= 0 ? (
+        <>
+          <h2>We didn't find the book: {search}</h2>
+          <h3>Please try something else!</h3>
+        </>
+      ) : (
+        <>
+          <div className="container">{currentPageData}</div>
 
-      {data && (
-        <ReactPaginate
-          previousLabel={"< previous"}
-          nextLabel={"next >"}
-          pageCount={pageCount}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          previousLinkClassName={"page-link"}
-          nextLinkClassName={"page-link"}
-          activeClassName={"page-link-active"}
-          disabledClassName={"page-link-disabled"}
-          breakLabel="..."
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
-        />
+          {data && (
+            <ReactPaginate
+              previousLabel={"< previous"}
+              nextLabel={"next >"}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              previousLinkClassName={"page-link"}
+              nextLinkClassName={"page-link"}
+              activeClassName={"page-link-active"}
+              disabledClassName={"page-link-disabled"}
+              breakLabel="..."
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+            />
+          )}
+        </>
       )}
     </div>
   );

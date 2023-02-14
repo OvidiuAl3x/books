@@ -13,21 +13,11 @@ export const BooksCard = ({ item }) => {
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
-  const { chapters, title, review, id, status, genres } = item;
+  const { pages, title, review, id, author, genres, language, img_title } =
+    item;
 
-  const reviewStar = review >= 6 ? "#FF0000" : "#4EFF00";
-
-  const statusBorderColor =
-    status === "complete"
-      ? "#2de215"
-      : status === "dropped"
-      ? "#cc0606"
-      : status === "on going"
-      ? "#d8db03"
-      : "";
-
-  const image = images[`${title}.jpg`]
-    ? images[`${title}.jpg`]
+  const image = images[`${img_title}.jpg`]
+    ? images[`${img_title}.jpg`]
     : "https://placehold.co/300x300/black/white?text=No+Image";
 
   return (
@@ -35,15 +25,21 @@ export const BooksCard = ({ item }) => {
       <div className="card-flip-box-inner">
         <div className="card-flip-box-front">
           <div className="star">
-            <Stars stars={review} size={20} spacing={5} fill={reviewStar} />
+            <Stars stars={review} size={20} spacing={5} fill="yellow" />
           </div>
 
-          <img src={image} height={250} width={250} alt={title} />
+          <img src={image} height={320} width={250} alt={title} />
         </div>
         <div className="card-flip-box-back">
           <h3>{title}</h3>
           <p>
-            <strong>Chapters:</strong> {chapters}
+            <strong>Author:</strong> {author}
+          </p>
+          <p>
+            <strong>Pages:</strong> {pages}
+          </p>
+          <p>
+            <strong>Language:</strong> {language}
           </p>
 
           <p>
@@ -54,10 +50,6 @@ export const BooksCard = ({ item }) => {
               <span className="genres-alignBooks">{item} </span>
             ))}
           </div>
-          <p>
-            <strong>status: </strong>
-            <span style={{ color: `${statusBorderColor}` }}>{status}</span>
-          </p>
         </div>
       </div>
     </div>

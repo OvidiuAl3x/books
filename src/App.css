@@ -61,14 +61,13 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  min-height: 48em;
 }
 
 
 .card-container {
   margin: 60px 10px 20px 10px;
   width: 250px;
-  height: 250px;
+  height: 320px;
   perspective: 1000px;
 }
 
@@ -202,7 +201,12 @@ h3 {
 .star {
   position: absolute;
   margin: 7px 16px;
+  background-color: #1d1d17;
+  backdrop-filter: blur(1px);
+  border-radius: 12px;
+  padding: 1px 10px;
 }
+
 
 .genres-Books {
   display: flex;

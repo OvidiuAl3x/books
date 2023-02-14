@@ -1,187 +1,170 @@
 {
   "genres": [
-    "Action",
-    "Adventure",
-    "Comedy",
-    "Fantasy",
-    "Reincarnation",
-    "Dungeon",
-    "System",
-    "Magic",
-    "Manhwa",
-    "Manga"
+    "Literary fiction",
+    "Philosophical novel",
+    "Fantasy novel",
+    "High Fantasy",
+    "Novel",
+    "Southern Gothic novel",
+    "Modernist novel",
+    "Realist novel",
+    "Magic realism"
   ],
   "books": [
     {
-      "id": 2,
-      "title": "caine",
-      "chapters": "130",
-      "chaptersReread": "160",
-      "review": "6",
-      "rereaded": 6,
-      "details": "bun",
-      "status": "complete",
+      "author": "Brandon Sanderson",
+      "country": "United States",
+      "language": "English",
+      "pages": 1007,
+      "title": "The Way of Kings",
+      "img_title": "TheWayOfKings",
       "genres": [
-        "Adventure",
-        "Reincarnation",
-        "Dungeon",
-        "Comedy"
-      ]
+        "High Fantasy"
+      ],
+      "year": 2010,
+      "review": "4",
+      "id": 1
     },
     {
-      "id": 1,
-      "title": "pisica",
-      "chapters": "574",
-      "chaptersReread": "70",
-      "review": "5",
-      "rereaded": 1,
-      "status": "complete",
+      "author": "Brandon Sanderson",
+      "country": "United States",
+      "language": "English",
+      "pages": 647,
+      "title": "Mistborn: The Final Empire",
+      "img_title": "Mistborn-cover",
       "genres": [
-        "Action",
-        "Dungeon",
-        "Comedy",
-        "Manhwa",
-        "Manga",
-        "System"
+        "Fantasy novel"
       ],
-      "details": "da"
+      "year": 2006,
+      "review": "4",
+      "id": 2
     },
     {
-      "title": "da",
-      "chapters": "232",
-      "chaptersReread": "0",
-      "review": "2",
-      "details": "",
-      "status": "dropped",
+      "author": "Brandon Sanderson",
+      "country": "United States",
+      "language": "English",
+      "pages": 421,
+      "title": "Calamity",
+      "img_title": "Calamity_book_cover",
       "genres": [
-        "Comedy",
-        "Reincarnation",
-        "Dungeon"
+        "Fantasy novel"
       ],
+      "year": 2016,
+      "review": "3",
       "id": 3
     },
     {
-      "title": "dsa2",
-      "chapters": "2312",
-      "chaptersReread": "0",
-      "review": "3",
-      "details": "",
-      "status": "complete",
+      "author": "Denis Diderot",
+      "country": "France",
+      "language": "French",
+      "pages": 596,
+      "title": "Jacques the Fatalist",
+      "img_title": "JacquesFatalist01",
       "genres": [
-        "Reincarnation",
-        "Magic"
+        "Philosophical novel"
       ],
+      "year": 1796,
+      "review": "3",
+      "id": 4
+    },
+    {
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "language": "Russian",
+      "pages": 551,
+      "title": "Crime and Punishment",
+      "img_title": "Crimeandpunishmentcover",
+      "genres": [
+        "Literary fiction"
+      ],
+      "year": 1866,
+      "review": "5",
       "id": 5
     },
     {
-      "title": "asd",
-      "chapters": "123",
-      "chaptersReread": "0",
-      "review": "2",
-      "details": "",
-      "status": "on going",
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "language": "Russian",
+      "pages": 656,
+      "title": "The Idiot",
+      "img_title": "theidiot",
       "genres": [
-        "Comedy",
-        "Dungeon",
-        "Manhwa"
+        "Novel"
       ],
-      "id": 11
-    },
-    {
-      "title": "da",
-      "chapters": "123",
-      "chaptersReread": "2",
-      "review": "2",
-      "details": "",
-      "status": "dropped",
-      "genres": [
-        "Adventure",
-        "Dungeon"
-      ],
-      "id": 12
-    },
-    {
-      "title": "231dsa",
-      "chapters": "3",
-      "chaptersReread": "0",
-      "review": "3",
-      "details": "",
-      "status": "on going",
-      "genres": [
-        "Adventure",
-        "Reincarnation"
-      ],
-      "id": 15
-    },
-    {
-      "title": "asd",
-      "chapters": "23",
-      "chaptersReread": "23",
-      "review": "2",
-      "details": "",
-      "status": "on going",
-      "genres": [
-        "Reincarnation",
-        "Magic"
-      ],
-      "id": 16
-    },
-    {
-      "title": "d",
-      "chapters": "1222",
-      "chaptersReread": "0",
+      "year": 1869,
       "review": "4",
-      "details": "",
-      "status": "on going",
-      "genres": [
-        "Adventure",
-        "Reincarnation"
-      ],
-      "id": 17
+      "id": 6
     },
     {
-      "title": "da",
-      "chapters": "1231",
-      "chaptersReread": "0",
+      "author": "William Faulkner",
+      "country": "United States",
+      "language": "English",
+      "pages": 326,
+      "title": "The Sound and the Fury",
+      "img_title": "The Sound and the Fury",
+      "genres": [
+        "Southern Gothic novel",
+        "Modernist novel"
+      ],
+      "year": 1929,
+      "review": "4",
+      "id": 7
+    },
+    {
+      "author": "Gustave Flaubert",
+      "country": "France",
+      "language": "French",
+      "pages": 528,
+      "title": "Madame Bovary",
+      "img_title": "Madame_Bovary_1857_(hi-res)",
+      "genres": [
+        "Realist novel"
+      ],
+      "year": 1857,
       "review": "5",
-      "details": "",
-      "status": "complete",
-      "genres": [
-        "Dungeon",
-        "Adventure",
-        "Reincarnation",
-        "Magic",
-        "Manhwa"
-      ],
-      "id": 18
+      "id": 8
     },
     {
-      "title": "caine",
-      "chapters": "123",
-      "chaptersReread": "0",
+      "author": "Gabriel García Márquez",
+      "country": "Colombia",
+      "language": "Spanish",
+      "pages": 417,
+      "title": "One Hundred Years of Solitude",
+      "img_title": "One Hundred Years of Solitude",
+      "year": 1967,
+      "review": "2",
+      "genres": [
+        "Magic realism"
+      ],
+      "id": 9
+    },
+    {
+      "author": "João Guimarães Rosa",
+      "country": "Brazil",
+      "language": "Portuguese",
+      "pages": 494,
+      "title": "The Devil to Pay in the Backlands",
+      "img_title": "The Devil to Pay in the Backlands",
+      "genres": [
+        "Novel"
+      ],
+      "year": 1956,
+      "review": "3",
+      "id": 10
+    },
+    {
+      "author": "Doris Lessing",
+      "country": "United Kingdom",
+      "language": "English",
+      "pages": 688,
+      "title": "The Golden Notebook",
+      "img_title": "The_Golden_Notebook",
+      "genres": [
+        "Novel"
+      ],
+      "year": 1962,
       "review": "5",
-      "details": "",
-      "status": "complete",
-      "genres": [
-        "Adventure",
-        "Reincarnation",
-        "Magic",
-        "System",
-        "Comedy"
-      ],
-      "id": 19
-    },
-    {
-      "title": "fs",
-      "chapters": "1",
-      "chaptersReread": "0",
-      "review": "1",
-      "details": "",
-      "status": "on going",
-      "genres": [
-        "Action"
-      ],
-      "id": 20
+      "id": 11
     }
   ]
 }
