@@ -61,8 +61,10 @@ export const BooksTable = ({ setShowForm }) => {
     ? Math.ceil(data?.length / PER_PAGE)
     : Math.ceil(dataFilter?.length / PER_PAGE);
 
-  if (!data) {
-    return <div>Loading ....</div>;
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <div>Please Login</div>;
   }
 
   return (
@@ -125,7 +127,7 @@ export const BooksTable = ({ setShowForm }) => {
               <tbody>{currentPageData}</tbody>
             </table>
           </div>
-          {data && (
+          {pageCount >= 2 ? (
             <ReactPaginate
               previousLabel={"< previous"}
               nextLabel={"next >"}
@@ -140,7 +142,7 @@ export const BooksTable = ({ setShowForm }) => {
               pageRangeDisplayed={3}
               marginPagesDisplayed={2}
             />
-          )}
+          ) : null}
         </>
       )}
     </div>

@@ -18,8 +18,10 @@ export const Books = () => {
   useEffect(() => {
     (async () => {
       const data = await GetData();
-      const dataSearch = data.filter((el) =>
-        el.title.toString().toLowerCase().trim().includes(deb)
+      const dataSearch = data.filter(
+        (el) =>
+          el.title.toString().toLowerCase().trim().includes(deb) ||
+          el.author.toString().toLowerCase().trim().includes(deb)
       );
       setData(dataSearch);
     })();
@@ -76,7 +78,7 @@ export const Books = () => {
         <>
           <div className="container">{currentPageData}</div>
 
-          {data && (
+          {pageCount >= 2 ? (
             <ReactPaginate
               previousLabel={"< previous"}
               nextLabel={"next >"}
@@ -91,7 +93,7 @@ export const Books = () => {
               pageRangeDisplayed={3}
               marginPagesDisplayed={2}
             />
-          )}
+          ) : null}
         </>
       )}
     </div>

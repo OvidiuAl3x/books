@@ -9,7 +9,6 @@ export const GetData = () => {
     .catch((err) => console.warn(err));
 };
 
-
 export const GetDataID = async (id) => {
   const response = await fetch(`http://localhost:3000/books/${id}`);
   if (response.ok) {
@@ -61,10 +60,9 @@ export const DeleteData = async (id) => {
   throw new Error("Something went wrong");
 };
 
-
 export const GetDataGenres = () => {
   return axios
-    .get('http://localhost:3000/genres')
+    .get("http://localhost:3000/genres")
     .then((res) => res.data)
     .catch((err) => console.warn(err));
 };

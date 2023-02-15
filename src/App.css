@@ -9,9 +9,10 @@ body {
       hsl(193deg 100% 38%) 49%,
       hsl(194deg 100% 36%) 51%,
       hsl(195deg 100% 35%) 99%);
+  height: 100vh;
 }
 
-/** =================================== NAVBAR =================================== */
+/*! =================================== NAVBAR =================================== */
 .navBar {
   display: flex;
   padding: 0px 15px;
@@ -49,7 +50,7 @@ body {
 }
 
 
-/** =================================== Container =================================== */
+/*! =================================== Container =================================== */
 .width-container {
   width: 70%;
   margin: auto;
@@ -162,7 +163,7 @@ body {
 
 .card-flip-box-back {
   background-color: #1d1d1d;
-  color: #00F9F9;
+  color: rgb(194, 191, 191);
   transform: rotateY(180deg);
   border-radius: 0px 12px 12px 0px;
   overflow: auto;
@@ -173,12 +174,6 @@ body {
     -15px 2px 0px -3.5px rgba(255, 255, 255, 0.3),
     -17.5px 2px 0px -3.5px rgba(255, 255, 255, 0.3),
     -19.5px 0px 0px 0px rgb(0, 0, 0);
-  background-image: linear-gradient(50deg,
-      hsl(270deg 100% 7%) 0%,
-      hsl(250deg 97% 17%) 33%,
-      hsl(230deg 94% 28%) 60%,
-      hsl(210deg 92% 39%) 84%,
-      hsl(190deg 90% 50%) 101%);
 }
 
 .card-flip-box-back::-webkit-scrollbar {
@@ -252,7 +247,7 @@ h3 {
   padding: 5px 5px;
 }
 
-/**  =================================== PAGINATION Container =================================== */
+/*!  =================================== PAGINATION Container =================================== */
 
 .pagination {
   display: flex;
@@ -288,7 +283,7 @@ h3 {
   cursor: default;
 }
 
-/** ============================== table  ===================================*/
+/*! ============================== table  ===================================*/
 
 .container-totalDetailsFilter {
   display: flex;
@@ -499,7 +494,7 @@ link,
 }
 
 
-/** ============================== Form ==============================*/
+/*! ============================== Form ==============================*/
 
 .add-containerParent {
   position: absolute;
@@ -675,7 +670,7 @@ link,
 }
 
 
-/** ============================== delete ============================== */
+/*! ============================== delete ============================== */
 
 .container-delete {
   background-color: #ffffff3d;
@@ -713,4 +708,96 @@ link,
   font-weight: 600;
   margin: 3px 0px 6px 3px;
   border: 1px solid black;
+}
+
+/*! ==============================     LOGIN        ============================== */
+
+
+.container-formLogin {
+  display: flex;
+  background-color: #ffffff3d;
+  margin: 5em auto;
+  width: 50%;
+  border-radius: 12px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.container-formLogin>.login>.sign-up {
+  position: relative;
+  left: 90px;
+  font-size: 12px;
+  font-weight: 600;
+  top: -50px;
+}
+
+.container-formLogin>.login>.sign-up>span {
+  color: blue;
+  cursor: pointer;
+}
+
+.container-formLogin>img {
+  width: 500px;
+  height: 500px;
+  border-radius: 24px;
+  padding: 10px;
+}
+
+.container-formLogin>.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.container-formLogin>.login>h1 {
+  margin-bottom: 0px;
+  margin-top: -20px;
+}
+
+.container-formLogin>.login>h5 {
+  margin: 6px 0px 30px 0px;
+}
+
+.container-formLogin>.login>form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+
+}
+
+
+.container-formLogin>.login>form>input {
+  outline: none;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  width: 110%;
+  padding: 12px;
+}
+
+.container-formLogin>.login>form>button {
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  padding: 8px 20px;
+  font-size: 16px;
+  width: 120%;
+  cursor: pointer;
+  background-color: black;
+  color: #00F9F9;
+}
+
+.container-formLogin>.login>.login-options>i {
+  margin: 0px 15px;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.container-formLogin>.login>.login-options>i:hover {
+  background-color: #1d1d1d;
+  color: #00b3db;
+  border-radius: 12px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(19, 19, 19, 0.3) 0px 18px 36px -18px inset;
 }
