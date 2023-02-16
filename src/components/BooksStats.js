@@ -4,34 +4,61 @@ export const BooksStats = ({
   setSelectedCategory,
   selectedCategory,
 }) => {
-  const chapters = data.reduce((a, b) => a + parseInt(b.chapters), 0);
-  const chaptersRereaded = data.reduce(
-    (a, b) => a + parseInt(b.chaptersReread),
-    0
-  );
-  const totalChapters = chapters + chaptersRereaded;
+  const pages = data.reduce((a, b) => a + parseInt(b.pages), 0);
 
   const totalBooks = data.length;
-  const lowReviewStar = data.filter((item) => item.review < "4").length;
-  const mediumReviewStar = data.filter(
-    (item) => item.review >= "4" && item.review < "5"
-  ).length;
-  const highReviewStar = data.filter(
-    (item) => item.review >= "5" && item.review < "6"
-  ).length;
-  const topReviewStar = data.filter((item) => item.review >= "6").length;
+  const lowReviewStar1 = data.filter((item) => item.review === "1").length;
+  const lowReviewStar2 = data.filter((item) => item.review === "2").length;
+  const lowReviewStar3 = data.filter((item) => item.review === "3").length;
+  const mediumReviewStar = data.filter((item) => item.review === "4").length;
+  const highReviewStar = data.filter((item) => item.review === "5").length;
 
   return (
     <div className="container-totalDetails">
       <p>
-        Total Books Readed: <span>{totalBooks}</span>
+        Total Books: <span>{totalBooks}</span>
       </p>
       <p>
-        Total Chapters: <span>{totalChapters}</span>
+        Total Pages: <span>{pages}</span>
       </p>
-
+      <p onClick={() => setSelectedCategory("")} style={{ cursor: "pointer" }}>
+        All Books
+      </p>
       <p>
-        1-3 <i class="fa-solid fa-star"></i>: <span>{lowReviewStar}</span>
+        1{" "}
+        <i
+          class="fa-solid fa-star"
+          onClick={() => setSelectedCategory("1")}
+          style={{
+            color: selectedCategory === "1" ? "#ffff00" : "black",
+            cursor: "pointer",
+          }}
+        ></i>
+        :<span>{lowReviewStar1}</span>
+      </p>
+      <p>
+        2{" "}
+        <i
+          class="fa-solid fa-star"
+          onClick={() => setSelectedCategory("2")}
+          style={{
+            color: selectedCategory === "2" ? "#ffff00" : "black",
+            cursor: "pointer",
+          }}
+        ></i>
+        :<span>{lowReviewStar2}</span>
+      </p>
+      <p>
+        3{" "}
+        <i
+          class="fa-solid fa-star"
+          onClick={() => setSelectedCategory("3")}
+          style={{
+            color: selectedCategory === "3" ? "#ffff00" : "black",
+            cursor: "pointer",
+          }}
+        ></i>
+        :<span>{lowReviewStar3}</span>
       </p>
       <p>
         4{" "}
@@ -57,18 +84,7 @@ export const BooksStats = ({
         ></i>
         : <span>{highReviewStar}</span>
       </p>
-      <p>
-        6{" "}
-        <i
-          class="fa-solid fa-star"
-          onClick={() => setSelectedCategory("6")}
-          style={{
-            color: selectedCategory === "6" ? "#ffff00" : "black",
-            cursor: "pointer",
-          }}
-        ></i>
-        : <span>{topReviewStar}</span>
-      </p>
+
       <i
         class="fa-regular fa-circle-xmark"
         onClick={() => {

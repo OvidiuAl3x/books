@@ -5,8 +5,7 @@ import { GetData } from "../service/ApiRequest";
 import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
 import { useDebounce } from "./DeabounceSearch";
-import { SortChapters, SortDetails, SortReview } from "./SortTable";
-import { StatusFilter } from "./StatusFilter";
+import { SortPages, SortReview } from "./SortTable";
 
 const PER_PAGE = 8;
 
@@ -23,8 +22,8 @@ export const BooksTable = ({ setShowForm }) => {
       const data = await GetData();
       const dataSearch = data.filter(
         (el) =>
-          el.title.toString().toLowerCase().trim().includes(deb) ||
-          el.details.toString().toLowerCase().trim().includes(deb)
+          el.author.toString().toLowerCase().trim().includes(deb) ||
+          el.title.toString().toLowerCase().trim().includes(deb)
       );
       setData(dataSearch);
     })();
@@ -79,11 +78,6 @@ export const BooksTable = ({ setShowForm }) => {
             >
               Stats <i class="fa-solid fa-magnifying-glass"></i>
             </h3>
-            <StatusFilter
-              setSelectedCategory={setSelectedCategory}
-              selectedCategory={selectedCategory}
-              data={data}
-            />
             <input
               type="search"
               value={search}
@@ -102,31 +96,36 @@ export const BooksTable = ({ setShowForm }) => {
             />
           )}
 
-          <div className="table-container">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Title</th>
-                  <SortChapters setData={setData} data={data} />
-                  <th>Chapters 1st</th>
-                  <SortReview setData={setData} data={data} />
-                  <th>Genres</th>
-                  <SortDetails setData={setData} data={data} />
-                  <th colSpan={2}>
-                    <Link to="new">
-                      <i
-                        class="fa-solid fa-square-plus"
-                        onClick={() => setShowForm(true)}
-                      ></i>
-                    </Link>
-                  </th>
-                </tr>
-              </thead>
+          {!filteredList.length <= 0 ? (
+            <div className="table-container">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <SortPages setData={setData} data={data} />
+                    <SortReview setData={setData} data={data} />
+                    <th>Genres</th>
+                    <th>Language</th>
 
-              <tbody>{currentPageData}</tbody>
-            </table>
-          </div>
+                    <th colSpan={2}>
+                      <Link to="new">
+                        <i
+                          class="fa-solid fa-square-plus"
+                          onClick={() => setShowForm(true)}
+                        ></i>
+                      </Link>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>{currentPageData}</tbody>
+              </table>
+            </div>
+          ) : (
+            <h2 style={{ textAlign: "center" }}>No Books found</h2>
+          )}
+
           {pageCount >= 2 ? (
             <ReactPaginate
               previousLabel={"< previous"}

@@ -5,16 +5,7 @@ import { DeleteBooks } from "./DeleteBooks";
 
 export const BooksTableCard = ({ item, setShowForm }) => {
   const [deleteBook, setDeleteBook] = useState(false);
-  const {
-    id,
-    title,
-    chapters,
-    chaptersReread,
-    review,
-    genres,
-    details,
-    status,
-  } = item;
+  const { id, title, pages, review, genres, language, img_title } = item;
 
   function importAll(r) {
     let images = {};
@@ -27,17 +18,8 @@ export const BooksTableCard = ({ item, setShowForm }) => {
     require.context("../photo/", false, /\.(png|jpe?g|svg)$/)
   );
 
-  const colorStatus =
-    status === "complete"
-      ? "#2de215"
-      : status === "dropped"
-      ? "#cc0606"
-      : status === "on going"
-      ? "#d8db03"
-      : "grey";
-
-  const image = images[`${title}.jpg`]
-    ? images[`${title}.jpg`]
+  const image = images[`${img_title}.jpg`]
+    ? images[`${img_title}.jpg`]
     : "https://placehold.co/300x300/black/white?text=No+Image";
 
   const handleDelete = (id) => {
@@ -54,10 +36,6 @@ export const BooksTableCard = ({ item, setShowForm }) => {
     <>
       <tr key={id}>
         <td>
-          <span
-            style={{ backgroundColor: `${colorStatus}` }}
-            className="span-status"
-          ></span>
           <img
             src={image}
             height={60}
@@ -66,21 +44,20 @@ export const BooksTableCard = ({ item, setShowForm }) => {
             className="img-zoom"
           />
         </td>
-        <td style={{ minWidth: "100px", maxWidth: "100px" }}>{title}</td>
-        <td>{chapters}</td>
-        <td>{chaptersReread}</td>
+        <td style={{ minWidth: "200px", maxWidth: "200px" }}>{title}</td>
+        <td>{pages}</td>
         <td>
           {review}
           <i class="fa-solid fa-star"></i>
         </td>
-        <td>
+        <td style={{ minWidth: "300px", maxWidth: "300px" }}>
           <div className="genres-container">
             {genres.map((item) => (
               <span className="genres-align">{item}</span>
             ))}
           </div>
         </td>
-        <td>{details}</td>
+        <td>{language}</td>
         <td>
           {deleteBook ? (
             <DeleteBooks

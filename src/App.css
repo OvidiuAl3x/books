@@ -287,9 +287,8 @@ h3 {
 
 .container-totalDetailsFilter {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  width: 66%;
   margin: auto;
 }
 
@@ -314,14 +313,14 @@ h3 {
 }
 
 .h1-totalDetails {
-  margin-left: 30px;
   margin-top: 0px;
   padding-top: 10px;
+  text-align: center;
 }
 
 .p-totalDetails {
-  margin-left: 30px;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .container-totalDetails>p>.fa-star {
@@ -827,5 +826,4 @@ link,
 
 .user>.logout:hover {
   color: black;
-
 }

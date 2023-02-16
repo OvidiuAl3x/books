@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const SortChapters = ({ data, setData }) => {
+export const SortPages = ({ data, setData }) => {
   const [sortData, setSortData] = useState("asc");
   const [iconAsc, setIconAsc] = useState(true);
 
@@ -9,7 +9,7 @@ export const SortChapters = ({ data, setData }) => {
 
     copyArray.sort((a, b) => {
       const sort = sortData === "asc" ? 1 : -1;
-      return sort * parseInt(b.chapters) - parseInt(a.chapters);
+      return sort * parseInt(b.pages) - parseInt(a.pages);
     });
 
     setData(copyArray);
@@ -26,7 +26,7 @@ export const SortChapters = ({ data, setData }) => {
             setIconAsc(false);
           }}
         >
-          <p>Chapters</p>
+          <p>Pages</p>
           <i class="fa-solid fa-arrow-down"></i>
         </div>
       ) : (
@@ -38,7 +38,7 @@ export const SortChapters = ({ data, setData }) => {
             setIconAsc(true);
           }}
         >
-          <p>Chapters</p>
+          <p>Pages</p>
           <i class="fa-solid fa-arrow-up"></i>
         </div>
       )}
@@ -87,30 +87,6 @@ export const SortReview = ({ data, setData }) => {
           <i class="fa-solid fa-arrow-up"></i>
         </div>
       )}
-    </th>
-  );
-};
-export const SortDetails = ({ data, setData }) => {
-  const sort = () => {
-    const copyArray = [...data];
-    copyArray.sort((a, b) => {
-      return a.details < b.details ? 1 : -1;
-    });
-
-    setData(copyArray);
-  };
-
-  return (
-    <th>
-      <div
-        className="table-sort"
-        onClick={() => {
-          sort();
-        }}
-      >
-        <p>Details</p>
-        <i class="fa-solid fa-arrow-down"></i>
-      </div>
     </th>
   );
 };
