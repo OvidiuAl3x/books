@@ -801,3 +801,31 @@ link,
   border-radius: 12px;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(19, 19, 19, 0.3) 0px 18px 36px -18px inset;
 }
+
+/*! ==============================     User        ============================== */
+
+.user {
+  background-color: #8d06c242;
+  backdrop-filter: blur(12px);
+  position: relative;
+  top: 50px;
+  left: 75px;
+  border-radius: 12px;
+  height: 90px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.user>.logout {
+  color: #00F9F9;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user>.logout:hover {
+  color: black;
+
+}
