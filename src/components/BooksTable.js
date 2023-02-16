@@ -102,12 +102,13 @@ export const BooksTable = ({ setShowForm }) => {
                 <thead>
                   <tr>
                     <th>Image</th>
+                    <th>Author</th>
                     <th>Title</th>
-                    <SortPages setData={setData} data={data} />
-                    <SortReview setData={setData} data={data} />
-                    <th>Genres</th>
                     <th>Language</th>
+                    <SortPages setData={setData} data={data} />
 
+                    <th>Genres</th>
+                    <SortReview setData={setData} data={data} />
                     <th colSpan={2}>
                       <Link to="new">
                         <i

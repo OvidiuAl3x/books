@@ -5,7 +5,8 @@ import { DeleteBooks } from "./DeleteBooks";
 
 export const BooksTableCard = ({ item, setShowForm }) => {
   const [deleteBook, setDeleteBook] = useState(false);
-  const { id, title, pages, review, genres, language, img_title } = item;
+  const { id, title, pages, review, genres, language, img_title, author } =
+    item;
 
   function importAll(r) {
     let images = {};
@@ -44,12 +45,11 @@ export const BooksTableCard = ({ item, setShowForm }) => {
             className="img-zoom"
           />
         </td>
+        <td style={{ minWidth: "150px", maxWidth: "150px" }}>{author}</td>
         <td style={{ minWidth: "200px", maxWidth: "200px" }}>{title}</td>
+        <td>{language}</td>
         <td>{pages}</td>
-        <td>
-          {review}
-          <i class="fa-solid fa-star"></i>
-        </td>
+
         <td style={{ minWidth: "300px", maxWidth: "300px" }}>
           <div className="genres-container">
             {genres.map((item) => (
@@ -57,7 +57,10 @@ export const BooksTableCard = ({ item, setShowForm }) => {
             ))}
           </div>
         </td>
-        <td>{language}</td>
+        <td>
+          {review}
+          <i class="fa-solid fa-star"></i>
+        </td>
         <td>
           {deleteBook ? (
             <DeleteBooks
