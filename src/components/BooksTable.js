@@ -5,7 +5,7 @@ import { GetData } from "../service/ApiRequest";
 import { BooksStats } from "./BooksStats";
 import { BooksTableCard } from "./BooksTableCard";
 import { useDebounce } from "./DeabounceSearch";
-import { SortPages, SortReview } from "./SortTable";
+import { SortPages, SortReview, SortYear } from "./SortTable";
 
 const PER_PAGE = 8;
 
@@ -108,6 +108,7 @@ export const BooksTable = ({ setShowForm }) => {
                     <SortPages setData={setData} data={data} />
 
                     <th>Genres</th>
+                    <SortYear setData={setData} data={data} />
                     <SortReview setData={setData} data={data} />
                     <th colSpan={2}>
                       <Link to="new">

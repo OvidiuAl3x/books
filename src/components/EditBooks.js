@@ -10,17 +10,17 @@ export const EditBooks = ({ setShowForm }) => {
   const [errorForm, setErrorForm] = useState(false);
 
   const [form, setForm] = useState({
+    author: "",
+    language: "",
+    pages: "",
     title: "",
-    chapters: "1",
-    chaptersReread: "0",
-    review: "1",
-    details: "",
-    status: "",
+    img_title: "",
     genres: [],
+    year: "1900",
+    review: "1",
   });
 
-  const { title, chapters, chaptersReread, review, details, status } = form;
-  const navigate = useNavigate();
+  const { title, pages, review, language, author, year } = form;
 
   useEffect(() => {
     if (id !== undefined) {
@@ -46,16 +46,14 @@ export const EditBooks = ({ setShowForm }) => {
     if (
       reTitle.test(form.title) &&
       !title.length < 1 &&
-      form.chapters > 0 &&
-      form.chapters < 9999 &&
-      form.chaptersReread >= 0 &&
-      form.chaptersReread < 9999 &&
-      form.status
+      form.pages > 0 &&
+      form.pages < 9999 &&
+      form.year >= 0 &&
+      form.year < 2080
     ) {
       try {
         await CreateData(form);
         alert(`Created ${form.title}`);
-        navigate(`/table`);
         window.location.reload(true);
       } catch (err) {
         console.warn(err);
@@ -68,16 +66,14 @@ export const EditBooks = ({ setShowForm }) => {
     if (
       reTitle.test(form.title) &&
       !title.length < 1 &&
-      form.chapters > 0 &&
-      form.chapters < 9999 &&
-      form.chaptersReread >= 0 &&
-      form.chaptersReread < 9999 &&
-      form.status
+      form.pages > 0 &&
+      form.pages < 9999 &&
+      form.year >= 0 &&
+      form.year < 2080
     ) {
       try {
         await UpdateData(form);
         alert(`Updated ${form.title}`);
-        navigate(`/table`);
         window.location.reload(true);
       } catch (e) {
         console.warn(e);
@@ -100,7 +96,7 @@ export const EditBooks = ({ setShowForm }) => {
             </Link>
           </div>
 
-          <h3>Add New Book</h3>
+          {!id ? <h3>Add New Book</h3> : <h3>Update Book</h3>}
           <form className="form-container">
             <label for="title">Title</label>
             <input
@@ -111,60 +107,68 @@ export const EditBooks = ({ setShowForm }) => {
               className={errorForm ? "error-form" : ""}
             />
             {errorForm && <p className="error-message">Please insert title</p>}
-            <label for="chapters">Chapters</label>
+            <label for="title" style={{ marginTop: "10px" }}>
+              Author
+            </label>
+            <input
+              type="text"
+              name="author"
+              value={author}
+              onChange={({ target }) => updateField(target)}
+              className={errorForm ? "error-form" : ""}
+            />
+            {errorForm && <p className="error-message">Please insert author</p>}
+            <label for="year" style={{ marginTop: "10px" }}>
+              Year
+            </label>
             <input
               type="number"
-              name="chapters"
-              value={chapters}
+              name="year"
+              value={year}
               onChange={({ target }) => updateField(target)}
-              className={chapters >= 9999 ? "error-form" : ""}
+              className={year >= 2080 ? "error-form" : ""}
+              min="1"
+              max="2050"
+            />
+            {year >= 2050 ? (
+              <p className="error-message">Year range between 1-2080</p>
+            ) : null}
+            <label for="pages" style={{ marginTop: "10px" }}>
+              Pages
+            </label>
+            <input
+              type="number"
+              name="pages"
+              value={pages}
+              onChange={({ target }) => updateField(target)}
+              className={pages >= 9999 ? "error-form" : ""}
               min="1"
               max="9999"
             />
-            {chapters >= 9999 ? (
-              <p className="error-message">Chapters range between 1-9999</p>
+            {pages >= 9999 ? (
+              <p className="error-message">Pages range between 1-9999</p>
             ) : null}
-            <label for="chaptersReread">Chapters Reread</label>
-            <input
-              type="number"
-              name="chaptersReread"
-              value={chaptersReread}
-              onChange={({ target }) => updateField(target)}
-              className={chaptersReread >= 9999 ? "error-form" : ""}
-            />
-            {chaptersReread >= 9999 && (
-              <p className="error-message">Chapters range between 0-9999</p>
-            )}
-            <label for="review">
-              Review (1 - 6): <span style={{ color: "white" }}>{review}</span>
+            <label for="review" style={{ marginTop: "10px" }}>
+              Review (1 - 5): <span style={{ color: "white" }}>{review}</span>
             </label>
             <input
               type="range"
               id="review"
               name="review"
               min="1"
-              max="6"
+              max="5"
               onChange={({ target }) => updateField(target)}
               value={review}
             />
-            <label for="details">Details</label>
+            <label for="language" style={{ marginTop: "10px" }}>
+              Language
+            </label>
             <input
               type="text"
-              name="details"
-              value={details}
+              name="language"
+              value={language}
               onChange={({ target }) => updateField(target)}
             />
-            <select
-              name="status"
-              onChange={({ target }) => updateField(target)}
-              className={errorForm ? "error-form" : ""}
-            >
-              <option value={status}>Status Selected: {status}</option>
-              <option value="complete">Complete</option>
-              <option value="on going">On Going</option>
-              <option value="dropped">Dropped</option>
-            </select>
-            {errorForm && <p className="error-message">Please select status</p>}
             <p className="genres">Please Select Genres:</p>
             <EditGenres form={form} setForm={setForm} />
           </form>

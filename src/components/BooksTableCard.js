@@ -5,8 +5,17 @@ import { DeleteBooks } from "./DeleteBooks";
 
 export const BooksTableCard = ({ item, setShowForm }) => {
   const [deleteBook, setDeleteBook] = useState(false);
-  const { id, title, pages, review, genres, language, img_title, author } =
-    item;
+  const {
+    id,
+    title,
+    pages,
+    review,
+    genres,
+    language,
+    img_title,
+    author,
+    year,
+  } = item;
 
   function importAll(r) {
     let images = {};
@@ -57,6 +66,7 @@ export const BooksTableCard = ({ item, setShowForm }) => {
             ))}
           </div>
         </td>
+        <td>{year}</td>
         <td>
           {review}
           <i class="fa-solid fa-star"></i>

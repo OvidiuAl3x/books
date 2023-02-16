@@ -90,3 +90,48 @@ export const SortReview = ({ data, setData }) => {
     </th>
   );
 };
+export const SortYear = ({ data, setData }) => {
+  const [sortData, setSortData] = useState("asc");
+  const [iconAsc, setIconAsc] = useState(true);
+
+  const sort = () => {
+    const copyArray = [...data];
+
+    copyArray.sort((a, b) => {
+      const sort = sortData === "asc" ? 1 : -1;
+      return sort * parseInt(b.year) - parseInt(a.year);
+    });
+
+    setData(copyArray);
+  };
+
+  return (
+    <th>
+      {iconAsc ? (
+        <div
+          className="table-sort"
+          onClick={() => {
+            sort();
+            setSortData("desc");
+            setIconAsc(false);
+          }}
+        >
+          <p>Year</p>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+      ) : (
+        <div
+          className="table-sort"
+          onClick={() => {
+            sort();
+            setSortData("asc");
+            setIconAsc(true);
+          }}
+        >
+          <p>Year</p>
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
+      )}
+    </th>
+  );
+};

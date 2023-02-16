@@ -16,13 +16,13 @@
       "author": "Brandon Sanderson",
       "country": "United States",
       "language": "English",
-      "pages": 1007,
+      "pages": "1007",
       "title": "The Way of Kings",
       "img_title": "TheWayOfKings",
       "genres": [
         "High Fantasy"
       ],
-      "year": 2010,
+      "year": "2010",
       "review": "4",
       "id": 1
     },
@@ -30,13 +30,13 @@
       "author": "Brandon Sanderson",
       "country": "United States",
       "language": "English",
-      "pages": 647,
+      "pages": "647",
       "title": "Mistborn: The Final Empire",
       "img_title": "Mistborn-cover",
       "genres": [
         "Fantasy novel"
       ],
-      "year": 2006,
+      "year": "2006",
       "review": "4",
       "id": 2
     },
@@ -44,13 +44,13 @@
       "author": "Brandon Sanderson",
       "country": "United States",
       "language": "English",
-      "pages": 421,
+      "pages": "421",
       "title": "Calamity",
       "img_title": "Calamity_book_cover",
       "genres": [
         "Fantasy novel"
       ],
-      "year": 2016,
+      "year": "2016",
       "review": "3",
       "id": 3
     },
@@ -58,13 +58,13 @@
       "author": "Denis Diderot",
       "country": "France",
       "language": "French",
-      "pages": 596,
+      "pages": "596",
       "title": "Jacques the Fatalist",
       "img_title": "JacquesFatalist01",
       "genres": [
         "Philosophical novel"
       ],
-      "year": 1796,
+      "year": "1796",
       "review": "3",
       "id": 4
     },
@@ -72,13 +72,13 @@
       "author": "Fyodor Dostoevsky",
       "country": "Russia",
       "language": "Russian",
-      "pages": 551,
+      "pages": "551",
       "title": "Crime and Punishment",
       "img_title": "Crimeandpunishmentcover",
       "genres": [
         "Literary fiction"
       ],
-      "year": 1866,
+      "year": "1866",
       "review": "5",
       "id": 5
     },
@@ -86,13 +86,13 @@
       "author": "Fyodor Dostoevsky",
       "country": "Russia",
       "language": "Russian",
-      "pages": 656,
+      "pages": "656",
       "title": "The Idiot",
       "img_title": "theidiot",
       "genres": [
         "Novel"
       ],
-      "year": 1869,
+      "year": "1869",
       "review": "4",
       "id": 6
     },
@@ -100,14 +100,14 @@
       "author": "William Faulkner",
       "country": "United States",
       "language": "English",
-      "pages": 326,
+      "pages": "326",
       "title": "The Sound and the Fury",
       "img_title": "The Sound and the Fury",
       "genres": [
         "Southern Gothic novel",
         "Modernist novel"
       ],
-      "year": 1929,
+      "year": "1929",
       "review": "4",
       "id": 7
     },
@@ -115,13 +115,13 @@
       "author": "Gustave Flaubert",
       "country": "France",
       "language": "French",
-      "pages": 528,
+      "pages": "528",
       "title": "Madame Bovary",
       "img_title": "Madame_Bovary_1857_(hi-res)",
       "genres": [
         "Realist novel"
       ],
-      "year": 1857,
+      "year": "1857",
       "review": "5",
       "id": 8
     },
@@ -129,10 +129,10 @@
       "author": "Gabriel García Márquez",
       "country": "Colombia",
       "language": "Spanish",
-      "pages": 417,
+      "pages": "417",
       "title": "One Hundred Years of Solitude",
       "img_title": "One Hundred Years of Solitude",
-      "year": 1967,
+      "year": "1967",
       "review": "2",
       "genres": [
         "Magic realism"
@@ -143,13 +143,13 @@
       "author": "João Guimarães Rosa",
       "country": "Brazil",
       "language": "Portuguese",
-      "pages": 494,
+      "pages": "494",
       "title": "The Devil to Pay in the Backlands",
       "img_title": "The Devil to Pay in the Backlands",
       "genres": [
         "Novel"
       ],
-      "year": 1956,
+      "year": "1956",
       "review": "3",
       "id": 10
     },
@@ -157,13 +157,13 @@
       "author": "Doris Lessing",
       "country": "United Kingdom",
       "language": "English",
-      "pages": 688,
+      "pages": "688",
       "title": "The Golden Notebook",
       "img_title": "The_Golden_Notebook",
       "genres": [
         "Novel"
       ],
-      "year": 1962,
+      "year": "1962",
       "review": "5",
       "id": 11
     }
