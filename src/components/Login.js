@@ -21,7 +21,7 @@ export const Login = () => {
       .then((res) => {
         localStorage.setItem("token", res["token"]);
         localStorage.setItem("username", JSON.stringify(res["username"]));
-        window.location.href = "/bookmarks";
+        window.location.href = "/mybooks";
       })
       .catch((err) => console.log(err));
   };

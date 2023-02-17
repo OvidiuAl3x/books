@@ -13,7 +13,7 @@ export const NavBar = () => {
         <Route path="/" element={<Books />}>
           <Route path="/" element={<BooksCard />}></Route>
         </Route>
-        <Route path="/bookmarks" element={<BooksDetails />}>
+        <Route path="/mybooks" element={<BooksDetails />}>
           <Route path="new" element={<BooksDetails />}></Route>
           <Route path=":id" element={<BooksDetails />}></Route>
         </Route>

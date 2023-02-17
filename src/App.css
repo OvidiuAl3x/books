@@ -191,6 +191,7 @@ h3 {
   font-size: 16px;
   padding: 0px 10px;
   text-transform: capitalize;
+  width: calc(100% - 65px);
 }
 
 .star {
@@ -211,6 +212,40 @@ h3 {
 
 .genres-Books>.genres-alignBooks {
   padding: 0px 4px;
+}
+
+.container-bookmark {
+  font-size: 12px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container-bookmark>p {
+  width: 30px;
+  padding: 10px 0;
+  position: absolute;
+  top: -16px;
+  left: 16.5em;
+  text-align: center;
+  border-top-left-radius: 3px;
+  background: #00F9F9;
+}
+
+.container-bookmark>p:before,
+.container-bookmark>p:after {
+  content: "";
+  position: absolute;
+}
+
+.container-bookmark>p:after {
+  height: 0;
+  width: 0px;
+  bottom: -14px;
+  left: 0;
+  border-left: 15px solid #00F9F9;
+  border-right: 15px solid #00F9F9;
+  border-bottom: 15px solid transparent;
 }
 
 .width-container>.container-filterHome {
@@ -246,6 +281,9 @@ h3 {
   margin: 10px 10px;
   padding: 5px 5px;
 }
+
+
+
 
 /*!  =================================== PAGINATION Container =================================== */
 

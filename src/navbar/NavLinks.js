@@ -7,7 +7,7 @@ export const NavLinks = () => {
   return (
     <nav className="navBar">
       <NavLink to="">Books</NavLink>
-      <NavLink to="/bookmarks">Your Books</NavLink>
+      <NavLink to="/mybooks">Your Books</NavLink>
       <UserAcc/>
     </nav>
   );
