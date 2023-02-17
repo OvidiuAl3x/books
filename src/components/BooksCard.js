@@ -1,7 +1,7 @@
 import Stars from "react-stars-display";
 import { YourBooks } from "./YourBooks";
 
-export const BooksCard = ({ item }) => {
+export const BooksCard = ({ item ,filteredList}) => {
   // add all images
   function importAll(r) {
     let images = {};
@@ -32,7 +32,7 @@ export const BooksCard = ({ item }) => {
           <img src={image} height={320} width={250} alt={title} />
         </div>
         <div className="card-flip-box-back">
-          <YourBooks/>
+          <YourBooks id={id} filteredList={filteredList}/>
           <h3>{title}</h3>
           <p>
             <strong>Author:</strong> {author}

@@ -9,6 +9,7 @@ const PER_PAGE = 8;
 
 export const Books = () => {
   const [data, setData] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState();
   const [search, setSearch] = useState("");
@@ -52,7 +53,7 @@ export const Books = () => {
 
   const currentPageData = filteredList
     ?.slice(offset, offset + PER_PAGE)
-    .map((item) => <BooksCard key={item.id} item={item} />);
+    .map((item) => <BooksCard key={item.id} item={item} filteredList={filteredList}/>);
 
   const pageCount = !selectedCategory
     ? Math.ceil(data?.length / PER_PAGE)

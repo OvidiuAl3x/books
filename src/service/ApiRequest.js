@@ -68,6 +68,15 @@ export const GetDataGenres = () => {
 };
 
 
+
+export const GetMyBooks= () => {
+  return axios
+    .get("http://localhost:3000/mybooks")
+    .then((res) => res.data)
+    .catch((err) => console.warn(err));
+};
+
+
 export const MyBooks = async (payload) => {
   const response = await fetch(`http://localhost:3000/mybooks`, {
     method: "POST",
