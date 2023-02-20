@@ -91,7 +91,7 @@ export const EditBooks = ({ setShowForm }) => {
       <div className="add-containerParent">
         <div className="add-containerChild">
           <div className="close-form">
-            <Link to="/mybooks">
+            <Link to="/admin">
               <i class="fa-solid fa-x" onClick={() => setShowForm(false)}></i>
             </Link>
           </div>
