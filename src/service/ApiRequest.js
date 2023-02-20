@@ -66,28 +66,3 @@ export const GetDataGenres = () => {
     .then((res) => res.data)
     .catch((err) => console.warn(err));
 };
-
-
-
-export const GetMyBooks= () => {
-  return axios
-    .get("http://localhost:3000/mybooks")
-    .then((res) => res.data)
-    .catch((err) => console.warn(err));
-};
-
-
-export const MyBooks = async (payload) => {
-  const response = await fetch(`http://localhost:3000/mybooks`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (response.ok) {
-    return await response.json();
-  }
-  throw new Error("Something went wrong");
-};

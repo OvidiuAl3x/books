@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CreateData, GetDataID, UpdateData } from "../service/ApiRequest";
 import { EditGenres } from "./EditGenres";
 

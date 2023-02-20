@@ -53,7 +53,9 @@ export const Books = () => {
 
   const currentPageData = filteredList
     ?.slice(offset, offset + PER_PAGE)
-    .map((item) => <BooksCard key={item.id} item={item} filteredList={filteredList}/>);
+    .map((item) => (
+      <BooksCard key={item.id} item={item} filteredList={filteredList} />
+    ));
 
   const pageCount = !selectedCategory
     ? Math.ceil(data?.length / PER_PAGE)

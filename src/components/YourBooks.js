@@ -1,48 +1,42 @@
 import { useEffect, useState } from "react";
-import { GetMyBooks, MyBooks } from "../service/ApiRequest";
+import { UpdateData } from "../service/ApiRequest";
 
-export const YourBooks = ({ id, filteredList }) => {
-  const [myBooks, setMyBooks] = useState({});
-  const [data, setData] = useState({});
+export const YourBooks = ({ id, filteredList, item }) => {
+  const [a, setA] = useState(JSON.parse(localStorage.getItem(id)) || false);
 
-  const addMyBooks = async (id) => {
+  const addMyBooks = (id) => {
     const dataBook = filteredList.find((item) => item.id === id);
-    setMyBooks({ ...myBooks, dataBook });
-    try {
-      await MyBooks(myBooks);
-      console.log("work");
-    } catch (err) {
-      console.warn(err);
-    }
+    const local = localStorage.setItem(id, JSON.stringify(dataBook));
+    //todo alerta de add
+    setA(!a);
   };
 
-  useEffect(() => {
-    (async () => {
-      const data = await GetMyBooks();
-      setData(data);
-    })();
-  }, []);
-
-  const a = data.map((item) => item.dataBook.title);
-  const b = filteredList.map((item) => item.title);
-
-  console.log(b);
-  if (a in b) {
-    return (
-      <div className="container-bookmark" onClick={() => addMyBooks(id)}>
-        <p>
-          <br />B<br />O<br />O<br />K
-        </p>
-      </div>
-    );
-  }
-
+  const removeBooks = (id) => {
+    const dataBook = filteredList.find((item) => item.id === id);
+    localStorage.removeItem(id);
+    setA(!a);
+  };
   return (
-    <div className="container-bookmark" onClick={() => addMyBooks(id)}>
-      <p>
-        A<br />D<br />D <br />
-        <br />B<br />O<br />O<br />K
-      </p>
-    </div>
+    <>
+      {a ? (
+        <div className="container-bookmark" onClick={() => removeBooks(id)}>
+          <p>
+            A<br />D<br />D<br />E<br />D
+          </p>
+        </div>
+      ) : (
+        <div
+          className="container-bookmark"
+          onClick={() => {
+            addMyBooks(id);
+          }}
+        >
+          <p>
+            A<br />D<br />D <br />
+            <br />B<br />O<br />O<br />K
+          </p>
+        </div>
+      )}
+    </>
   );
 };

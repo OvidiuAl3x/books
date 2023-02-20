@@ -10,59 +10,6 @@
     "Realist novel",
     "Magic realism"
   ],
-  "mybooks": [
-    {
-      "dataBook": {
-        "author": "Brandon Sanderson",
-        "country": "United States",
-        "language": "English",
-        "pages": "421",
-        "title": "Calamity",
-        "img_title": "Calamity_book_cover",
-        "genres": [
-          "Fantasy novel"
-        ],
-        "year": "2016",
-        "review": "3",
-        "id": 3
-      },
-      "id": 1
-    },
-    {
-      "dataBook": {
-        "author": "Fyodor Dostoevsky",
-        "country": "Russia",
-        "language": "Russian",
-        "pages": "656",
-        "title": "The Idiot",
-        "img_title": "theidiot",
-        "genres": [
-          "Novel"
-        ],
-        "year": "1869",
-        "review": "4",
-        "id": 6
-      },
-      "id": 2
-    },
-    {
-      "dataBook": {
-        "author": "Gustave Flaubert",
-        "country": "France",
-        "language": "French",
-        "pages": "528",
-        "title": "Madame Bovary",
-        "img_title": "Madame_Bovary_1857_(hi-res)",
-        "genres": [
-          "Realist novel"
-        ],
-        "year": "1857",
-        "review": "5",
-        "id": 8
-      },
-      "id": 3
-    }
-  ],
   "books": [
     {
       "author": "Brandon Sanderson",
