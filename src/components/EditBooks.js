@@ -96,7 +96,11 @@ export const EditBooks = ({ setShowForm }) => {
             </Link>
           </div>
 
-          {!id ? <h3>Add New Book</h3> : <h3>Update Book</h3>}
+          {!id ? (
+            <h3 style={{ textAlign: "center" }}>Add New Book</h3>
+          ) : (
+            <h3 style={{ textAlign: "center" }}>Update Book</h3>
+          )}
           <form className="form-container">
             <label for="title">Title</label>
             <input

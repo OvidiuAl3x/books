@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import { UpdateData } from "../service/ApiRequest";
+import { useState } from "react";
 
-export const YourBooks = ({ id, filteredList, item }) => {
+export const YourBooks = ({ id, filteredList }) => {
   const [a, setA] = useState(JSON.parse(localStorage.getItem(id)) || false);
 
   const addMyBooks = (id) => {
