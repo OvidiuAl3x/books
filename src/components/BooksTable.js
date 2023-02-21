@@ -63,7 +63,24 @@ export const BooksTable = ({ setShowForm }) => {
   const token = localStorage.getItem("token");
 
   if (!token) {
-    return <div>Please Login</div>;
+    return (
+      <>
+        <h1 style={{ textAlign: "center" }}>
+          Please{" "}
+          <Link
+            to="/login"
+            style={{
+              color: "#00F9F9",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            Login
+          </Link>{" "}
+          to Continue
+        </h1>
+      </>
+    );
   }
 
   return (

@@ -4,7 +4,6 @@ import { GetData } from "../service/ApiRequest";
 import { BooksCard } from "../components/BooksCard";
 import { FilterBooks } from "../components/FilterBooks";
 import { useDebounce } from "../components/DeabounceSearch";
-import { MyBooks } from "./MyBooks";
 
 const PER_PAGE = 8;
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { GetData } from "../service/ApiRequest";
 import Stars from "react-stars-display";
+import { Link } from "react-router-dom";
 
 export const MyBooks = ({ filteredList }) => {
   const [data, setData] = useState([]);
@@ -13,8 +14,29 @@ export const MyBooks = ({ filteredList }) => {
     })();
   }, []);
 
-  const a = data?.map((item) => <AA item={item} />);
+  const a = data?.map((item) => <Favorite item={item} />);
+  const token = localStorage.getItem("token");
 
+  if (!token) {
+    return (
+      <>
+        <h1 style={{ textAlign: "center" }}>
+          Please{" "}
+          <Link
+            to="/login"
+            style={{
+              color: "#00F9F9",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            Login
+          </Link>{" "}
+          to Continue
+        </h1>
+      </>
+    );
+  }
   return (
     <div className="width-container">
       <div className="container">{a}</div>
@@ -22,7 +44,7 @@ export const MyBooks = ({ filteredList }) => {
   );
 };
 
-const AA = ({ item }) => {
+const Favorite = ({ item }) => {
   const a = JSON.parse(localStorage.getItem(item.id));
   function importAll(r) {
     let images = {};
