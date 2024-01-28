@@ -57,7 +57,7 @@ function Register() {
   return (
     <div className="h-[80vh] flex justify-center">
       <div className="flex flex-col items-center  bg-slate-300  m-auto rounded-lg shadow-lg w-[400px] h-[500px]">
-        <p className=" text-3xl mt-10">Member Login</p>
+        <p className=" text-3xl mt-10">Member Register</p>
 
         <div className="flex flex-col gap-2 justify-center items-center m-auto">
           <div className="flex items-center bg-white ">

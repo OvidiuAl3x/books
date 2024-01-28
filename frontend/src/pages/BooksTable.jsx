@@ -103,8 +103,8 @@ const BooksTable = () => {
     },
     { field: "title", headerName: "Title", width: 150 },
     { field: "author", headerName: "Author", width: 150 },
-    { field: "publishYear", headerName: "Publish Year", width: 150 },
-    { field: "category", headerName: "Category", width: 150 },
+    { field: "publishYear", headerName: "Publish Year", width: 100 },
+    { field: "category", headerName: "Category", width: 250 },
     {
       field: "createdAt",
       headerName: "Created At",
@@ -145,7 +145,7 @@ const BooksTable = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="w-[90%] m-auto">
+        <div className="w-[85%] m-auto">
           <div className="flex">
             <Link to="/books/create" className="ml-auto">
               <MdOutlineAddBox className="text-sky-800 text-4xl hover:scale-110 duration-300" />

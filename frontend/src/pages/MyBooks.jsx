@@ -77,25 +77,31 @@ function MyBooks() {
         <div>
           <p className="text-3xl text-center my-5"> My Books</p>
           <div className="flex m-auto">
-            <div className="flex flex-wrap gap-5 justify-center w-[70%]  m-auto">
+            <div className="flex flex-wrap gap-5 justify-center w-[80%]  m-auto">
               {data?.map((item) => (
                 <div
                   key={item._id}
-                  className="w-[230px] h-[400px]  flex flex-col justify-between hover:scale-105 duration-300"
+                  className="w-[250px] h-[400px]  flex flex-col justify-between hover:scale-105 duration-300"
                 >
                   <div>
                     <div className="flex justify-end ">
-                      <FaHeart
-                        className={`absolute  mt-2 mr-2 cursor-pointer ${
-                          idWhislist.includes(item._id) && "text-red-500"
-                        }`}
+                      <div
+                        className="absolute mt-2 mr-2 cursor-pointer bg-slate-400 rounded-full p-[5px]"
                         onClick={() => toggleWishlist(item._id)}
-                      />
+                      >
+                        <FaHeart
+                          className={` ${
+                            idWhislist.includes(item._id)
+                              ? "text-red-500"
+                              : "text-zinc-100"
+                          }`}
+                        />
+                      </div>
                     </div>
                     <img
                       src={`${image}${item.image}`}
                       alt={item.image}
-                      className="w-[230px] rounded-[6px] shadow-lg"
+                      className="min-w-[250px] max-w-[250px] min-h-[350px] max-h-[350px] rounded-[6px] shadow-lg"
                     />
                   </div>
 

@@ -83,7 +83,7 @@ function Home() {
   return (
     <div>
       <p className="text-3xl text-center my-5">Books</p>
-      <div className="flex m-auto">
+      <div className="flex m-auto justify-between">
         <Filter
           setSearch={setSearch}
           authorParams={authorParams}
@@ -93,7 +93,7 @@ function Home() {
           publishYearParams={publishYearParams}
           setPublishYearParams={setPublishYearParams}
         />
-        <div className="flex flex-wrap gap-10 justify-center w-[80%]  m-auto">
+        <div className="flex flex-wrap gap-10  w-[80%] ">
           {data.map((item) => (
             <div
               key={item._id}
