@@ -1,18 +1,19 @@
 body {
   letter-spacing: 1.2px;
-  font-family: 'DynaPuff', cursive;
+  font-family: "DynaPuff", cursive;
   text-transform: capitalize;
-  background-image: linear-gradient(160deg,
-      hsl(191, 100%, 43%) 1%,
-      hsl(192deg 100% 41%) 49%,
-      hsl(193deg 100% 40%) 51%,
-      hsl(193deg 100% 38%) 49%,
-      hsl(194deg 100% 36%) 51%,
-      hsl(195deg 100% 35%) 99%);
+  background-image: linear-gradient(
+    160deg,
+    hsl(191, 100%, 43%) 1%,
+    hsl(192deg 100% 41%) 49%,
+    hsl(193deg 100% 40%) 51%,
+    hsl(193deg 100% 38%) 49%,
+    hsl(194deg 100% 36%) 51%,
+    hsl(195deg 100% 35%) 99%
+  );
   height: 100vh;
 }
 
-/*! =================================== NAVBAR =================================== */
 .navBar {
   display: flex;
   padding: 0px 15px;
@@ -20,9 +21,9 @@ body {
   background-color: #1d1d1d;
 }
 
-.navBar>a {
+.navBar > a {
   margin: 10px 20px;
-  color: #00F9F9;
+  color: #00f9f9;
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -30,25 +31,24 @@ body {
   font-size: 18px;
 }
 
-.navBar>a::before {
+.navBar > a::before {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #00F9F9;
+  background-color: #00f9f9;
   border-radius: 4px;
   scale: 0;
   transform-origin: left;
   transition: scale 0.25s;
 }
 
-.navBar>a:hover::before {
+.navBar > a:hover::before {
   scale: 1;
   transform-origin: right;
 }
-
 
 /*! =================================== Container =================================== */
 .width-container {
@@ -64,7 +64,6 @@ body {
   justify-content: space-around;
 }
 
-
 .card-container {
   margin: 60px 10px 20px 10px;
   width: 250px;
@@ -75,7 +74,6 @@ body {
 @keyframes animationCards {
   0% {
     opacity: 0;
-
   }
 
   100% {
@@ -87,14 +85,12 @@ body {
   animation: animationCardsLeft 1s ease-in-out;
   position: relative;
   animation-fill-mode: both;
-
 }
 
 .card-container:nth-child(even) {
   animation: animationCardsRight 1s ease-in-out;
   position: relative;
   animation-fill-mode: both;
-
 }
 
 @keyframes animationCardsRight {
@@ -119,7 +115,6 @@ body {
   }
 }
 
-
 .card-flip-box-inner {
   position: relative;
   width: 100%;
@@ -127,7 +122,6 @@ body {
   transition: transform 0.8s ease-out;
   transform-style: preserve-3d;
 }
-
 
 .card-container:hover .card-flip-box-inner {
   transform: rotateY(-180deg);
@@ -140,14 +134,13 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-
 }
 
 .card-flip-box-front {
   transform: rotateY(-18deg);
 }
 
-.card-flip-box-front>img {
+.card-flip-box-front > img {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   box-shadow: 5px 2px 0px -3.5px rgb(255, 255, 255, 0.3),
@@ -157,9 +150,8 @@ body {
     15px 2px 0px -3.5px rgba(255, 255, 255, 0.3),
     17.5px 2px 0px -3.5px rgba(255, 255, 255, 0.3),
     19.5px 0px 0px 0px rgb(0, 0, 0);
-  border: 2px solid black
+  border: 2px solid black;
 }
-
 
 .card-flip-box-back {
   background-color: #1d1d1d;
@@ -185,8 +177,7 @@ body {
   background: white;
 }
 
-
-.card-flip-box-back>p,
+.card-flip-box-back > p,
 h3 {
   font-size: 16px;
   padding: 0px 10px;
@@ -203,14 +194,13 @@ h3 {
   padding: 1px 10px;
 }
 
-
 .genres-Books {
   display: flex;
   flex-wrap: wrap;
   margin: -14px 10px 0px 10px;
 }
 
-.genres-Books>.genres-alignBooks {
+.genres-Books > .genres-alignBooks {
   padding: 0px 4px;
 }
 
@@ -221,7 +211,7 @@ h3 {
   cursor: pointer;
 }
 
-.container-bookmark>p {
+.container-bookmark > p {
   width: 30px;
   padding: 10px 0;
   position: absolute;
@@ -229,33 +219,33 @@ h3 {
   left: 16.5em;
   text-align: center;
   border-top-left-radius: 3px;
-  background: #00F9F9;
+  background: #00f9f9;
 }
 
-.container-bookmark>p:before,
-.container-bookmark>p:after {
+.container-bookmark > p:before,
+.container-bookmark > p:after {
   content: "";
   position: absolute;
 }
 
-.container-bookmark>p:after {
+.container-bookmark > p:after {
   height: 0;
   width: 0px;
   bottom: -14px;
   left: 0;
-  border-left: 15px solid #00F9F9;
-  border-right: 15px solid #00F9F9;
+  border-left: 15px solid #00f9f9;
+  border-right: 15px solid #00f9f9;
   border-bottom: 15px solid transparent;
 }
 
-.width-container>.container-filterHome {
+.width-container > .container-filterHome {
   position: absolute;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.width-container>.container-filterHome>.container-filterHomeChild {
+.width-container > .container-filterHome > .container-filterHomeChild {
   position: relative;
   right: 15em;
   top: 10em;
@@ -264,26 +254,25 @@ h3 {
   backdrop-filter: blur(12px);
 }
 
-.width-container>.container-filterHome>.container-filterHomeChild>p {
+.width-container > .container-filterHome > .container-filterHomeChild > p {
   cursor: pointer;
   margin: 6px;
-
 }
 
-.width-container>.container-filterHome>.container-filterHomeChild>p>i {
+.width-container > .container-filterHome > .container-filterHomeChild > p > i {
   margin-right: 3px;
 }
 
-.width-container>.container-filterHome>.container-filterHomeChild>.search {
+.width-container
+  > .container-filterHome
+  > .container-filterHomeChild
+  > .search {
   border-radius: 12px;
   outline: none;
   border: 1px solid black;
   margin: 10px 10px;
   padding: 5px 5px;
 }
-
-
-
 
 /*!  =================================== PAGINATION Container =================================== */
 
@@ -337,13 +326,15 @@ h3 {
   animation: tableBody 0.8s ease-in-out;
   animation-fill-mode: both;
   font-weight: bold;
-  background-image: linear-gradient(200deg,
-      hsl(191deg 100% 43%) 1%,
-      hsl(192deg 100% 41%) 49%,
-      hsl(193deg 100% 40%) 51%,
-      hsl(193deg 100% 38%) 49%,
-      hsl(194deg 100% 36%) 51%,
-      hsl(195deg 100% 35%) 99%);
+  background-image: linear-gradient(
+    200deg,
+    hsl(191deg 100% 43%) 1%,
+    hsl(192deg 100% 41%) 49%,
+    hsl(193deg 100% 40%) 51%,
+    hsl(193deg 100% 38%) 49%,
+    hsl(194deg 100% 36%) 51%,
+    hsl(195deg 100% 35%) 99%
+  );
   border: 1px solid black;
   border-radius: 12px;
   width: 80%;
@@ -361,30 +352,28 @@ h3 {
   margin-right: 20px;
 }
 
-.container-totalDetails>p>.fa-star {
+.container-totalDetails > p > .fa-star {
   margin-left: -6px;
   cursor: default;
 }
 
-.container-totalDetails>p>span {
+.container-totalDetails > p > span {
   color: white;
   font-weight: 400;
 }
 
-.container-totalDetails>.fa-circle-xmark {
+.container-totalDetails > .fa-circle-xmark {
   font-size: 24px;
   color: #cc0606;
   cursor: pointer;
 }
 
-.width-container>.container-totalDetailsFilter>.search {
+.width-container > .container-totalDetailsFilter > .search {
   border-radius: 12px;
   border: 1px solid black;
   padding: 5px;
   outline: none;
 }
-
-
 
 .container-statusON {
   border-bottom: 3px solid #d8db03;
@@ -408,7 +397,6 @@ h3 {
   animation: fadeIn 1.5s;
 }
 
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -418,7 +406,6 @@ h3 {
     opacity: 1;
   }
 }
-
 
 .table {
   text-align: center;
@@ -441,67 +428,67 @@ h3 {
   }
 }
 
-.table>thead>tr,
+.table > thead > tr,
 th {
   font-size: 13px;
   position: relative;
 }
 
-.table>tr,
+.table > tr,
 th,
 td {
   border-bottom: 1px solid black;
   padding: 3px 8px;
 }
 
-.table>tbody>tr,
+.table > tbody > tr,
 td {
   font-size: 12px;
   max-width: 400px;
 }
 
-.table>tr,
+.table > tr,
 .fa-solid {
   cursor: pointer;
 }
 
-.table>tbody>tr .fa-star {
+.table > tbody > tr .fa-star {
   color: #ffff00;
   font-size: 12px;
   margin-left: 3px;
   cursor: default;
 }
 
-.table>tr,
+.table > tr,
 .fa-square-plus {
   color: #00ff2a;
   font-size: 18px;
 }
 
-.table>tr,
+.table > tr,
 .fa-ban {
   color: rgb(255, 0, 0);
 }
 
-.table>tr,
+.table > tr,
 link,
 .fa-wrench {
   color: black;
 }
 
-.table>tr,
+.table > tr,
 .img-zoom {
   transition: 0.5s ease-in-out;
 }
 
-.table>tr,
+.table > tr,
 .img-zoom:hover {
   transform: scale(2.5);
   position: relative;
   z-index: 1;
 }
 
-.table>tr,
+.table > tr,
 .table-sort {
   display: flex;
   cursor: pointer;
@@ -509,8 +496,8 @@ link,
   justify-content: center;
 }
 
-.table>tr,
-.table-sort>i {
+.table > tr,
+.table-sort > i {
   margin-left: 3px;
 }
 
@@ -520,7 +507,6 @@ link,
   left: -3px;
 }
 
-
 .genres-container {
   display: flex;
   flex-wrap: wrap;
@@ -529,7 +515,6 @@ link,
 .genres-align {
   padding: 0 5px;
 }
-
 
 /*! ============================== Form ==============================*/
 
@@ -566,19 +551,19 @@ link,
   }
 }
 
-.add-containerChild>.close-form {
+.add-containerChild > .close-form {
   display: flex;
   width: 100%;
   justify-content: flex-end;
 }
 
-.add-containerChild>.close-form>a,
+.add-containerChild > .close-form > a,
 .fa-x {
   color: #cc0606;
   text-decoration: none;
 }
 
-.add-containerChild>h3 {
+.add-containerChild > h3 {
   color: #1d1d1d;
   font-size: 20px;
   margin: 0px 0px 10px 0px;
@@ -591,7 +576,7 @@ link,
   max-width: 350px;
 }
 
-.form-container>input:not([type=range]) {
+.form-container > input:not([type="range"]) {
   text-align: center;
   width: 80%;
   margin: 5px;
@@ -601,14 +586,14 @@ link,
   border: 0px;
 }
 
-.form-container>.error-message {
+.form-container > .error-message {
   font-size: 12px;
   font-weight: bold;
   color: white;
   margin: 0px 0px 10px 0px;
 }
 
-.add-containerChild>.form-button {
+.add-containerChild > .form-button {
   margin: 5px;
   padding: 10px 30px;
   background-color: #ffffff10;
@@ -621,11 +606,11 @@ link,
   font-weight: 600;
 }
 
-.add-containerChild>.form-button:hover {
+.add-containerChild > .form-button:hover {
   background-color: #00b3db;
 }
 
-.add-containerChild>.form-container>select {
+.add-containerChild > .form-container > select {
   text-align: center;
   border-radius: 12px;
   width: 80%;
@@ -634,19 +619,19 @@ link,
   text-transform: capitalize;
 }
 
-.add-containerChild>.form-container>textarea {
+.add-containerChild > .form-container > textarea {
   border-radius: 12px;
   margin: 5px 0px;
   padding: 10px;
 }
 
-.form-container>label {
+.form-container > label {
   font-size: 13px;
   font-weight: 600;
   margin: 0px 8px;
 }
 
-.form-container>.error-form {
+.form-container > .error-form {
   outline: solid red;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   transform: scale(1);
@@ -671,19 +656,19 @@ link,
   }
 }
 
-.form-container>input[type="range"] {
+.form-container > input[type="range"] {
   cursor: pointer;
   width: 80%;
 }
 
-.form-container>.genres {
+.form-container > .genres {
   margin: 10px 0 0 0;
   padding: 0;
   font-weight: 600;
   font-size: 14px;
 }
 
-.form-container>.container-formGenres {
+.form-container > .container-formGenres {
   display: flex;
   flex-wrap: wrap;
   font-size: 12px;
@@ -691,7 +676,7 @@ link,
   margin: 10px 0px;
 }
 
-.form-container>.container-formGenres>.checkbox {
+.form-container > .container-formGenres > .checkbox {
   cursor: pointer;
   margin: 10px;
   border: 1px solid black;
@@ -701,11 +686,9 @@ link,
   opacity: 0.6;
 }
 
-
-.form-container>.container-formGenres>.checkbox>input {
+.form-container > .container-formGenres > .checkbox > input {
   display: contents;
 }
-
 
 /*! ============================== delete ============================== */
 
@@ -721,7 +704,6 @@ link,
 @keyframes deleteAnimation {
   0% {
     opacity: 0;
-
   }
 
   100% {
@@ -729,16 +711,14 @@ link,
   }
 }
 
-.container-delete>.close {
+.container-delete > .close {
   cursor: pointer;
   margin-right: 3px;
   margin: 3px 3px 6px 0px;
   border: 1px solid black;
 }
 
-
-
-.container-delete>.delete {
+.container-delete > .delete {
   cursor: pointer;
   background-color: #cc0606;
   color: white;
@@ -749,17 +729,17 @@ link,
 
 /*! ==============================     LOGIN        ============================== */
 
-
 .container-formLogin {
   display: flex;
   background-color: #ffffff3d;
   margin: 5em auto;
   width: 50%;
   border-radius: 12px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.container-formLogin>.login>.sign-up {
+.container-formLogin > .login > .sign-up {
   position: relative;
   left: 90px;
   font-size: 12px;
@@ -767,44 +747,42 @@ link,
   top: -50px;
 }
 
-.container-formLogin>.login>.sign-up>span {
+.container-formLogin > .login > .sign-up > span {
   color: blue;
   cursor: pointer;
 }
 
-.container-formLogin>img {
+.container-formLogin > img {
   width: 500px;
   height: 500px;
   border-radius: 24px;
   padding: 10px;
 }
 
-.container-formLogin>.login {
+.container-formLogin > .login {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: auto;
 }
 
-.container-formLogin>.login>h1 {
+.container-formLogin > .login > h1 {
   margin-bottom: 0px;
   margin-top: -20px;
 }
 
-.container-formLogin>.login>h5 {
+.container-formLogin > .login > h5 {
   margin: 6px 0px 30px 0px;
 }
 
-.container-formLogin>.login>form {
+.container-formLogin > .login > form {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: auto;
-
 }
 
-
-.container-formLogin>.login>form>input {
+.container-formLogin > .login > form > input {
   outline: none;
   margin: 10px;
   border-radius: 12px;
@@ -813,7 +791,7 @@ link,
   padding: 12px;
 }
 
-.container-formLogin>.login>form>button {
+.container-formLogin > .login > form > button {
   margin: 10px;
   border-radius: 12px;
   border: 1px solid black;
@@ -822,21 +800,22 @@ link,
   width: 120%;
   cursor: pointer;
   background-color: black;
-  color: #00F9F9;
+  color: #00f9f9;
 }
 
-.container-formLogin>.login>.login-options>i {
+.container-formLogin > .login > .login-options > i {
   margin: 0px 15px;
   font-size: 28px;
   cursor: pointer;
   padding: 10px;
 }
 
-.container-formLogin>.login>.login-options>i:hover {
+.container-formLogin > .login > .login-options > i:hover {
   background-color: #1d1d1d;
   color: #00b3db;
   border-radius: 12px;
-  box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(19, 19, 19, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset,
+    rgba(19, 19, 19, 0.3) 0px 18px 36px -18px inset;
 }
 
 /*! ==============================     User        ============================== */
@@ -854,14 +833,14 @@ link,
   margin-top: 10px;
 }
 
-.user>.logout {
-  color: #00F9F9;
+.user > .logout {
+  color: #00f9f9;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
 }
 
-.user>.logout:hover {
+.user > .logout:hover {
   color: black;
 }
