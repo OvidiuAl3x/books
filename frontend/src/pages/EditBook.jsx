@@ -19,6 +19,7 @@ const EditBook = () => {
 
   const [categories, setCategories] = useState([]);
   const [imagePreview, setImagePreview] = useState(null);
+  const [selectedCategoryName, setSelectedCategoryName] = useState([]);
 
   const { title, author, publishYear, language, description, pages } = book;
 
@@ -27,26 +28,35 @@ const EditBook = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchBookData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
-        setBook(response.data);
+        const [bookResponse, categoriesResponse] = await Promise.all([
+          axios.get(`http://localhost:5555/books/${id}`),
+          axios.get("http://localhost:5555/categories"),
+        ]);
+
+        const bookData = bookResponse.data;
+        const categoriesData = categoriesResponse.data.data;
+
+        setBook(bookData);
+
+        // Update selectedCategoryName when book data or categories change
+        const selectedCategories = bookData.categories.map((categoryId) => {
+          const selectedCategory = categoriesData.find(
+            (category) => category._id === categoryId._id
+          );
+          return selectedCategory ? categoryId.name : "";
+        });
+
+        setSelectedCategoryName(selectedCategories);
+
+        setCategories(categoriesData);
       } catch (error) {
-        console.error("Error fetching book data:", error.message);
+        console.error("Error fetching data:", error.message);
       }
     };
 
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get("http://localhost:5555/categories");
-        setCategories(response.data.data);
-      } catch (error) {
-        console.error("Error fetching categories:", error.message);
-      }
-    };
-
-    fetchBookData();
-    fetchCategories();
+    fetchData();
   }, [id]);
 
   const handleInputChange = (e) => {
@@ -73,6 +83,21 @@ const EditBook = () => {
 
   const handleCategoryChange = (e) => {
     const selectedCategoryId = e.target.value;
+
+    const selectCateg = categories.find(
+      (category) => category._id === selectedCategoryId
+    );
+
+    if (selectCateg) {
+      if (!selectedCategoryName.includes(selectCateg.name)) {
+        setSelectedCategoryName([...selectedCategoryName, selectCateg.name]);
+      } else {
+        const updatedCategories = selectedCategoryName.filter(
+          (category) => category !== selectCateg.name
+        );
+        setSelectedCategoryName(updatedCategories);
+      }
+    }
 
     setBook((prevBook) => {
       if (prevBook.categories.includes(selectedCategoryId)) {
@@ -149,7 +174,7 @@ const EditBook = () => {
       <div className="flex mt-10 justify-center">
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col gap-4 border-2 p-6  shadow-2xl rounded-md w-[25em]"
+          className="flex flex-col gap-4 border-2 p-6  shadow-2xl rounded-md max-w-[29em]"
         >
           <div className="flex flex-col gap-1">
             <label>Title*</label>
@@ -172,26 +197,27 @@ const EditBook = () => {
               className="border-2 focus:outline-none border-blue-500 px-2 capitalize"
             />
           </div>
-
-          <div className="flex flex-col gap-1">
-            <label> Publish Year*</label>
-            <input
-              type="text"
-              name="publishYear"
-              value={publishYear}
-              onChange={handleInputChange}
-              className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
-            />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label>Pages*</label>
-            <input
-              type="text"
-              name="pages"
-              value={pages}
-              onChange={handleInputChange}
-              className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
-            />
+          <div className="flex gap-2 flex-wrap justify-center">
+            <div className="flex flex-col gap-1">
+              <label> Publish Year*</label>
+              <input
+                type="text"
+                name="publishYear"
+                value={publishYear}
+                onChange={handleInputChange}
+                className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label>Pages*</label>
+              <input
+                type="text"
+                name="pages"
+                value={pages}
+                onChange={handleInputChange}
+                className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
+              />
+            </div>
           </div>
           <div className="flex flex-col gap-1">
             <label> Language*</label>
@@ -222,43 +248,57 @@ const EditBook = () => {
               Description*
             </textarea>
           </div>
+          <div className="flex gap-1">
+            <label className="flex gap-2 items-center cursor-pointer w-fit border-2 px-4 py-2 border-blue-500 m-auto hover:-translate-y-1 duration-300">
+              <MdOutlineFileUpload className="text-2xl" />
+              Upload Image
+              <input
+                type="file"
+                onChange={handleImageChange}
+                className="hidden"
+              />
+            </label>
 
-          <label className="flex gap-2 items-center cursor-pointer w-fit border-2 px-4 py-2 border-blue-500 m-auto hover:-translate-y-1 duration-300">
-            <MdOutlineFileUpload className="text-2xl" />
-            Upload Image
-            <input
-              type="file"
-              onChange={handleImageChange}
-              className="hidden"
-            />
-          </label>
-
-          <div>
-            Categories:
-            <div className="flex gap-2 mt-2 justify-center flex-wrap h-[10em] overflow-auto">
-              {categories.map((category) => (
-                <label
-                  key={category._id}
-                  className={`cursor-pointer w-fit border-2 px-4 py-2 border-blue-500 hover:-translate-y-1 duration-300 ${
-                    book.categories.includes(category._id) ? "bg-blue-300" : ""
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    name="categories"
+            <div className="flex flex-col gap-1">
+              <select
+                name="categories"
+                value=""
+                onChange={(e) => handleCategoryChange(e)}
+                className="border-2 focus:outline-none border-blue-500 p-2"
+              >
+                <option>Select Categories</option>
+                {categories.map((category) => (
+                  <option
+                    key={category._id}
                     value={category._id}
-                    onChange={(e) => {
-                      handleCategoryChange(e);
-                    }}
-                    className="hidden"
-                    checked={book.categories.includes(category._id)}
-                  />
-                  {category.name}
-                </label>
-              ))}
+                    className={`
+                  w-fit
+                  ${
+                    book.categories.some((e) => e._id === category._id) ||
+                    book.categories.includes(category._id)
+                      ? "bg-zinc-300"
+                      : ""
+                  }`}
+                  >
+                    {category.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
-
+          {selectedCategoryName.length > 0 && (
+            <div className="">
+              Selected Categories:
+              <p>
+                {selectedCategoryName.map((e, index) => (
+                  <span key={index}>
+                    {e}
+                    {index < selectedCategoryName.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </p>
+            </div>
+          )}
           <button
             type="submit"
             className="p-2 bg-sky-500 m-8 rounded-md hover:-translate-y-1 duration-300"

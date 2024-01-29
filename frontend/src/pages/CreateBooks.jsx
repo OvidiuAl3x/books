@@ -20,6 +20,7 @@ const CreateBooks = () => {
 
   const [categories, setCategories] = useState([]);
   const [imagePreview, setImagePreview] = useState(null);
+  const [selectedCategoryName, setSelectedCategoryName] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -66,6 +67,21 @@ const CreateBooks = () => {
 
   const handleCategoryChange = (e) => {
     const selectedCategory = e.target.value;
+
+    const selectCateg = categories.find(
+      (category) => category._id === selectedCategory
+    );
+
+    if (selectCateg) {
+      if (!selectedCategoryName.includes(selectCateg.name)) {
+        setSelectedCategoryName([...selectedCategoryName, selectCateg.name]);
+      } else {
+        const updatedCategories = selectedCategoryName.filter(
+          (category) => category !== selectCateg.name
+        );
+        setSelectedCategoryName(updatedCategories);
+      }
+    }
 
     setBook({
       ...book,
@@ -136,7 +152,7 @@ const CreateBooks = () => {
       <div className="flex mt-10 justify-center">
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col gap-4 border-2 p-6  shadow-2xl rounded-md w-[25em]"
+          className="flex flex-col gap-4 border-2 p-6  shadow-2xl rounded-md max-w-[29em]"
         >
           <div className="flex flex-col gap-1">
             <label>Title*</label>
@@ -160,26 +176,29 @@ const CreateBooks = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label> Publish Year*</label>
-            <input
-              type="text"
-              name="publishYear"
-              value={book.publishYear}
-              onChange={handleInputChange}
-              className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
-            />
+          <div className="flex gap-2 flex-wrap justify-center">
+            <div className="flex flex-col gap-1 ">
+              <label> Publish Year*</label>
+              <input
+                type="number"
+                name="publishYear"
+                value={book.publishYear}
+                onChange={handleInputChange}
+                className="border-2 focus:outline-none border-blue-500 p-2 capitalize "
+              />
+            </div>
+            <div className="flex flex-col gap-1 ">
+              <label>Pages*</label>
+              <input
+                type="number"
+                name="pages"
+                value={book.pages}
+                onChange={handleInputChange}
+                className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
+              />
+            </div>
           </div>
-          <div className="flex flex-col gap-1">
-            <label>Pages*</label>
-            <input
-              type="text"
-              name="pages"
-              value={book.pages}
-              onChange={handleInputChange}
-              className="border-2 focus:outline-none border-blue-500 p-2 capitalize"
-            />
-          </div>
+
           <div className="flex flex-col gap-1">
             <label> Language*</label>
             <select
@@ -199,52 +218,65 @@ const CreateBooks = () => {
             </select>
           </div>
           <div className="flex flex-col gap-1">
+            <label>Description*</label>
             <textarea
               name="description"
               rows="5"
               value={book.description}
               onChange={handleInputChange}
               className="border-2 focus:outline-none border-blue-500 px-2 capitalize"
-            >
-              Description*
-            </textarea>
+            ></textarea>
           </div>
-          <label className="flex gap-2 items-center cursor-pointer w-fit border-2 px-4 py-2 border-blue-500 m-auto hover:-translate-y-1 duration-300">
-            <MdOutlineFileUpload className="text-2xl" />
-            Upload Image
-            <input
-              type="file"
-              onChange={handleImageChange}
-              className="hidden"
-            />
-          </label>
 
-          <div>
-            Categories:
-            <div className="flex gap-2 mt-2 justify-center flex-wrap h-[10em] overflow-auto">
-              {categories.map((category) => (
-                <label
-                  key={category._id}
-                  className={`cursor-pointer w-fit border-2 px-4 py-2 border-blue-500  hover:-translate-y-1 duration-300 
-                  ${
-                    book.categories.includes(category._id) ? "bg-blue-300" : ""
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    name="categories"
+          <div className="flex gap-1">
+            <label className="flex gap-2 items-center justify-center cursor-pointer  border-2 h-full w-full border-blue-500 m-auto hover:-translate-y-1 duration-300">
+              <MdOutlineFileUpload className="text-2xl" />
+              Upload Image
+              <input
+                type="file"
+                onChange={handleImageChange}
+                className="hidden"
+              />
+            </label>
+
+            <div className="flex flex-col gap-1 h-full w-full">
+              <select
+                name="categories"
+                value=""
+                onChange={(e) => handleCategoryChange(e)}
+                className="border-2 focus:outline-none border-blue-500 p-2"
+              >
+                <option>Select Categories</option>
+                {categories.map((category) => (
+                  <option
+                    key={category._id}
                     value={category._id}
-                    onChange={(e) => {
-                      handleCategoryChange(e);
-                    }}
-                    className="hidden"
-                  />
-                  {category.name}
-                </label>
-              ))}
+                    className={`
+                  w-fit
+                  ${
+                    book.categories.includes(category._id) ? "bg-zinc-300" : ""
+                  }`}
+                  >
+                    {category.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
+          {selectedCategoryName.length > 0 && (
+            <div className="">
+              Selected Categories:
+              <p>
+                {selectedCategoryName.map((e, index) => (
+                  <span key={index}>
+                    {e}
+                    {index < selectedCategoryName.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </p>
+            </div>
+          )}
           <button
             type="submit"
             className="p-2 bg-sky-500 m-8 rounded-md hover:-translate-y-1 duration-300"
