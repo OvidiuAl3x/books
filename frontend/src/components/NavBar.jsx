@@ -41,15 +41,11 @@ function NavBar() {
   };
 
   return (
-    <div className="bg-slate-300 flex items-center justify-between p-5 shadow-md">
-      <div className="flex gap-5 ml-5 items-center">
+    <div className="bg-slate-300 flex items-center justify-between p-5 shadow-md flex-wrap">
+      <div className="flex gap-5 ml-5 items-center flex-wrap w-full">
         <Link to="/" className="flex items-center gap-3 mr-10">
           <ImBooks className="text-5xl text-blue-800" />
           <p className="text-xl font-bold">BookBreeze</p>
-        </Link>
-        <Link to="/" className="relative group">
-          <span>Home</span>
-          <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
         </Link>
         <Link to="/myBooks" className=" relative group">
           <span> My Books</span>
@@ -61,32 +57,32 @@ function NavBar() {
             <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
           </Link>
         )}
-      </div>
 
-      {cookie ? (
-        <Link
-          to="/myAccount"
-          className=" relative group mr-5"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <span> My Account</span>
-          <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
-          {isHovered && (
-            <p
-              className="absolute bg-blue-800 px-4 py-1 text-white rounded-b-md"
-              onClick={handleLogout}
-            >
-              Logout
-            </p>
-          )}
-        </Link>
-      ) : (
-        <Link to="/login" className=" relative group mr-5">
-          <span> Login</span>
-          <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
-        </Link>
-      )}
+        {cookie ? (
+          <Link
+            to="/myAccount"
+            className="relative group mr-5 ml-auto"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <span> My Account</span>
+            <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
+            {isHovered && (
+              <p
+                className="absolute bg-blue-800 px-4 py-1 text-white rounded-b-md"
+                onClick={handleLogout}
+              >
+                Logout
+              </p>
+            )}
+          </Link>
+        ) : (
+          <Link to="/login" className=" relative group mr-5 ml-auto">
+            <span> Login</span>
+            <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-400 transition-all group-hover:w-full"></span>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

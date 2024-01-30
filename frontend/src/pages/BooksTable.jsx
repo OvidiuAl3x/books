@@ -145,7 +145,7 @@ const BooksTable = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="w-[85%] m-auto">
+        <div className="w-full sm:w-[85%] m-auto">
           <div className="flex">
             <Link to="/books/create" className="ml-auto">
               <MdOutlineAddBox className="text-sky-800 text-4xl hover:scale-110 duration-300" />

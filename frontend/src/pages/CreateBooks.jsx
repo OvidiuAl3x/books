@@ -149,7 +149,7 @@ const CreateBooks = () => {
       <BackButton />
       <h1 className="text-3xl my-4 text-center"> Create a Book</h1>
       {loading && <Spinner />}
-      <div className="flex mt-10 justify-center">
+      <div className="flex mt-10 justify-center flex-wrap-reverse gap-2 lg:gap-0">
         <form
           onSubmit={handleFormSubmit}
           className="flex flex-col gap-4 border-2 p-6  shadow-2xl rounded-md max-w-[29em]"
@@ -228,8 +228,8 @@ const CreateBooks = () => {
             ></textarea>
           </div>
 
-          <div className="flex gap-1">
-            <label className="flex gap-2 items-center justify-center cursor-pointer  border-2 h-full w-full border-blue-500 m-auto hover:-translate-y-1 duration-300">
+          <div className="flex gap-1 flex-wrap">
+            <label className="flex gap-2 items-center cursor-pointer  border-2 px-4 py-2 border-blue-500 hover:-translate-y-1 duration-300">
               <MdOutlineFileUpload className="text-2xl" />
               Upload Image
               <input
@@ -239,7 +239,7 @@ const CreateBooks = () => {
               />
             </label>
 
-            <div className="flex flex-col gap-1 h-full w-full">
+            <div className="flex flex-col ">
               <select
                 name="categories"
                 value=""

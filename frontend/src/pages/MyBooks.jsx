@@ -77,11 +77,11 @@ function MyBooks() {
         <div>
           <p className="text-3xl text-center my-5"> My Books</p>
           <div className="flex m-auto">
-            <div className="flex flex-wrap gap-5 justify-center w-[80%]  m-auto">
+            <div className="flex flex-wrap gap-10 justify-center w-[80%]  m-auto">
               {data?.map((item) => (
                 <div
                   key={item._id}
-                  className="w-[250px] h-[400px]  flex flex-col justify-between hover:scale-105 duration-300"
+                  className="w-[250px] h-[400px]  flex flex-col justify-between my-6 gap-5 hover:scale-105 duration-300"
                 >
                   <div>
                     <div className="flex justify-end ">

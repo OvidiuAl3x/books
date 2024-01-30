@@ -11,7 +11,7 @@ function MyAccount() {
   const [page, setPage] = useState(Page_Account);
 
   return (
-    <div className="flex items-center justify-center m-auto h-[80vh] gap-[10em]">
+    <div className="flex items-center justify-center flex-wrap m-auto md:h-[80vh] gap-[2em] mt-2 md:gap-[10em]">
       <div>
         <div className="mb-10 flex items-center flex-col">
           <img

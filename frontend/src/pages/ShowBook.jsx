@@ -69,8 +69,8 @@ const ShowBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="flex flex-col gap-10">
-          <div className="flex items-center justify-between w-[60%] m-auto  gap-10 p-10 shadow-lg bg-slate-300 rounded-lg">
+        <div className="flex flex-col gap-10 w-full sm:w-[80%] md:w-[70%] lg:w-[60%]   m-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 p-10 shadow-lg bg-slate-300 rounded-lg">
             <div className="flex m-auto">
               <img
                 src={image !== undefined ? imageSrc : imagePlaceholder}
@@ -79,7 +79,7 @@ const ShowBook = () => {
                 className="rounded-md"
               />
             </div>
-            <div className="w-[100%]">
+            <div className="w-full lg:w-[60%]">
               <div className="my-4">
                 <span className="text-xl mr-4 text-blue-800">Title</span>
                 <span>{title}</span>
@@ -106,8 +106,7 @@ const ShowBook = () => {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col items-center w-[60%] m-auto  gap-10 p-10 shadow-lg bg-slate-300 rounded-lg">
+          <div className="flex flex-col items-center m-auto gap-10 py-2 md:p-10 shadow-lg bg-slate-300 rounded-lg">
             <p className="text-2xl">Reviews</p>
 
             {(!canWriteReview && localStorageUsername) ||

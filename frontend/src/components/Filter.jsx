@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { FaArrowDown } from "react-icons/fa";
 
 function Filter({
   setSearch,
@@ -13,6 +14,7 @@ function Filter({
 }) {
   const [category, setCategory] = useState([]);
   const [data, setData] = useState([]);
+  const [allFilters, setAllfilters] = useState(false);
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
@@ -80,8 +82,16 @@ function Filter({
     handleSearchDebounced(value);
   };
 
+  const handleFilterMobile = () => {
+    if (window.innerWidth < 1080) {
+      setAllfilters(!allFilters);
+    } else {
+      setAllfilters(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col bg-slate-300 rounded-xl px-10 py-2 max-w-[300px] h-fit ml-2">
+    <div className="flex flex-col bg-slate-300 rounded-xl px-10 py-2 lg:max-w-[300px] h-fit mx-2 lg:ml-2">
       <div className="flex items-center bg-white rounded-xl p-2 gap-2">
         <CiSearch />
         <input
@@ -92,68 +102,80 @@ function Filter({
           onChange={handleSearchChange}
         />
       </div>
-      <div className="mt-2 flex flex-col gap-5">
-        <div>
-          <p className="font-semibold">Category</p>
-          <div className="max-h-[200px] overflow-auto flex flex-col">
-            {category.map((item) => (
-              <label key={item._id}>
-                <input
-                  type="checkbox"
-                  value={item._id}
-                  className="mr-2"
-                  onChange={() => handleCategoryChange(item._id)}
-                  checked={categoriesParams.includes(item._id)}
-                />
-                {item.name}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <p className="font-semibold">Author</p>
-          <div className="max-h-[200px] overflow-auto flex flex-col">
-            {Array.from(new Set(data.map((item) => item.author)))
-              .sort((a, b) => a.localeCompare(b))
-              .map((item, index) => (
-                <label key={index}>
-                  <input
-                    type="checkbox"
-                    value={item}
-                    className="mr-2"
-                    name="author"
-                    onChange={() => handleAuthorChange(item)}
-                    checked={authorParams.includes(item)}
-                  />
-                  {item}
-                </label>
-              ))}
-          </div>
-        </div>
-        <div>
-          <p className="font-semibold">Publish Year</p>
-          <div className="max-h-[200px] overflow-auto flex flex-col">
-            {Array.from(new Set(data.map((item) => item.publishYear)))
-              .sort((a, b) => b - a)
-              .map((item, index) => (
-                <label key={index}>
-                  <input
-                    type="checkbox"
-                    value={item}
-                    className="mr-2"
-                    onChange={() => handleYearChange(item)}
-                    checked={publishYearParams.includes(item)}
-                  />
-                  {item}
-                </label>
-              ))}
-          </div>
-        </div>
-        <div>
-          <p className="font-semibold"></p>
+      <div className="flex  justify-center mt-2">
+        <div
+          className="flex items-center gap-2 border border-blue-800 px-2 py-1 rounded-xl lg:hidden"
+          onClick={handleFilterMobile}
+        >
+          <p>More Filters</p>
+          <FaArrowDown className="text-sm" />
         </div>
       </div>
+
+      {allFilters || window.innerWidth > 1018 ? (
+        <div className="flex flex-col gap-5 mt-2">
+          <div>
+            <p className="font-semibold">Category</p>
+            <div className="max-h-[200px] overflow-auto flex flex-col">
+              {category.map((item) => (
+                <label key={item._id}>
+                  <input
+                    type="checkbox"
+                    value={item._id}
+                    className="mr-2"
+                    onChange={() => handleCategoryChange(item._id)}
+                    checked={categoriesParams.includes(item._id)}
+                  />
+                  {item.name}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="font-semibold">Author</p>
+            <div className="max-h-[200px] overflow-auto flex flex-col">
+              {Array.from(new Set(data.map((item) => item.author)))
+                .sort((a, b) => a.localeCompare(b))
+                .map((item, index) => (
+                  <label key={index}>
+                    <input
+                      type="checkbox"
+                      value={item}
+                      className="mr-2"
+                      name="author"
+                      onChange={() => handleAuthorChange(item)}
+                      checked={authorParams.includes(item)}
+                    />
+                    {item}
+                  </label>
+                ))}
+            </div>
+          </div>
+          <div>
+            <p className="font-semibold">Publish Year</p>
+            <div className="max-h-[200px] overflow-auto flex flex-col">
+              {Array.from(new Set(data.map((item) => item.publishYear)))
+                .sort((a, b) => b - a)
+                .map((item, index) => (
+                  <label key={index}>
+                    <input
+                      type="checkbox"
+                      value={item}
+                      className="mr-2"
+                      onChange={() => handleYearChange(item)}
+                      checked={publishYearParams.includes(item)}
+                    />
+                    {item}
+                  </label>
+                ))}
+            </div>
+          </div>
+          <div>
+            <p className="font-semibold"></p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

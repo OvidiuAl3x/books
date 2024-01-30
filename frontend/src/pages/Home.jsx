@@ -83,7 +83,7 @@ function Home() {
   return (
     <div>
       <p className="text-3xl text-center my-5">Books</p>
-      <div className="flex m-auto justify-between">
+      <div className="flex justify-between flex-col lg:flex-row">
         <Filter
           setSearch={setSearch}
           authorParams={authorParams}
@@ -93,11 +93,11 @@ function Home() {
           publishYearParams={publishYearParams}
           setPublishYearParams={setPublishYearParams}
         />
-        <div className="flex flex-wrap gap-10  w-[80%] ">
+        <div className="flex flex-wrap justify-center gap-10  lg:w-[80%] lg:ml-10 ">
           {data.map((item) => (
             <div
               key={item._id}
-              className="w-[250px] h-[400px] flex flex-col justify-between my-6  hover:scale-105 duration-300 gap-5"
+              className="w-[200px]  lg:w-[250px] lg:h-[400px] flex flex-col justify-between my-6  hover:scale-105 duration-300 gap-5"
             >
               <div>
                 <div className="flex justify-end ">
@@ -121,15 +121,15 @@ function Home() {
                 <img
                   src={`${image}${item.image}`}
                   alt={item.image}
-                  className="min-w-[250px] max-w-[250px] min-h-[350px] max-h-[350px]  rounded-[6px] shadow-lg"
+                  className="min-w-[200px] max-w-[200px] min-h-[280px] max-h-[280px] lg:min-w-[250px] lg:max-w-[250px] lg:min-h-[350px] lg:max-h-[350px]  rounded-[6px] shadow-lg"
                 />
               </div>
 
               <Link
                 to={`/books/details/${item._id}`}
-                className="flex flex-col items-center border-2 border-blue-400  rounded-[8px] shadow-lg "
+                className="flex flex-col items-center text-center gap-2  border-2 border-blue-400  rounded-[8px] shadow-lg "
               >
-                <p>{item.title}</p>
+                <p className="text-balance">{item.title}</p>
                 <p>{item.author}</p>
                 <p>Publish Year: {item.publishYear}</p>
               </Link>
